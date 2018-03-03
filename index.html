@@ -177,6 +177,15 @@ header {
 #about-me > p {
 
 }
+.menu-button {
+  background: transparent;
+  border:solid 3px;
+  border-color: #f1f1f1;
+  border-radius: 10%;
+  width: 200px;
+  height: 80px;
+  font-size: 25px;
+}
 
 
 </style>
@@ -190,7 +199,7 @@ header {
         <a href="index.html">Piotr Kawa</a>
       </li>
       <li class="dropdown">
-        <a href="" class="dropbtn">Semestr</a>
+        <a href="semesters.html" class="dropbtn">Semestry</a>
         <div class="dropdown-content">
           <a href="semester_1.html">Semestr I</a>
           <a href="semester_2.html">Semestr II</a>
@@ -201,17 +210,17 @@ header {
         </div>
       </li>
       <li>
-        <a href="hobby.html">Hobby</a>
+        <a href="hobbies.html">Hobby</a>
       </li>
     </ul>
   </div>
 </header>
 <div id="main">
   <div id="panorama">
-  <div id="person-panel">
-    <img src="face.png"/>
-    <h2>Piotr Kawa</h2>
-  </div>
+    <div id="person-panel">
+      <img src="face.png"/>
+      <h2>Piotr Kawa</h2>
+    </div>
   </div>
 
 
@@ -223,19 +232,19 @@ header {
   </div>
 
   <div class="row">
-    <div class="col-2">
+    <div class="col-2 panel">
       <p>
         Znajdziesz tutaj informacje dotyczące kursów w których brałem udział
         podczas mojej już 3-letniej nauki na Politechnice Wrocławskiej.
       </p>
-      <button>Uczelnia</button>
+      <button class="menu-button">Uczelnia</button>
     </div>
-    <div class="col-2">
+    <div class="col-2 panel">
       <p>
         Dzięki zakładce hobby dowiesz się trochę o moich
         zainteresowaniach, które są mniej lub bardziej związane z nauką.
       </p>
-      <button>Hobby</button>
+      <button class="menu-button">Hobby</button>
 
     </div>
   </div>
