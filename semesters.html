@@ -1,189 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-    box-sizing: border-box;
-}
+  <title>Moje przygody z edukacją</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="main_style.css">
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+        box-sizing: border-box;
+    }
 
-body {
-    background-color: #474e5d;
-    font-family: Helvetica, sans-serif;
-}
+    body {
+        background-color: #474e5d;
+        font-family: Helvetica, sans-serif;
+    }
 
-header {
-    width: 60%;
-}
+    header {
+        width: 60%;
+    }
 
-#main {
-  width: 60%;
-  margin:auto;
-}
+    #main {
+      width: 60%;
+      margin:auto;
+    }
 
-#panorama {
-   background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    #panorama {
+       background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+      background-size: cover;
+      height: 500px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-#person-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 3px;
-  padding-top:30px;
-  font-size: 30px;
-  width: 300px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-}
+    #person-panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 3px;
+      padding-top:30px;
+      font-size: 30px;
+      width: 300px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    }
 
-#person-panel > img {
-  border-radius: 50%;
-  width:  200px;
-  height: 200px;
-}
-/* .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    #person-panel > img {
+      border-radius: 50%;
+      width:  200px;
+      height: 200px;
+    }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-}
+    #about-me {
+      width: 100%;
+      margin:auto;
+    }
 
-.container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-}
+    #about-me > p {
 
-.container::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #FF9F55;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-}
+    }
+    .menu-button {
+      background: transparent;
+      border:solid 3px;
+      border-color: #f1f1f1;
+      border-radius: 10%;
+      width: 200px;
+      height: 80px;
+      font-size: 25px;
+    }
 
-.left {
-    left: 0;
-}
+    .panel {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-.right {
-    left: 50%;
-}
-
-.left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-}
-
-.right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-}
-
-.right::after {
-    left: -16px;
-}
-
-.content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-}
-
-@media all and (max-width: 600px) {
-  .timeline::after {
-    left: 31px;
-  }
-
-  .container {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-  .container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  .left::after, .right::after {
-    left: 15px;
-  }
-
-  .right {
-    left: 0%;
-  }
-} */
-
-#about-me {
-  width: 100%;
-  margin:auto;
-}
-
-#about-me > p {
-
-}
-.menu-button {
-  background: transparent;
-  border:solid 3px;
-  border-color: #f1f1f1;
-  border-radius: 10%;
-  width: 200px;
-  height: 80px;
-  font-size: 25px;
-}
-
-.panel {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-</style>
+  </style>
 </head>
 <body>
 
