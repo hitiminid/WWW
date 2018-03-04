@@ -13,6 +13,36 @@
   width: 100%;
 }
 
+.faculty-header {
+  font-size: 22px;
+}
+
 .content > button {
   background-color:red
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+li {
+
+}
+
+ul {
+
+}
+
+.lecture {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-bottom:30px;
+}
+
+footer {
+  height: 100px;
 }
