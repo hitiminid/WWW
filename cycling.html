@@ -7,6 +7,45 @@
   <link rel="stylesheet" type="text/css" href="grid.css">
   <link rel="stylesheet" type="text/css" href="hobbies_style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+  .map {
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #map_1 {
+    background-image: url('front.jpg');
+  }
+
+  .route-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    font-size: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .route-panel > .map {
+      border-radius: 5px;
+  }
+
+  .map-description {
+    background-color: rgb(136, 136, 136);
+    border-bottom-left-radius:  5px;
+    padding: 15px;
+    border-bottom-right-radius: 5px;
+  }
+
+  </style>
+
 </head>
 <body>
 
@@ -44,11 +83,31 @@
       Oto niektóre ze sposobów spędzania przeze mnie wolnego czasu.
     </p>
   </div>
+  <div id="maps" class="row">
+    <div class=" col-2 route-panel">
 
+      <div id="map_1" class="map">
+      </div>
+      <div class="map-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+
+    </div>
+    <div class=" col-2 route-panel">
+
+      <div id="map_1" class="map">
+      </div>
+
+      <div class="map-description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+  </div>
 </div>
+<footer>
+
+</footer>
 </body>
-</html>
-
-
-
 </html>

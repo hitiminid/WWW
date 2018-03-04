@@ -26,7 +26,7 @@
 .author {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  background-color: #f1f1ff;
+  background-color: #8B8B8B;
   padding-top:15px;
   text-align: center;
   font-size:35px;
@@ -43,6 +43,7 @@
   align-items: center;
   flex-direction: column;
   padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .book-cover > img {
@@ -51,11 +52,14 @@
 }
 
 .description {
+  background-color: #8B8B8B;
   padding-left:   30px;
   padding-right:  30px;
   padding-top:    20px;
   padding-bottom: 20px;
   text-align: justify;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .description > p {

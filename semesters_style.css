@@ -1,5 +1,11 @@
 .lecture {
   background: rgba(16, 15, 93, 0.8);
+  padding-top:10px;
+}
+
+.lecture > h2 {
+  font-size: 35px;
+  text-align:center;
 }
 
 .faculty {
@@ -32,8 +38,16 @@ li {
 
 }
 
-ul {
+button {
+    width:  150px;
+    height: 50px;
+    border: 2px solid;
+    background: #f1f1f1;
+}
 
+
+button:hover {
+    background: #594E4E;
 }
 
 .lecture {
@@ -45,4 +59,11 @@ ul {
 
 footer {
   height: 100px;
+}
+
+.timeline-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
