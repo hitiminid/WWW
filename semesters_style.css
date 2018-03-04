@@ -12,3 +12,7 @@
 .faculty-content {
   width: 100%;
 }
+
+.content > button {
+  background-color:red
+}

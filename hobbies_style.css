@@ -21,3 +21,33 @@
   width: 300px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
+
+#hobbies-menu {
+
+}
+
+#hobbies-menu > h2 {
+  text-align:center;
+  font-size: 40px;
+}
+.hobbies-panel {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: transparent;
+}
+button {
+  background: transparent;
+  border:solid 3px;
+  border-color: #1d1b78;
+  width: 200px;
+  height: 80px;
+  font-size: 25px;
+}
+
+button:hover {
+  border-color: transparent;
+  color: #f1f1f1;
+  background: #1d1b78;
+}
