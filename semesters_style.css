@@ -1,0 +1,14 @@
+.lecture {
+  background: rgba(16, 15, 93, 0.8);
+}
+
+.faculty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.faculty-content {
+  width: 100%;
+}

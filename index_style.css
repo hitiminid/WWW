@@ -53,14 +53,20 @@ header {
 #about-me > p {
 
 }
+
 .menu-button {
   background: transparent;
   border:solid 3px;
-  border-color: #f1f1f1;
-  border-radius: 10%;
+  border-color: #1d1b78;
   width: 200px;
   height: 80px;
   font-size: 25px;
+}
+
+.menu-button:hover {
+  border-color: transparent;
+  color: #f1f1f1; 
+  background: #1d1b78;
 }
 
 .panel {
@@ -68,6 +74,9 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
 }
 
 ul {

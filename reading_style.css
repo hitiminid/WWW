@@ -1,5 +1,5 @@
 .year {
-
+  margin-top: 50px;
 }
 
 .year-header {
@@ -9,7 +9,6 @@
 .year-number {
   text-align:center;
   font-size:50px;
-
 }
 
 .book-panel {
@@ -34,6 +33,9 @@
   width:100%
 }
 
+.author > h2 {
+  font-size: 30px;
+}
 
 .book-cover {
   display: flex;
@@ -49,5 +51,13 @@
 }
 
 .description {
+  padding-left:   30px;
+  padding-right:  30px;
+  padding-top:    20px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
 
+.description > p {
+  font-size: 22px;
 }
