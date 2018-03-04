@@ -1,0 +1,53 @@
+.year {
+
+}
+
+.year-header {
+
+}
+
+.year-number {
+  text-align:center;
+  font-size:50px;
+
+}
+
+.book-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 7px;
+  font-size: 30px;
+  width: 300px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.author {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  background-color: #f1f1ff;
+  padding-top:15px;
+  text-align: center;
+  font-size:35px;
+  width:100%
+}
+
+
+.book-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.book-cover > img {
+  width: 40%;
+  margin:auto;
+}
+
+.description {
+
+}

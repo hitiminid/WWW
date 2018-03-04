@@ -69,3 +69,7 @@ header {
   align-items: center;
   flex-direction: column;
 }
+
+ul {
+  width: 100%;
+}
