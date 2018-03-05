@@ -48,26 +48,19 @@ header {
 #about-me {
   width: 100%;
   margin:auto;
-  text-align:justify;
 }
 
 #about-me > p {
-
+  text-align: justify;
 }
-
 .menu-button {
   background: transparent;
   border:solid 3px;
-  border-color: #1d1b78;
+  border-color: #f1f1f1;
+  border-radius: 10%;
   width: 200px;
   height: 80px;
   font-size: 25px;
-}
-
-.menu-button:hover {
-  border-color: transparent;
-  color: #f1f1f1;
-  background: #1d1b78;
 }
 
 .panel {
@@ -75,39 +68,30 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 7px;
-  background: #f0f0f0;
-  padding: 20px;
-  text-align: justify;
 }
 
-ul {
-  width: 100%;
-}
-@media only screen and (max-width: 1200px) {
-    #main {
-      width:80%;
-    }
-
+@media only screen and (max-width:1300px) {
+  #person-panel {
+    padding-top:0px;
+  }
+  #main {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 640px) {
-    #main {
-      width:90%;
-    }
-    #panorama {
-      height:300px;
-    }
-    #person-panel {
-      font-size: 20px;
-      width: 100%;
-    }
-    #person-panel > img {
-      border-radius: 50%;
-      width:  100px;
-      height: 100px;
-    }
-    .panel {
-      margin-top:15px;
-    }
+  #main {
+    width: 90%;
+  }
+  .lecture > h2 {
+    font-size:25px
+  }
+  .faculty {
+    margin-top: 15px;
+  }
+  .faculty-header {
+    font-size: 15px;
+    text-align:center;
+  }
+
 }

@@ -1,6 +1,20 @@
 .lecture {
-  background: rgba(16, 15, 93, 0.8);
-  padding-top:10px;
+  /* background: white; */
+  background: #4f535e;
+  border-radius: 7px;
+  padding:0
+}
+
+.lecture-header {
+  background:  #7b7b7b;
+  width:100%;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  margin:0;
+  text-align:center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .lecture > h2 {
@@ -12,7 +26,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #f0f0f0;
   flex-direction: column;
+  border-radius: 7px;
 }
 
 .faculty-content {
@@ -21,6 +37,11 @@
 
 .faculty-header {
   font-size: 22px;
+  text-align: center;
+  background: #d1d1d1;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  width: 100%;
 }
 
 .content > button {
@@ -45,12 +66,11 @@ button {
     background: #f1f1f1;
 }
 
-
 button:hover {
     background: #594E4E;
 }
 
-.lecture {
+.lecture-content {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
@@ -66,4 +86,21 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 640px) {
+  #main {
+    width: 90%;
+  }
+  .lecture > h2 {
+    font-size:25px
+  }
+  .faculty {
+    margin-top: 15px;
+  }
+  .faculty-header {
+    font-size: 15px;
+    text-align:center;
+  }
+
 }

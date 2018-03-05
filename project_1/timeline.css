@@ -2,6 +2,7 @@
 .timeline {
   position: relative;
   max-width: 1200px;
+  padding-bottom: 100px;
   margin: 0 auto;
 }
 
@@ -10,7 +11,7 @@
   content: '';
   position: absolute;
   width: 6px;
-  background-color: white;
+  background-color: #909090;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -32,8 +33,8 @@
   width: 25px;
   height: 25px;
   right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
+  background-color: #f1f1f1;
+  border: 4px solid #181818;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -88,6 +89,7 @@
   background-color: white;
   position: relative;
   border-radius: 6px;
+  text-align: center;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -120,5 +122,8 @@
 /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
+  }
+  .content {
+    font-size: 15px;
   }
 }
