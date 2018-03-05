@@ -82,3 +82,21 @@ header {
 ul {
   width: 100%;
 }
+
+@media only screen and (max-width: 640px) {
+    #panorama {
+      height:300px;
+    }
+    #person-panel {
+      font-size: 20px;
+      width: 100%;
+    }
+    #person-panel > img {
+      border-radius: 50%;
+      width:  100px;
+      height: 100px;
+    }
+    .panel {
+      margin-top:15px;
+    }
+}

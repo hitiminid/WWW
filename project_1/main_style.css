@@ -31,7 +31,6 @@ body {
 .row {
   display:flex;
 }
-
 body {
     background-color: #474e5d;
     font-family: Helvetica, sans-serif;
@@ -93,4 +92,10 @@ ul {
 
 footer {
     height: 100px;
+}
+
+@media only screen and (max-width: 640px) {
+    .row {
+        flex-direction: column;
+    }
 }
