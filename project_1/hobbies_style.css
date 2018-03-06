@@ -30,6 +30,7 @@
   text-align:center;
   font-size: 40px;
 }
+
 .hobbies-panel {
   flex-direction: column;
   justify-content: center;
@@ -37,6 +38,11 @@
   flex-direction: column;
   background: transparent;
 }
+
+.hobbies-panel > img {
+  width:50%
+}
+
 button {
   background: transparent;
   border:solid 3px;
@@ -50,4 +56,15 @@ button:hover {
   border-color: transparent;
   color: #f1f1f1;
   background: #1d1b78;
+}
+
+
+@media only screen and (max-width: 640px) {
+  #main {
+    width: 90%;
+  }
+
+  .hobbies-panel {
+    margin-top:25px;
+  }
 }
