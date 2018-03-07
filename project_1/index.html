@@ -3,23 +3,24 @@
 <head>
   <title>Moje przygody z edukacją</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="main_style.css">
   <link rel="stylesheet" type="text/css" href="grid.css">
   <link rel="stylesheet" type="text/css" href="index_style.css">
+  <link rel="stylesheet" type="text/css" href="main_style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<!-- <header>
+<header>
+  <div class="navigation">
     <ul>
-      <li>
-        <a class="logo-anchor" href="index.html"><img class="logo" src="logo.png" /></a>
+      <li class="navbar-item navbar-left-item">
+        <a href="index.html"><img src='logo.png' /></a>
       </li>
-      <li class="right-aligned">
+      <li class="navbar-item navbar-right-item">
         <a href="hobbies.html">Hobby</a>
       </li>
-      <li class="dropdown right-aligned">
-        <a href="semesters.html" class="dropbtn">Semestry</a>
+      <li class="dropdown navbar-right-item">
+        <a href="semesters.html" class="dropbtn">Semestr</a>
         <div class="dropdown-content">
           <a href="semester_1.html">Semestr I</a>
           <a href="semester_2.html">Semestr II</a>
@@ -30,25 +31,6 @@
         </div>
       </li>
 
-    </ul>
-</header> -->
-<header>
-  <div class="navigation">
-    <ul>
-      <li class="navbar-item">
-        <a href="index.html">Piotr Kawa</a>
-      </li>
-      <li class="dropdown navbar-item">
-        <a href="" class="dropbtn">Semestr</a>
-        <div class="dropdown-content">
-          <a href="semester_1.html">Semestr I</a>
-          <a href="semester_2.html">Semestr II</a>
-          <a href="semester_3.html">Semestr III</a>
-          <a href="semester_4.html">Semestr IV</a>
-          <a href="semester_5.html">Semestr V</a>
-          <a href="semester_6.html">Semestr VI</a>
-        </div>
-      </li>
     </ul>
   </div>
 </header>
@@ -60,7 +42,6 @@
       <h2>John Doe</h2>
     </div>
   </div>
-
 
   <div id="about-me">
     <p>
@@ -75,19 +56,17 @@
         Znajdziesz tutaj informacje dotyczące kursów w których brałem udział
         podczas mojej już 3-letniej nauki na Politechnice Wrocławskiej.
       </p>
-      <a href="semesters.html"><button class="menu-button">Uczelnia</button></a>
+      <a class="tile" href="semesters.html"><button class="menu-button">Uczelnia</button></a>
     </div>
     <div class="col-2 panel">
       <p>
         Dzięki zakładce hobby dowiesz się trochę o moich
         zainteresowaniach, które są mniej lub bardziej związane z nauką.
       </p>
-      <a href="hobbies.html"><button class="menu-button">Hobby</button></a>
+      <a class="tile" href="hobbies.html"><button class="menu-button">Hobby</button></a>
     </div>
   </div>
 </div>
-<footer>
-  
-</footer>
+<footer></footer>
 </body>
 </html>

@@ -67,7 +67,8 @@ button {
 }
 
 button:hover {
-    background: #594E4E;
+    background: white;
+    color:black;
 }
 
 .lecture-content {

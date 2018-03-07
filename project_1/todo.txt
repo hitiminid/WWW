@@ -1,1 +1,1 @@
-TODO: unordered list display
+TODO: navbar na małych rozdziałkach

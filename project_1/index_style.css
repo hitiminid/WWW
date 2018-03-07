@@ -7,10 +7,6 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-header {
-    width: 60%;
-}
-
 #main {
   width: 60%;
   margin:auto;
@@ -84,12 +80,11 @@ header {
 ul {
   width: 100%;
 }
-@media only screen and (max-width: 1200px) {
-    #main {
-      width:80%;
-    }
 
+.tile {
+  cursor: pointer;
 }
+
 
 @media only screen and (max-width: 640px) {
     #main {

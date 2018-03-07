@@ -6,69 +6,41 @@
   <link rel="stylesheet" type="text/css" href="main_style.css">
   <link rel="stylesheet" type="text/css" href="grid.css">
   <link rel="stylesheet" type="text/css" href="hobbies_style.css">
+  <link rel="stylesheet" type="text/css" href="cycling_style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
 
-  .map {
-    background-size: cover;
-    height: 350px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  #map_1 {
-    background-image: url('front.jpg');
-  }
-
-  .route-panel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    font-size: 20px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-  }
-
-  .route-panel > .map {
-      border-radius: 5px;
-  }
-
-  .map-description {
-    background-color: rgb(136, 136, 136);
-    border-bottom-left-radius:  5px;
-    padding: 15px;
-    border-bottom-right-radius: 5px;
-  }
 
   </style>
 
 </head>
 <body>
 
-  <header>
-    <div class="navigation">
-      <ul>
-        <li class="navbar-item">
-          <a href="index.html">Piotr Kawa</a>
-        </li>
-        <li class="dropdown navbar-item">
-          <a href="" class="dropbtn">Semestr</a>
-          <div class="dropdown-content">
-            <a href="semester_1.html">Semestr I</a>
-            <a href="semester_2.html">Semestr II</a>
-            <a href="semester_3.html">Semestr III</a>
-            <a href="semester_4.html">Semestr IV</a>
-            <a href="semester_5.html">Semestr V</a>
-            <a href="semester_6.html">Semestr VI</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </header>
+
+<header>
+  <div class="navigation">
+    <ul>
+      <li class="navbar-item navbar-left-item">
+        <a href="index.html"><img src='logo.png' /></a>
+      </li>
+      <li class="navbar-item navbar-right-item">
+        <a href="hobbies.html">Hobby</a>
+      </li>
+      <li class="dropdown navbar-right-item">
+        <a href="" class="dropbtn">Semestr</a>
+        <div class="dropdown-content">
+          <a href="semester_1.html">Semestr I</a>
+          <a href="semester_2.html">Semestr II</a>
+          <a href="semester_3.html">Semestr III</a>
+          <a href="semester_4.html">Semestr IV</a>
+          <a href="semester_5.html">Semestr V</a>
+          <a href="semester_6.html">Semestr VI</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
 
 <div id="main">
   <div id="panorama">
@@ -96,7 +68,7 @@
     </div>
     <div class=" col-2 route-panel">
 
-      <div id="map_1" class="map">
+      <div id="map_2" class="map">
       </div>
 
       <div class="map-description">

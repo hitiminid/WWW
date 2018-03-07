@@ -3,12 +3,11 @@ header {
   display: flex;
   margin: 0 auto 0 auto;
   height: 100px;
-  /* position: fixed; */
 }
 
 .logo {
   width: 170px;
-  height: 80px;
+  height: 100px;
 }
 
 .logo-anchor {
@@ -17,6 +16,10 @@ header {
 
 body {
   margin:0;
+}
+
+.navigation {
+  width:100%;
 }
 
 #main {
@@ -31,6 +34,7 @@ body {
 .row {
   display:flex;
 }
+
 body {
     background-color: #474e5d;
     font-family: Helvetica, sans-serif;
@@ -44,8 +48,20 @@ ul {
     background-color: #333;
 }
 
+.navbar-item  img {
+  height: 80px;
+}
+
 .navbar-item {
+  height:100px;
+}
+
+.navbar-left-item {
     float: left;
+}
+
+.navbar-right-item {
+    float:right;
 }
 
 .navbar-item a, .dropbtn {
@@ -54,6 +70,12 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.navbar-right-item a{
+  padding-top:40px;
+  font-size: 18px;
+  padding-bottom:40px;
 }
 
 .navbar-item a:hover, .dropdown:hover .dropbtn {
@@ -94,8 +116,24 @@ footer {
     height: 100px;
 }
 
+@media only screen and (max-width: 1200px) {
+    #main {
+      width:80%;
+    }
+    header {
+      width: 80%;
+    }
+}
+
+
 @media only screen and (max-width: 640px) {
     .row {
         flex-direction: column;
+    }
+    header {
+      width: 90%;
+    }
+    #main {
+      width:90%;
     }
 }
