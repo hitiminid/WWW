@@ -61,7 +61,7 @@
   right: 30px;
   border: medium solid white;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
+  border-color: transparent transparent transparent #909090;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -75,7 +75,7 @@
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  border-color: transparent #909090 transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -86,7 +86,8 @@
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: white;
+  background-color: #909090;
+  color: #f1f1f1;
   position: relative;
   border-radius: 6px;
   text-align: center;

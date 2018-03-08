@@ -64,9 +64,6 @@
   width: 100%;
 }
 
-.content > button {
-  background-color:red
-}
 
 .list {
     display: flex;
@@ -79,12 +76,13 @@ button {
     width:  150px;
     height: 50px;
     border: 2px solid;
-    background: #f1f1f1;
+    border-color: #333333;
+    background:   transparent;
 }
 
 button:hover {
-    background: white;
-    color:black;
+    background: #333333;
+    color: white;
 }
 
 .lecture-content {
