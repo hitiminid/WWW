@@ -22,11 +22,11 @@
 }
 
 #map_1 {
-  background-image: url('map_1.png');
+  background-image: url('../images/map_1.png');
 }
 
 #map_2 {
-  background-image: url('map_2.png');
+  background-image: url('../images/map_2.png');
 }
 
 .route-panel {
