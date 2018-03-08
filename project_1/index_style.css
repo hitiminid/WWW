@@ -7,11 +7,6 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-#main {
-  width: 60%;
-  margin:auto;
-}
-
 #panorama {
   background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
   background-size: cover;
@@ -45,16 +40,24 @@ body {
   width: 100%;
   margin:auto;
   text-align:justify;
+  background: #fcfcfc;
+  padding-left:   30px;
+  padding-right:  30px;
+  padding-bottom: 20px;
+  padding-top:20px;
 }
 
-#about-me > p {
-
+.panels {
+  background: #fcfcfc;
+  padding-left:   15px;
+  padding-right:  15px;
+  padding-bottom: 30px;
 }
 
 .menu-button {
   background: transparent;
   border:solid 3px;
-  border-color: #1d1b78;
+  border-color: #333333;
   width: 200px;
   height: 80px;
   font-size: 25px;
@@ -63,7 +66,7 @@ body {
 .menu-button:hover {
   border-color: transparent;
   color: #f1f1f1;
-  background: #1d1b78;
+  background: #333333;
 }
 
 .panel {
@@ -72,7 +75,7 @@ body {
   align-items: center;
   flex-direction: column;
   border-radius: 7px;
-  background: #f0f0f0;
+  background: #dbd9d9;
   padding: 20px;
   text-align: justify;
 }

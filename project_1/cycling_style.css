@@ -1,3 +1,9 @@
+#maps {
+  padding-left:   30px;
+  padding-right:  30px;
+  padding-bottom: 50px;
+}
+
 .map {
   background-size: cover;
   height: 350px;
@@ -5,6 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#cycling-description {
+  padding-left:   40px;
+  padding-right:  40px;
+  padding-top:    20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 #map_1 {
@@ -34,7 +48,7 @@
   background-color: rgb(136, 136, 136);
   border-bottom-left-radius:  5px;
   padding: 15px;
-  font-size: 18px;
+  font-size: 16px;
   border-bottom-right-radius: 5px;
 }
 

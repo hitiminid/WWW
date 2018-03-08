@@ -1,6 +1,5 @@
 #panorama {
   background-image: url('front.jpg');
-
   background-size: cover;
   height: 500px;
   width: 100%;
@@ -23,12 +22,20 @@
 }
 
 #hobbies-menu {
-
+  background:  #FCFCFC;
+  padding-top:    30px;
+  padding-bottom: 30px;
+  text-align:center;
 }
 
 #hobbies-menu > h2 {
-  text-align:center;
   font-size: 40px;
+}
+
+#hobbies-menu > p {
+  padding-left:   30px;
+  padding-right:  30px;
+  padding-bottom: 40px;
 }
 
 .hobbies-panel {

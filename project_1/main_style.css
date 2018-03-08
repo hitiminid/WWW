@@ -1,5 +1,5 @@
 header {
-  width: 60%;
+  width: 70%;
   display: flex;
   margin: 0 auto 0 auto;
   height: 100px;
@@ -23,8 +23,9 @@ body {
 }
 
 #main {
-  width: 60%;
+  width: 70%;
   margin:auto;
+  background: #fcfcfc;
 }
 
 .right-aligned {
@@ -124,7 +125,6 @@ footer {
       width: 80%;
     }
 }
-
 
 @media only screen and (max-width: 640px) {
     .row {
