@@ -1,3 +1,13 @@
+#panorama {
+  background: url('../images/cycling_bg.png');
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #maps {
   padding-left:   30px;
   padding-right:  30px;

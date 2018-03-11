@@ -102,7 +102,14 @@ footer {
   align-items: center;
   flex-direction: column;
 }
-
+@media only screen and (max-width:1300px) {
+  #person-panel {
+    padding-top:0px;
+  }
+  #main {
+    width: 80%;
+  }
+}
 @media only screen and (max-width: 640px) {
   #main {
     width: 90%;
@@ -117,5 +124,20 @@ footer {
     font-size: 15px;
     text-align:center;
   }
-
+  .row {
+      flex-direction: column;
+  }
+  header {
+    width: 90%;
+  }
+  #main {
+    width:90%;
+  }
+  #person-panel {
+    width: 70%;
+  }
+  .navbar-item img {
+    height: 70px;
+    padding-top:15px;
+  }
 }

@@ -1,5 +1,5 @@
 #panorama {
-  background-image: url('../images/front.jpg');
+  background-image: url('../images/hobbies.png');
   background-size: cover;
   height: 500px;
   width: 100%;
@@ -58,6 +58,7 @@
 .hobbies-panel a {
   text-decoration: none;
 }
+
 button > p {
   padding: 0;
   margin:0;

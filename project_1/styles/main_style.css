@@ -73,7 +73,7 @@ ul {
     text-decoration: none;
 }
 
-.navbar-right-item a{
+.navbar-right-item a {
   padding-top:40px;
   font-size: 18px;
   padding-bottom:40px;
@@ -136,4 +136,12 @@ footer {
     #main {
       width:90%;
     }
+    #person-panel {
+      width: 70%;
+    }
+    .navbar-item img {
+      height: 70px;
+      padding-top:15px;
+    }
+
 }

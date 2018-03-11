@@ -1,3 +1,12 @@
+#panorama {
+  background: url('../images/reading_bg.png');
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #content {
   width:80%;
   margin: auto;
