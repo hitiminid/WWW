@@ -84,8 +84,13 @@ button:hover {
   #main {
     width: 90%;
   }
-
+  .row {
+      flex-direction: column;
+  }
   .hobbies-panel {
     margin-top:25px;
+  }
+  .navbar-item img {
+    height: 50px;
   }
 }
