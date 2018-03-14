@@ -57,6 +57,11 @@ body {
 .menu-button {
   background: transparent;
   border:solid 3px;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 25px;
+  text-decoration: none;
+  color: #333333;
   border-color: #333333;
   width: 200px;
   height: 80px;
@@ -82,10 +87,6 @@ body {
 
 ul {
   width: 100%;
-}
-
-.tile {
-  cursor: pointer;
 }
 
 

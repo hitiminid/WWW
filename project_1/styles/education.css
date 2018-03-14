@@ -70,6 +70,26 @@ header {
   font-size: 25px;
 }
 
+.timeline-button {
+  border: solid 2px;
+  border-color: #333333;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+  text-decoration: none;
+  color: #333333;
+  background-color: transparent;
+}
+
+.timeline-button:hover {
+  border-color: #333333;
+  width: 150px;
+  height: 50px;
+  color: white;
+  background-color: #333333;
+}
+
 .panel {
   flex-direction: column;
   justify-content: center;

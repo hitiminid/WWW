@@ -51,6 +51,13 @@ ul {
 
 .navbar-item  img {
   height: 80px;
+  background: url("../images/logo_white.png");
+  background-size: 188px 80px;
+}
+
+.navbar-item img:hover {
+  background: url("../images/logo_black.png");
+  background-size: 188px 80px;
 }
 
 .navbar-item {
@@ -139,9 +146,4 @@ footer {
     #person-panel {
       width: 70%;
     }
-    .navbar-item img {
-      height: 70px;
-      padding-top:15px;
-    }
-
 }

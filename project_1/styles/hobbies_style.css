@@ -59,24 +59,20 @@
   text-decoration: none;
 }
 
-button > p {
-  padding: 0;
-  margin:0;
-}
-
-button {
-  background: transparent;
-  border:solid 2px;
+.menu-button {
   border-color: #333333;
-  width: 250px;
+  color: #333333;
+  border:solid 2px;
+  background: transparent;
   height: 80px;
+  padding-top: 12px;
   font-size: 25px;
   text-decoration: none;
 }
 
-button:hover {
+.menu-button:hover {
   border-color: transparent;
-  color: #f1f1f1;
+  color: white;
   background: #333333;
 }
 
