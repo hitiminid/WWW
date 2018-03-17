@@ -1,26 +1,26 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #474e5d;
-    font-family: Helvetica, sans-serif;
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
 }
 
 header {
-    width: 70%;
+  width: 70%;
 }
 
 #main {
   width: 70%;
-  margin:auto;
+  margin: auto;
 }
 
 #about-me {
-  padding-top:    30px;
+  padding-top: 30px;
   padding-bottom: 30px;
-  padding-left:   30px;
-  padding-right:  30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #panorama {
@@ -45,48 +45,48 @@ header {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
-#person-panel > img {
+#person-panel>img {
   border-radius: 50%;
-  width:  200px;
+  width: 200px;
   height: 200px;
 }
 
 #about-me {
   width: 100%;
-  margin:auto;
+  margin: auto;
 }
 
-#about-me > p {
+#about-me>p {
   text-align: justify;
 }
 
 .menu-button {
-  background: transparent;
-  border:solid 3px;
-  border-color: #f1f1f1;
-  border-radius: 10%;
   width: 200px;
   height: 80px;
+  background: transparent;
+  border: solid 3px;
+  border-color: #f1f1f1;
+  border-radius: 10%;
   font-size: 25px;
 }
 
 .timeline-button {
-  border: solid 2px;
-  border-color: #333333;
   width: 150px;
   height: 50px;
+  border: solid 2px;
+  color: #333333;
+  border-color: #333333;
   text-align: center;
   padding-top: 15px;
   text-decoration: none;
-  color: #333333;
   background-color: transparent;
 }
 
 .timeline-button:hover {
-  border-color: #333333;
   width: 150px;
   height: 50px;
   color: white;
+  border-color: #333333;
   background-color: #333333;
 }
 
@@ -99,9 +99,12 @@ header {
 
 @media only screen and (max-width:1300px) {
   #person-panel {
-    padding-top:0px;
+    padding-top: 0px;
   }
   #main {
+    width: 80%;
+  }
+  header {
     width: 80%;
   }
 }
@@ -110,30 +113,23 @@ header {
   #main {
     width: 90%;
   }
-  .lecture > h2 {
-    font-size:25px
+  .lecture>h2 {
+    font-size: 25px
   }
   .faculty {
     margin-top: 15px;
   }
   .faculty-header {
     font-size: 15px;
-    text-align:center;
+    text-align: center;
   }
   .row {
-      flex-direction: column;
+    flex-direction: column;
   }
   header {
     width: 90%;
   }
-  #main {
-    width:90%;
-  }
   #person-panel {
     width: 70%;
-  }
-  .navbar-item img {
-    height: 70px;
-    padding-top:15px;
   }
 }
