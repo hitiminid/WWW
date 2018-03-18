@@ -109,12 +109,18 @@ footer {
   #main {
     width: 80%;
   }
+  .lecture h3 {
+    font-size:20px
+  }
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 900px) {
   #main {
     width: 90%;
   }
   .lecture > h2 {
+    font-size:25px
+  }
+  .lecture h3 {
     font-size:25px
   }
   .faculty {
@@ -135,8 +141,5 @@ footer {
   }
   #person-panel {
     width: 70%;
-  }
-  .navbar-item img {
-    height: 50px;
   }
 }

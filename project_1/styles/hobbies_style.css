@@ -65,7 +65,6 @@
   border:solid 2px;
   background: transparent;
   height: 80px;
-  padding-top: 12px;
   font-size: 25px;
   text-decoration: none;
 }
@@ -85,8 +84,5 @@
   }
   .hobbies-panel {
     margin-top:25px;
-  }
-  .navbar-item img {
-    height: 50px;
   }
 }
