@@ -1,8 +1,3 @@
-function gcd(number) {
-  console.log(number);
-}
-
-
 function sum(x, y) {
   return x + y;
 }
@@ -42,4 +37,23 @@ function gcd(a,b) {
         if (a == 0) return b;
         b %= a;
     }
+}
+
+function gcd_extended(a, b) {
+  var result = compute_extended_gcd(a, b);
+  console.log("GCD of", a, "and", b, "is", result[2]);
+  console.log("x =", result[0], "y =", result[1]);
+
+}
+
+function compute_extended_gcd(a, b) {
+  if (b == 0) {
+    return [1, 0, a]
+  } else {
+    temp = compute_extended_gcd(b, a % b)
+    x = temp[0]
+    y = temp[1]
+    d = temp[2]
+    return [y, x-y*Math.floor(a/b), d]
+  }
 }
