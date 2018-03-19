@@ -49,30 +49,30 @@ ul {
     background-color: #333;
 }
 
-.navbar-item  img {
+.navigation-item img {
   height: 80px;
   background: url("../images/logo_white.png");
   background-size: 188px 80px;
 }
 
-.navbar-item img:hover {
+.navigation-item img:hover {
   background: url("../images/logo_black.png");
   background-size: 188px 80px;
 }
 
-.navbar-item {
+.navigation-item {
   height:100px;
 }
 
-.navbar-left-item {
+.navigation-left-item {
     float: left;
 }
 
-.navbar-right-item {
+.navigation-right-item {
     float:right;
 }
 
-.navbar-item a, .dropbtn {
+.navigation-item a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -80,18 +80,18 @@ ul {
     text-decoration: none;
 }
 
-.navbar-right-item a {
+.navigation-right-item a {
   padding-top:40px;
   font-size: 18px;
   padding-bottom:40px;
 }
 
-.navbar-item a:hover, .dropdown:hover .dropbtn {
+.navigation-item a:hover, .dropdown:hover .dropbtn {
     background-color: #f1f1f1;
     color:black
 }
 
-.navbar-item.dropdown {
+.navigation-item.dropdown {
     display: inline-block;
 }
 
