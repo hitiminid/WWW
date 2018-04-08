@@ -1,0 +1,36 @@
+[class*='col-'] {
+  float: left;
+  display:flex;
+  padding: 0;
+  margin: 0 1% 0 1%;
+}
+[class*='col-']:first-of-type {
+  margin-left: 0;
+}
+[class*='col-']:last-of-type {
+  margin-right: 0;
+}
+.col-1 {
+  flex: 1;
+  background-color: #4F9051;
+}
+.col-2 {
+  flex: 2;
+  background-color: #f1b2c4;
+}
+.col-3 {
+  flex: 3;
+  background-color: #c6b1e5;
+}
+.col-4 {
+  flex: 4;
+  background-color: #f1f1f1;
+}
+.col-5 {
+  flex: 5;
+  background-color: #B13232;
+}
+.col-6 {
+  flex: 6;
+  background-color: #afc3b1;
+}
