@@ -16,7 +16,7 @@
   require_once(__DIR__."/../../php/BaseGenerator.php");
 
   $generator = new BaseGenerator;
-  $lectures = aray("Analiza Matematyczna I", "Algebra z Geometrią Analityczną", "Wstęp do Informatyki i Programowania", "Logika i Struktury Formalne");
+  $lectures = aray("Systemy Wbudowane", "Wprowadzenie do Funkcji Zespolonych", "Programowanie w Logice", "Grafika Komputerowa i Wizualizacja", "Nowoczesne Technologie WWW");
 
   $generator->renderLecture("Analiza Matematyczna I")
 

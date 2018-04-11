@@ -17,6 +17,11 @@
       return $head .= $tail;
     }
 
+    //semestr 1 2015/2016
+    function renderHeader()
+    {
+      return null;
+    }
 
     function renderLecture($lectureName, $whatIHaveLearnedArray, $whatIIntendToLearnArray)
     {

@@ -13,22 +13,16 @@
 <body>
 <div id="container">
 <?php
-  require_once(__DIR__."/../../php/BaseGenerator.php");
+  require_once(__DIR__."/../../php/SemestersGenerator.php");
 
-  $generator = new BaseGenerator;
-  $lectures = aray("Analiza Matematyczna II", "Algebra Abstrakcyjna i Kodowanie", "Matematyka Dyskretna", "Problemy Prawne Informatyki", "Kurs Programowania", "Fizyka");
-
-  echo $generator->renderLecture("Analiza Matematyczna I", ":)", ":)")
-
-
-
-
-
+  $generator = new SemestersGenerator;
+  $lectures = array("Analiza Matematyczna II", "Algebra Abstrakcyjna i Kodowanie", "Matematyka Dyskretna", "Problemy Prawne Informatyki", "Kurs Programowania", "Fizyka");
 
 
   echo $generator->renderNavbar();
   echo $generator->renderMain(null);
 
+  echo $generator->renderLecture("Analiza Matematyczna I", ":)", ":)");
 
 
 
