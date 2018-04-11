@@ -13,16 +13,10 @@
 <body>
 <div id="container">
 <?php
-require_once(__DIR__."/generator.php");
+require_once(__DIR__."/EducationGenerator.php");
 
-  $generator = new PageGenerator;
-  
-  $lectures = array();
-  array_push($lectures, $generator->renderLecture("1", "23", "34"));
-  array_push($lectures, $generator->renderLecture("2", "23", "34"));
-  array_push($lectures, $generator->renderLecture("3", "23", "5656"));
-  array_push($lectures, $generator->renderLecture("4", "23", "34"));
-  $semesterInfo = $generator->renderSemester($lectures);
+  $generator = new EducationGenerator;
+  $generator->renderTimelineElement("left", "witam witam", )
 
   echo $generator->renderNavbar();
   echo $generator->renderMain($semesterInfo);
