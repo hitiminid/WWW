@@ -16,14 +16,7 @@
   require_once(__DIR__."/../../php/SemestersGenerator.php");
 
   $generator = new SemestersGenerator;
-  $lecturesNames = array("Analiza Matematyczna I", "Algebra z Geometrią Analityczną", "Wstęp do Informatyki i Programowania", "Logika i Struktury Formalne");
-
-  $lectures = array();
-  array_push($lectures, $generator->renderLecture("Analiza Matematyczna I", ":)", ":)"));
-
-
-  echo $generator->renderNavbar();
-  echo $generator->renderMain($lectures[0]);
+  echo $generator->getNavbar();
 
 ?>
 <br>

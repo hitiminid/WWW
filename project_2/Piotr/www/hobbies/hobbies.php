@@ -19,7 +19,6 @@
   $generator       = new BaseGenerator;
   $mainPagePath    = "../index.php";
   $semestersPrefix = "../../www/semesters/";
-  // $semesterPaths   = ["","$semestersPrefix","","","","",""];
   $hobbyPath       = "hobbies.php";
   $imagePath = "";
   echo $generator->renderNavbar($mainPagePath,"",$semestersPrefix,$hobbyPath);

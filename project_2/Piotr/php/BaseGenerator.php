@@ -26,7 +26,7 @@
     /*
       educationPaths [0 => education.php, 1 => semester_1.php, ...]
     */
-    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath )
+    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath)
     {
 
       $semestersArray = $this->createSemestersArray($semestersPrefix);
@@ -45,10 +45,10 @@
             <div class='dropdown-content'>
               <a href='$semestersArray[0]'>Semestr I</a>
               <a href='$semestersArray[1]'>Semestr II</a>
-              <a href=''>Semestr III</a>
-              <a href=''>Semestr IV</a>
-              <a href=''>Semestr V</a>
-              <a href=''>Semestr VI</a>
+              <a href='$semestersArray[2]'>Semestr III</a>
+              <a href='$semestersArray[3]'>Semestr IV</a>
+              <a href='$semestersArray[4]'>Semestr V</a>
+              <a href='$semestersArray[5]'>Semestr VI</a>
             </div>
           </li>
         </ul>

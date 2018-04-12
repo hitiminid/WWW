@@ -4,6 +4,16 @@
   class SemestersGenerator extends BaseGenerator
   {
 
+    private $imagePath = "../../img/logo.png";
+    private $mainPagePath = "../index.php";
+    private $semestersPrefix = "";
+    private $hobbyPath = "../hobbies/hobbies.php";
+
+    function getNavbar()
+    {
+        return parent::renderNavbar($this->mainPagePath, $this->imagePath, $this->semestersPrefix, $this->hobbyPath);
+    }
+
     function renderSemester($lecturesArray)
     {
       $head = "<div id='lectures'>";
