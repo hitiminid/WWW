@@ -3,11 +3,17 @@
 
   class HomePageGenerator extends BaseGenerator
   {
-    function renderJumbotron()
+    //TODO: panorama as a <img, not css background
+    function renderJumbotron($imagePath, $name)
     {
-
+      $content = "
+      <div id='panorama'>
+        <div id='person-panel'>
+          <img src='$imagePath' alt='face'/>
+          <h2>$name</h2>
+        </div>
+      </div>"
     }
-
 
     function renderAboutMe($aboutMe)
     {
@@ -20,13 +26,26 @@
         return $content;
     }
 
-    function renderSubSectionPanel()
+    function renderSubSectionSection($panels)
     {
-      $content = "";
-
-
+      $content = "
+        <div class='row panels'>
+          $panels[0]
+          $panels[1]
+        </div>";
       return $content;
     }
+
+    function renderSubSectionSection($description, $link, $buttonText)
+    {
+        $content = "
+        <div class='col-2 panel'>
+          <p>$subSectionDescription</p>
+          <a class='menu-button' href='$link'>$buttonText</a>
+        </div>";
+        return $content;
+    }
+
   }
 
 

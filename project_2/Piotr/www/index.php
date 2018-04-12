@@ -16,9 +16,18 @@
 <?php
   require_once(__DIR__."/../php/BaseGenerator.php");
 
-  $generator = new BaseGenerator;
-  echo $generator->renderNavbar();
+  $generator     = new BaseGenerator;
+  $mainPagePath  = "/index.php";
+  $semestersPrefix = "semesters/";
+
+  $hobbyPath     = "hobbies/hobbies.php";
+  $imagePath = "";
+  echo $generator->renderNavbar($mainPagePath,"",$semestersPrefix,$hobbyPath);
   echo $generator->renderMain(null);
+
+
+
+
 ?>
 <br>
 </div>

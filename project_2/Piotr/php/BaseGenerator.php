@@ -1,35 +1,54 @@
 <?php
   class BaseGenerator
   {
-    function renderNavbar()
+
+    function debugTool($data)
     {
-      $relativePathToSemesters = "../www/semesters/semester_";
-      $semester1Path = $relativePathToSemesters . 1 . ".php";
-      $semester2Path = $relativePathToSemesters . 2 . ".php";
-      $semester3Path = $relativePathToSemesters . 3 . ".php";
-      $semester4Path = $relativePathToSemesters . 4 . ".php";
-      $semester5Path = $relativePathToSemesters . 5 . ".php";
-      $semester6Path = $relativePathToSemesters . 6 . ".php";
-      $imagePath = "../img/logo.png";
+      $output = $data;
+      if (is_array($output))
+      {
+        $output = implode(',', $output);
+      }
+      echo "<script>console.log('".$output."');</script>";
+    }
+
+    function createSemestersArray($semesterPath)
+    {
+      $semesters = [];
+      for ($semester = 1; $semester <= 6; $semester++)
+      {
+          array_push($semesters, $semesterPath."semester_".$semester.".php");
+      }
+      return $semesters;
+      // return $semesterPath . "/semester_" . $semesterNumber . ".php";
+    }
+
+    /*
+      educationPaths [0 => education.php, 1 => semester_1.php, ...]
+    */
+    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath )
+    {
+
+      $semestersArray = $this->createSemestersArray($semestersPrefix);
       $navbar = "
       <header>
       <div class='navigation'>
         <ul>
           <li class='navigation-item navigation-left-item'>
-            <a href='../www/index.php'><img src='$imagePath' alt='logo'/></a>
+            <a href='$mainPagePath'><img src='$imagePath' alt='logo'/></a>
           </li>
           <li class='navigation-item navigation-right-item'>
-            <a href='../www/hobbies/hobbies.php'>Hobby</a>
+            <a href='$hobbyPath'>Hobby</a>
           </li>
           <li class='dropdown navigation-right-item'>
-            <a href='semesters.html' class='dropbtn'>Semestr</a>
+            <a href='$semestersPrefix' class='dropbtn'>Semestr</a>
             <div class='dropdown-content'>
-              <a href='$semester1Path'>Semestr I</a>
-              <a href='$semester2Path'>Semestr II</a>
-              <a href='$semester3Path'>Semestr III</a>
-              <a href='$semester4Path'>Semestr IV</a>
-              <a href='$semester5Path'>Semestr V</a>
-              <a href='$semester6Path'>Semestr VI</a>
+              <a href='$semestersArray[0]'>Semestr I</a>
+              <a href='$semestersArray[1]'>Semestr II</a>
+              <a href=''>Semestr III</a>
+              <a href=''>Semestr IV</a>
+              <a href=''>Semestr V</a>
+              <a href=''>Semestr VI</a>
             </div>
           </li>
         </ul>
