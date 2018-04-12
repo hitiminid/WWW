@@ -4,36 +4,51 @@
   class SemestersGenerator extends BaseGenerator
   {
 
-    private $imagePath = "../../img/logo.png";
     private $mainPagePath = "../index.php";
+    private $imagePath = "../../img/logo.png";
     private $semestersPrefix = "";
     private $hobbyPath = "../hobbies/hobbies.php";
 
-    function getNavbar()
+    public function getNavbar()
     {
         return parent::renderNavbar($this->mainPagePath, $this->imagePath, $this->semestersPrefix, $this->hobbyPath);
     }
 
-    function renderSemester($lecturesArray)
+    public function renderSemester($lecturesArray)
     {
-      $head = "<div id='lectures'>";
-      $tail = "</div>";
+      // $head = "<div id='lectures'>";
+      // $tail = "</div>";
+      //
+      // foreach ($lecturesArray as $lecture)
+      // {
+      //   $head .= $lecture;
+      // }
+      // for ()
+      // return $head .= $tail;
 
-      foreach ($lecturesArray as $lecture)
-      {
-        $head .= $lecture;
+      $rowsNumber = count($lecturesArray);
+      for ($row = 0; $row < $rowsNumber; $row++) {
+           $colsNumber = count($lecturesArray[$row]);
+
+           for($col = 0; $col < $colsNumber; $col++ ) {
+
+           }
       }
 
-      return $head .= $tail;
+      // fill what i learnt array
+
+      //fill todo array
+
+      return null;
     }
 
     //semestr 1 2015/2016
-    function renderHeader()
+     public function renderHeader()
     {
       return null;
     }
 
-    function renderLecture($lectureName, $whatIHaveLearnedArray, $whatIIntendToLearnArray)
+    private function renderLecture($lectureName, $whatIHaveLearnedArray, $whatIIntendToLearnArray)
     {
       $lecture = "<div class='lecture'>
         <div class='lecture-header'>

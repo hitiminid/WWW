@@ -15,8 +15,17 @@
 <?php
   require_once(__DIR__."/../../php/SemestersGenerator.php");
 
+  $lectures = array(
+    array("Analiza Matematyczna I", "Całkować", "Różniczkować"),
+    array("Algebra z Geometrią Analityczną", "Operacje na macierzach", "Obliczenia na liczbach zespolonych"),
+    array("Wstęp do Informatyki i Programowania", "Podstawowych pojęć informatycznych", "Podstaw języka C"),
+    array("Logika i Struktury Formalne", "Tautologii", "Podstawowych kwantyfikatorów"));
+
+  // "Analiza Matematyczna I", "2" => "Algebra z Geometrią Analityczną", "3" => "Wstęp do Informatyki i Programowania", "4" => "Logika i Struktury Formalne"];
+
   $generator = new SemestersGenerator;
   echo $generator->getNavbar();
+  echo $generator->renderSemester($lectures);
 
 ?>
 <br>

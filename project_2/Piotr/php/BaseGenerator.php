@@ -23,9 +23,6 @@
       // return $semesterPath . "/semester_" . $semesterNumber . ".php";
     }
 
-    /*
-      educationPaths [0 => education.php, 1 => semester_1.php, ...]
-    */
     function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath)
     {
 
