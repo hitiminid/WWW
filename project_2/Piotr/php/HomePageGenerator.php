@@ -26,7 +26,7 @@
         return $content;
     }
 
-    function renderSubSectionSection($panels)
+    function renderSubSectionPanels($panels)
     {
       $content = "
         <div class='row panels'>
@@ -36,17 +36,14 @@
       return $content;
     }
 
-    function renderSubSectionSection($description, $link, $buttonText)
+    function renderPanel($description, $link, $buttonText)
     {
         $content = "
         <div class='col-2 panel'>
-          <p>$subSectionDescription</p>
+          <p>$description</p>
           <a class='menu-button' href='$link'>$buttonText</a>
         </div>";
         return $content;
     }
-
   }
-
-
 ?>

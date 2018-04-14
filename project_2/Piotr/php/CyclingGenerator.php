@@ -18,11 +18,10 @@
     function renderRoutePanel($mapFilePath, $routeDescription)
     {
       $content = "
-      <div class=" col-2 route-panel">
-        <div id='map_2' class='map'>
-        </div>
+      <div class='col-2 route-panel'>
+        <img src='$mapFilePath' />
         <div class='map-description'>
-          $description
+          $routeDescription
         </div>
       </div>
       ";

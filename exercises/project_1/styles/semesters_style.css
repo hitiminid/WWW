@@ -1,0 +1,145 @@
+#lectures {
+  padding-left:  30px;
+  padding-right: 30px;
+  text-align:    center;
+  padding-top:   30px;
+}
+
+#lectures > h1 {
+  font-size: 60px;
+}
+
+#lectures > h2 {
+  font-size:     30px;
+  margin-bottom: 35px;
+}
+
+#main {
+  padding-bottom:30px;
+}
+
+.lecture {
+  /* background: white; */
+  background: #4f535e;
+  border-radius: 7px;
+  padding:0
+}
+
+.lecture-header {
+  background:  #7b7b7b;
+  width:100%;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  margin:0;
+  text-align:center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.lecture > h2 {
+  font-size: 35px;
+  text-align:center;
+}
+
+.faculty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  flex-direction: column;
+  border-radius: 7px;
+}
+
+.faculty-content {
+  width: 100%;
+}
+
+.faculty-header {
+  font-size: 22px;
+  text-align: center;
+  background: #d1d1d1;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  width: 100%;
+}
+
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+button {
+    width:  150px;
+    height: 50px;
+    border: 2px solid;
+    border-color: #333333;
+    background:   transparent;
+}
+
+button:hover {
+    background: #333333;
+    color: white;
+}
+
+.lecture-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-bottom:30px;
+}
+
+footer {
+  height: 100px;
+}
+
+.timeline-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (max-width:1300px) {
+  #person-panel {
+    padding-top:0px;
+  }
+  #main {
+    width: 80%;
+  }
+  .lecture h3 {
+    font-size:20px
+  }
+}
+@media only screen and (max-width: 900px) {
+  #main {
+    width: 90%;
+  }
+  .lecture > h2 {
+    font-size:25px
+  }
+  .lecture h3 {
+    font-size:25px
+  }
+  .faculty {
+    margin-top: 15px;
+  }
+  .faculty-header {
+    font-size: 15px;
+    text-align:center;
+  }
+  .row {
+      flex-direction: column;
+  }
+  header {
+    width: 90%;
+  }
+  #main {
+    width:90%;
+  }
+  #person-panel {
+    width: 70%;
+  }
+}

@@ -3,6 +3,15 @@
 
   class ReadingGenerator extends HobbyGenerator
   {
+
+    function renderYears($years)
+    {
+      foreach ($years as $$year)
+      {
+        echo $year;
+      }
+    }
+
     function renderYear($year, $bookPanels)
     {
       $content = "

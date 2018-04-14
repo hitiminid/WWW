@@ -1,32 +1,24 @@
 #panorama {
+  background-image: url('../images/hobbies.png');
+  background-size: cover;
   height: 500px;
   width: 100%;
-  position: relative;
-  display:inline-block;
-}
-
-#panorama > img {
-  width:  100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #title-panel {
-  position:absolute;
-  top: 200px; left: 0; right:0;
-  text-align: center;
-  margin:auto;
-  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
+  /* padding-top:30px; */
   font-size: 30px;
+  width: 300px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-}
-
-#main-description {
-  padding-left:   40px;
-  padding-right:  40px;
-  padding-top:    20px;
-  padding-bottom: 20px;
-  text-align: center;
 }
 
 #hobbies-menu {
