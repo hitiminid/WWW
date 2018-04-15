@@ -12,7 +12,7 @@
 <body>
 
 <?php
-  require_once(__DIR__."/../php/HomePageGenerator.php");
+  require_once(__DIR__."../php/HomePageGenerator.php");
 
   $generator       = new HomePageGenerator;
   $mainPagePath    = "/index.php";

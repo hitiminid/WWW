@@ -11,7 +11,7 @@
 
 <body>
 <?php
-  require_once(__DIR__."../../../php/HobbyGenerator.php");
+  require_once(__DIR__."/../../php/HobbyGenerator.php");
 
   $generator       = new HobbyGenerator;
   $mainPagePath    = "../index.php";
