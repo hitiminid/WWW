@@ -1,33 +1,28 @@
 <?php
+
   require_once(__DIR__."\BaseGenerator.php");
 
   class HomePageGenerator extends BaseGenerator
   {
     //TODO: panorama as a <img, not css background
-    function renderJumbotron($imagePath, $name)
-    {
+    function renderJumbotron($backgroundPath, $facePath, $name) {
       $content = "
       <div id='panorama'>
+        <img src='$backgroundPath' />
         <div id='person-panel'>
-          <img src='$imagePath' alt='face'/>
+          <img src='$facePath' alt='face'/>
           <h2>$name</h2>
         </div>
-      </div>"
+      </div>";
+      return $content;
+
     }
 
-    function renderAboutMe($aboutMe)
-    {
-      $content = "
-        <div id='about-me'>
-          <p>
-            $aboutMe
-          </p>
-        </div>";
-        return $content;
+    function renderAboutMe($aboutMe) {
+        return "<div id='about-me'><p>$aboutMe</p></div>";
     }
 
-    function renderSubSectionPanels($panels)
-    {
+    function renderSubSectionPanels($panels) {
       $content = "
         <div class='row panels'>
           $panels[0]

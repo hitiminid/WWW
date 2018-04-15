@@ -7,11 +7,6 @@
   <link rel="stylesheet" type="text/css" href="../../css/grid.css">
   <link rel="stylesheet" type="text/css" href="../../css/hobbies_style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  #main-description > p{
-    margin-top:0;
-  }
-  </style>
 </head>
 
 <body>
@@ -22,17 +17,18 @@
   $mainPagePath    = "../index.php";
   $semestersPrefix = "../../www/semesters/";
   $hobbyPath       = "hobbies.php";
-  $imagePath = "";
-  $panorama   = $generator->renderWidePicture("Moje Hobby", "../../img/hobbies.png");
+  $imagePath = "../../img/logo.png";
+  $panorama   = $generator->renderWidePicture("Moje hobby", "../../img/hobbies.png");
   $hobbiesRow = array(
     $generator->renderHobbyPanel("Czytanie", "../../img/reading.png"),
     $generator->renderHobbyPanel("Rower", "../../img/cycling.png"));
   $hobbiesRow  = $generator->renderHobbiesRow($hobbiesRow);
   $hobbiesMenu = $generator->renderHobbiesMenu($hobbiesRow);
-  $description = $generator->renderDescription("ADSasddas");
+  $description = $generator->renderDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)
+  oraz jazda na rowerze.");
   $content     = $generator->renderMain(array($panorama, $description, $hobbiesMenu));
 
-  echo $generator->renderNavbar($mainPagePath,"",$semestersPrefix,$hobbyPath);
+  echo $generator->renderNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   echo $content;
   //TODO: footer
 ?>

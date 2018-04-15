@@ -6,8 +6,17 @@
 }
 
 #panorama > img {
-  /* height: 100%; */
   width:  100%;
+  height:100%;
+  /* overflow:visible; */
+}
+
+#main-description {
+  padding-left:   40px;
+  padding-right:  40px;
+  padding-top:    20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 #title-panel {

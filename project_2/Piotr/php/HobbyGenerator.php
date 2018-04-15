@@ -15,9 +15,9 @@ require_once(__DIR__."\BaseGenerator.php");
     }
 
     function renderDescription($content) {
-      $description = "<div id='main-description'><p>";
-      $description .= $content;
-      return $description .= "</p></div>";
+      // $description =
+      // $description .= $content;
+      return  "<div id='main-description'><p>$content</p></div>";
     }
 
     function renderHobbiesMenu($rows) {
