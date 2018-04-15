@@ -11,7 +11,18 @@
       echo "<script>console.log('".$output."');</script>";
     }
 
-    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
+    function appendElements($begin, $elements, $end) {
+      if (is_array($elements)) {
+        foreach ($elements as $element) {
+          $begin .= $element;
+        }
+      } else {
+        $begin .= $elements;
+      }
+      return $begin .= $end;
+    }
+
+    function generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
 
       $semestersArray = $this->createSemestersArray($semestersPrefix);
       $navbar = "
@@ -51,12 +62,14 @@
 
     /* Used for rendering wide picture used main page of each page section */
     //TODO: panoramas are handled via src in CSS, check it
-    function renderPanorama($imagePath) {
-      $content = "<div id='panorama'>
-                    <div id='person-panel'>
-                      <h2>$title</h2>
-                    </div>
-                  </div>";
+    function generatePanorama($title, $imagePath) {
+      $content = "
+      <div id='panorama'>
+        <img src='$imagePath' alt='' />
+        <div id='title-panel'>
+          <h2>$title</h2>
+        </div>
+      </div>";
       return $content;
     }
 

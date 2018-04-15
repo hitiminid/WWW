@@ -5,7 +5,7 @@
   class HomePageGenerator extends BaseGenerator
   {
     //TODO: panorama as a <img, not css background
-    function renderJumbotron($backgroundPath, $facePath, $name) {
+    function generatePanoramaWithInnerImage($backgroundPath, $facePath, $name) {
       $content = "
       <div id='panorama'>
         <img src='$backgroundPath' />
@@ -18,11 +18,11 @@
 
     }
 
-    function renderAboutMe($aboutMe) {
+    function generateAboutMe($aboutMe) {
         return "<div id='about-me'><p>$aboutMe</p></div>";
     }
 
-    function renderSubSectionPanels($panels) {
+    function generateSubSectionPanels($panels) {
       $content = "
         <div class='row panels'>
           $panels[0]
@@ -31,7 +31,7 @@
       return $content;
     }
 
-    function renderPanel($description, $link, $buttonText)
+    function generatePanel($description, $link, $buttonText)
     {
         $content = "
         <div class='col-2 panel'>

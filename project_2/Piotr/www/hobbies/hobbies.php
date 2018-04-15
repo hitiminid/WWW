@@ -18,17 +18,17 @@
   $semestersPrefix = "../../www/semesters/";
   $hobbyPath       = "hobbies.php";
   $imagePath = "../../img/logo.png";
-  $panorama   = $generator->renderWidePicture("Moje hobby", "../../img/hobbies.png");
+  $panorama   = $generator->generatePanorama("Moje hobby", "../../img/hobbies.png");
   $hobbiesRow = array(
     $generator->renderHobbyPanel("Czytanie", "../../img/reading.png"),
     $generator->renderHobbyPanel("Rower", "../../img/cycling.png"));
   $hobbiesRow  = $generator->renderHobbiesRow($hobbiesRow);
-  $hobbiesMenu = $generator->renderHobbiesMenu($hobbiesRow);
-  $description = $generator->renderDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)
+  $hobbiesMenu = $generator->generateHobbiesMenu($hobbiesRow);
+  $description = $generator->generateDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)
   oraz jazda na rowerze.");
-  $content     = $generator->renderMain(array($panorama, $description, $hobbiesMenu));
+  $content  = $generator->renderMain(array($panorama, $description, $hobbiesMenu));
 
-  echo $generator->renderNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
+  echo $generator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   echo $content;
   //TODO: footer
 ?>

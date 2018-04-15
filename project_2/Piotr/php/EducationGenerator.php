@@ -3,19 +3,19 @@
 
   class EducationGenerator extends BaseGenerator
   {
-      function renderEducationPage()
-      {
+      function renderEducationPage() {
 
       }
 
-      function renderTimeline($body)
-      {
-        $element = "<div class='timeline'>" + $body + renderDivClosingTag();
-        return $element;
+      function generateDescription($description) {
+        return "<div id='about-me'><p>$description</p></div>";
       }
 
-      function renderTimelineElement($side, $semester, $link)
-      {
+      function generateTimeline($timelineElements) {
+        return $this->appendElements("<div class='timeline'>", $timelineElements, "</div>");
+      }
+
+      function generateTimelineElement($side, $semester, $link) {
         $element = " <div class='container $side'>
                       <div class='content timeline-element'>
                         <h2>$semester</h2>

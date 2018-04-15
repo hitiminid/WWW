@@ -20,16 +20,15 @@
 
   $hobbyPath = "hobbies/hobbies.php";
   $imagePath = "../img/logo.png";
-  $panorama  = $generator->renderJumbotron("../img/front.jpg", "../img/face.png", "Piotr Kawa");
-  $aboutMe   = $generator->renderAboutMe("Jestem Piotrek. Mam 21 lat i jestem studentem Politechniki Wrocławskiej. Studiuję informatykę na wydziale Podstawowych Problemów Techniki. Na tej stronie znaleźć możesz informacje dotyczące zarówno mojej nauki jak i form spędzania przeze mnie czasu wolnego. Moim głównym obszarem zainteresowań informatycznych jest programowanie aplikacji mobilnych na systemy Android. Jednym z ulubionych hobby to słaba książka, słaby film. ");
+  $panorama  = $generator->generatePanoramaWithInnerImage("../img/front.jpg", "../img/face.png", "Piotr Kawa");
+  $aboutMe   = $generator->generateAboutMe("Jestem Piotrek. Mam 21 lat i jestem studentem Politechniki Wrocławskiej. Studiuję informatykę na wydziale Podstawowych Problemów Techniki. Na tej stronie znaleźć możesz informacje dotyczące zarówno mojej nauki jak i form spędzania przeze mnie czasu wolnego. Moim głównym obszarem zainteresowań informatycznych jest programowanie aplikacji mobilnych na systemy Android. Jednym z ulubionych hobby to słaba książka, słaby film. ");
   $panels    = array(
-    $generator->renderPanel("Znajdziesz tutaj informacje dotyczące kursów w których brałem udział podczas mojej już 3-letniej nauki na Politechnice Wrocławskiej.", "", "Uczelnia"),
-    $generator->renderPanel("Dzięki zakładce hobby dowiesz się trochę o moich zainteresowaniach, które są mniej lub bardziej związane z nauką. ", "../www/hobbies/hobbies.php", "Hobby")
+    $generator->generatePanel("Znajdziesz tutaj informacje dotyczące kursów w których brałem udział podczas mojej już 3-letniej nauki na Politechnice Wrocławskiej.", "../www/semesters/education.php", "Uczelnia"),
+    $generator->generatePanel("Dzięki zakładce hobby dowiesz się trochę o moich zainteresowaniach, które są mniej lub bardziej związane z nauką. ", "../www/hobbies/hobbies.php", "Hobby")
   );
-  $subSectionPanels = $generator->renderSubSectionPanels($panels);
+  $subSectionPanels = $generator->generateSubSectionPanels($panels);
 
-
-  echo $generator->renderNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
+  echo $generator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   echo $generator->renderMain(array($panorama, $aboutMe, $subSectionPanels));
 
 ?>
