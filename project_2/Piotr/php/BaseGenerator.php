@@ -2,8 +2,7 @@
   class BaseGenerator
   {
 
-    function debugTool($data)
-    {
+    function debugTool($data) {
       $output = $data;
       if (is_array($output))
       {
@@ -12,19 +11,7 @@
       echo "<script>console.log('".$output."');</script>";
     }
 
-    function createSemestersArray($semesterPath)
-    {
-      $semesters = [];
-      for ($semester = 1; $semester <= 6; $semester++)
-      {
-          array_push($semesters, $semesterPath."semester_".$semester.".php");
-      }
-      return $semesters;
-      // return $semesterPath . "/semester_" . $semesterNumber . ".php";
-    }
-
-    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath)
-    {
+    function renderNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
 
       $semestersArray = $this->createSemestersArray($semestersPrefix);
       $navbar = "
@@ -54,10 +41,17 @@
       return $navbar;
     }
 
+    function createSemestersArray($semesterPath) {
+      $semesters = [];
+      for ($semester = 1; $semester <= 6; $semester++) {
+          array_push($semesters, $semesterPath."semester_".$semester.".php");
+      }
+      return $semesters;
+    }
+
     /* Used for rendering wide picture used main page of each page section */
     //TODO: panoramas are handled via src in CSS, check it
-    function renderPanorama($imagePath)
-    {
+    function renderPanorama($imagePath) {
       $content = "<div id='panorama'>
                     <div id='person-panel'>
                       <h2>$title</h2>
@@ -66,20 +60,28 @@
       return $content;
     }
 
-    function renderMain($siteContent)
-    {
-      $mainBegin = "<div id='main'>" . $siteContent;
+    function renderMain($siteContent) {
+      $mainBegin = "<div id='main'>";
+      $middle = "";
+      if (is_array($siteContent))
+      {
+        foreach ($siteContent as $content) {
+          $middle .= $content;
+        }
+      } else {
+          $middle = $siteContent;
+      }
+
+      $mainBegin .= $middle;
       $mainEnd  = "</div>";
       return $mainBegin .= $mainEnd;
     }
 
-    function renderDivClosingTag()
-    {
+    function renderDivClosingTag() {
       return "</div>";
     }
 
-    function renderFooter()
-    {
+    function renderFooter() {
       return "<footer></footer>";
     }
   }

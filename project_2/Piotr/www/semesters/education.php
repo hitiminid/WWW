@@ -11,14 +11,11 @@
 </head>
 
 <body>
-<div id="container">
 <?php
-require_once(__DIR__."/EducationGenerator.php");
+require_once(__DIR__."/../../php/EducationGenerator.php");
 
 
 
 ?>
-<br>
-</div>
 </body>
 </html>

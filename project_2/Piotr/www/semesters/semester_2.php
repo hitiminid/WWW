@@ -11,7 +11,6 @@
 </head>
 
 <body>
-<div id="container">
 <?php
   require_once(__DIR__."/../../php/SemestersGenerator.php");
 
@@ -27,7 +26,5 @@
 
 
 ?>
-<br>
-</div>
 </body>
 </html>

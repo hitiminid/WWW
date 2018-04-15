@@ -12,7 +12,6 @@
 
 <body>
 
-<div id="container">
 <?php
   require_once(__DIR__."/../php/BaseGenerator.php");
 
@@ -25,11 +24,6 @@
   echo $generator->renderNavbar($mainPagePath,"",$semestersPrefix,$hobbyPath);
   echo $generator->renderMain(null);
 
-
-
-
 ?>
-<br>
-</div>
 </body>
 </html>

@@ -11,9 +11,9 @@
 </head>
 
 <body>
-<div id="container">
 <?php
-  require_once(__DIR__."/../../php/BaseGenerator.php");
+  require_once(__DIR__."/../../php/SemestersGenerator.php");
+
 
   $generator = new BaseGenerator;
   $lectures = aray("Technologia Programowania", "Bazy Danych i Systemy Informacyjne", "Architektura Komputerów i Systemy Operacyjne", "Metody Probablistyczne i Statystyka");
@@ -22,18 +22,10 @@
 
 
 
-
-
-
-
   echo $generator->renderNavbar();
   echo $generator->renderMain(null);
 
 
-
-
 ?>
-<br>
-</div>
 </body>
 </html>

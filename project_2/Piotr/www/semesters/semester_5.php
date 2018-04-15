@@ -11,29 +11,18 @@
 </head>
 
 <body>
-<div id="container">
 <?php
-  require_once(__DIR__."/../../php/BaseGenerator.php");
+  require_once(__DIR__."/../../php/SemestersGenerator.php");
+
 
   $generator = new BaseGenerator;
   $lectures = aray("Kryptografia", "Programowanie zespołowe", "Obliczenia Naukowe", "Języki Formalne i Techniki Translacji", "Wprowadzenie do Topologii i Teorii Miar", "Metody Wytwarzania Oprogramowania");
 
   $generator->renderLecture("Analiza Matematyczna I")
 
-
-
-
-
-
-
   echo $generator->renderNavbar();
   echo $generator->renderMain(null);
 
-
-
-
 ?>
-<br>
-</div>
 </body>
 </html>
