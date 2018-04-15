@@ -10,6 +10,7 @@
 [class*='col-']:last-of-type {
   margin-right: 0;
 }
+//TODO: erase colors
 .col-1 {
   flex: 1;
   background-color: #4F9051;

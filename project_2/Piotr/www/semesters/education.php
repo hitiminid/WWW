@@ -15,7 +15,7 @@
   <?php
     require_once(__DIR__."/../../php/EducationGenerator.php");
     $generator   = new EducationGenerator;
-    $navbar      = $generator->generateNavbar("", "", "", "");
+    $navbar      = $generator->generateNavbar("", "../../img/logo.png", "", "");
     $description = $generator->generateDescription("W przeciągu 3 lat na Politechnice Wrocławskiej brałem udział w wielu przydatnych i ciekawych kursach z zakresu zarówno matematyki jak i informatyki. Poniższa oś czasu pokazuje każdy z semestrów, które odbyłem wraz z kursami które obejmowały.");
     $panorama = $generator->generatePanorama("Edukacja", "../../img/pwr.png");
     $timelineElements = array(
@@ -27,7 +27,8 @@
       $generator->generateTimelineElement("right","Semestr zimowy 2015/2016",""),
     );
     $timeline = $generator->generateTimeline($timelineElements);
-    echo $generator->renderMain(array($navbar, $panorama, $description, $timeline));
+    echo $navbar;
+    echo $generator->renderMain(array($panorama, $description, $timeline));
   ?>
 </body>
 </html>

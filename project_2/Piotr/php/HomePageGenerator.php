@@ -4,13 +4,16 @@
 
   class HomePageGenerator extends BaseGenerator
   {
-    //TODO: panorama as a <img, not css background
+
     function generatePanoramaWithInnerImage($backgroundPath, $facePath, $name) {
+      $altBackground = substr($backgroundPath, strrpos($backgroundPath, '/') + 1);
+      $altFace       = substr($facePath, strrpos($facePath, '/') + 1);
+
       $content = "
       <div id='panorama'>
-        <img src='$backgroundPath' />
+        <img src='$backgroundPath' alt='$altBackground'/>
         <div id='person-panel'>
-          <img src='$facePath' alt='face'/>
+          <img src='$facePath' alt='$altFace'/>
           <h2>$name</h2>
         </div>
       </div>";

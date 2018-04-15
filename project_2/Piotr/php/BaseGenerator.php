@@ -4,8 +4,7 @@
 
     function debugTool($data) {
       $output = $data;
-      if (is_array($output))
-      {
+      if (is_array($output)) {
         $output = implode(',', $output);
       }
       echo "<script>console.log('".$output."');</script>";
@@ -60,12 +59,11 @@
       return $semesters;
     }
 
-    /* Used for rendering wide picture used main page of each page section */
-    //TODO: panoramas are handled via src in CSS, check it
     function generatePanorama($title, $imagePath) {
+      $alt = substr($title, strrpos($title, '/'));
       $content = "
       <div id='panorama'>
-        <img src='$imagePath' alt='' />
+        <img src='$imagePath' alt='$alt' />
         <div id='title-panel'>
           <h2>$title</h2>
         </div>
@@ -87,7 +85,7 @@
 
       $mainBegin .= $middle;
       $mainEnd  = "</div>";
-      return $mainBegin .= $mainEnd;
+      echo $mainBegin .= $mainEnd;
     }
 
     function renderDivClosingTag() {

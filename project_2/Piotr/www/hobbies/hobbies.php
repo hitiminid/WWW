@@ -26,11 +26,9 @@
   $hobbiesMenu = $generator->generateHobbiesMenu($hobbiesRow);
   $description = $generator->generateDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)
   oraz jazda na rowerze.");
-  $content  = $generator->renderMain(array($panorama, $description, $hobbiesMenu));
 
   echo $generator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
-  echo $content;
-  //TODO: footer
+  $generator->renderMain(array($panorama, $description, $hobbiesMenu));
 ?>
 </body>
 </html>
