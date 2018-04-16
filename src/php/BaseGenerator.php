@@ -35,14 +35,14 @@
             <a href='$hobbyPath'>Hobby</a>
           </li>
           <li class='dropdown navigation-right-item'>
-            <a href='$semestersPrefix' class='dropbtn'>Semestr</a>
+            <a href='$semestersArray[0]' class='dropbtn'>Semestr</a>
             <div class='dropdown-content'>
-              <a href='$semestersArray[0]'>Semestr I</a>
-              <a href='$semestersArray[1]'>Semestr II</a>
-              <a href='$semestersArray[2]'>Semestr III</a>
-              <a href='$semestersArray[3]'>Semestr IV</a>
-              <a href='$semestersArray[4]'>Semestr V</a>
-              <a href='$semestersArray[5]'>Semestr VI</a>
+              <a href='$semestersArray[1]'>Semestr I</a>
+              <a href='$semestersArray[2]'>Semestr II</a>
+              <a href='$semestersArray[3]'>Semestr III</a>
+              <a href='$semestersArray[4]'>Semestr IV</a>
+              <a href='$semestersArray[5]'>Semestr V</a>
+              <a href='$semestersArray[6]'>Semestr VI</a>
             </div>
           </li>
         </ul>
@@ -53,6 +53,7 @@
 
     function createSemestersArray($semesterPath) {
       $semesters = [];
+      array_push($semesters, $semesterPath."education.php");
       for ($semester = 1; $semester <= 6; $semester++) {
           array_push($semesters, $semesterPath."semester_".$semester.".php");
       }

@@ -15,10 +15,10 @@
   require_once(__DIR__."/../php/HomePageGenerator.php");
 
   $generator       = new HomePageGenerator;
-  $mainPagePath    = "/index.php";
+  $mainPagePath    = "index.php";
   $semestersPrefix = "semesters/";
 
-  $hobbyPath = "/hobbies/hobbies.php";
+  $hobbyPath = "hobbies/hobbies.php";
   $imagePath = "../img/logo.png";
   $panorama  = $generator->generatePanoramaWithInnerImage("../img/front.jpg", "../img/face.png", "Piotr Kawa");
   $aboutMe   = $generator->generateAboutMe("Jestem Piotrek. Mam 21 lat i jestem studentem Politechniki Wrocławskiej. Studiuję informatykę na wydziale Podstawowych Problemów Techniki. Na tej stronie znaleźć możesz informacje dotyczące zarówno mojej nauki jak i form spędzania przeze mnie czasu wolnego. Moim głównym obszarem zainteresowań informatycznych jest programowanie aplikacji mobilnych na systemy Android. Jednym z ulubionych hobby to słaba książka, słaby film. ");

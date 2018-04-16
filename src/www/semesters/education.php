@@ -15,16 +15,16 @@
   <?php
     require_once(__DIR__."/../../php/EducationGenerator.php");
     $generator   = new EducationGenerator;
-    $navbar      = $generator->generateNavbar("", "../../img/logo.png", "", "");
+    $navbar      = $generator->generateNavbar("../index.php", "../../img/logo.png", "", "../hobbies/hobbies.php");
     $description = $generator->generateDescription("W przeciągu 3 lat na Politechnice Wrocławskiej brałem udział w wielu przydatnych i ciekawych kursach z zakresu zarówno matematyki jak i informatyki. Poniższa oś czasu pokazuje każdy z semestrów, które odbyłem wraz z kursami które obejmowały.");
     $panorama = $generator->generatePanorama("Edukacja", "../../img/pwr.png");
     $timelineElements = array(
-      $generator->generateTimelineElement("left","Semestr letni 2017/2018",""),
-      $generator->generateTimelineElement("right","Semestr zimowy 2017/2018",""),
-      $generator->generateTimelineElement("left","Semestr letni 2016/2017",""),
-      $generator->generateTimelineElement("right","Semestr zimowy 2016/2017",""),
-      $generator->generateTimelineElement("left","Semestr letni 2015/2018",""),
-      $generator->generateTimelineElement("right","Semestr zimowy 2015/2016",""),
+      $generator->generateTimelineElement("left","Semestr letni 2017/2018","semester_6.php"),
+      $generator->generateTimelineElement("right","Semestr zimowy 2017/2018","semester_5.php"),
+      $generator->generateTimelineElement("left","Semestr letni 2016/2017","semester_4.php"),
+      $generator->generateTimelineElement("right","Semestr zimowy 2016/2017","semester_3.php"),
+      $generator->generateTimelineElement("left","Semestr letni 2015/2018","semester_2.php"),
+      $generator->generateTimelineElement("right","Semestr zimowy 2015/2016","semester_1.php"),
     );
     $timeline = $generator->generateTimeline($timelineElements);
     echo $navbar;
