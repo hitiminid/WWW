@@ -3,14 +3,9 @@
 
   class PageGenerator
   {
-
-    private $utilityManager;
+    private $utilityManager; //TODO: find how to initialize it once and for all
 
     function __construct() {
-
-    }
-
-    public function renderPage() {
 
     }
 
@@ -24,7 +19,7 @@
       $head .= $this->generateTitle($title);
       $head .= $this->addCSSFiles($cssPaths);
       $head .= $this->addJSFiles($jsPaths);
-      return $head .= "</head>";
+      return $head .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'></head>";
     }
 
     public function generateBody($content) {
@@ -48,17 +43,16 @@
       return $css;
     }
 
-    private function addJSFiles($jsFiles){
-
+    private function addJSFiles($jsPaths){
+      $js = "";
+      if (is_array($jsPaths)) {
+        foreach ($jsPaths as $path) {
+          $js .= "<script type='text/javascript' src='$path'></script>\n";
+        }
+      } else {
+          $js = "<script type='text/javascript' src='$jsPaths'></script>\n";
+      }
+      return $js;
     }
-
-    public function setDescription(){
-
-    }
-
-
-
-
-
   }
 ?>

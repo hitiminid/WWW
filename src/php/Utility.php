@@ -1,6 +1,7 @@
 <?php
 
-  class Utility {
+  class Utility
+  {
     public function debugTool($data) {
       $output = $data;
       if (is_array($output)) {

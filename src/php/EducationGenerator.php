@@ -3,16 +3,16 @@
 
   class EducationGenerator extends BaseGenerator
   {
-      function renderEducationPage() {
 
-      }
+      private $utilityManager; //TODO: find how to initialize it once and for all
 
       function generateDescription($description) {
         return "<div id='about-me'><p>$description</p></div>";
       }
 
       function generateTimeline($timelineElements) {
-        return $this->appendElements("<div class='timeline'>", $timelineElements, "</div>");
+        $utilityManager = new Utility();
+        return $utilityManager->appendElements("<div class='timeline'>", $timelineElements, "</div>");
       }
 
       function generateTimelineElement($side, $semester, $link) {

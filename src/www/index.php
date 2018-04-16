@@ -2,9 +2,9 @@
   require_once(__DIR__."/../php/HomePageGenerator.php");
   require_once(__DIR__."/../php/PageGenerator.php");
 
-
   $pageGenerator = new PageGenerator;
-  $head = $pageGenerator->generateHead("haha", array("../css/grid.css", "../css/index_style.css", "../css/main_style.css"), null);
+  $cssStyles = array("../css/reset.css","../css/grid.css", "../css/index_style.css", "../css/main_style.css");
+  $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, null);
 
   $contentGenerator = new HomePageGenerator;
   $mainPagePath     = "index.php";
