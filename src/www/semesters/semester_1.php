@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>PHP intro</title>
-  <!-- <link rel="stylesheet" href="css/intro.css"> -->
-  <link rel="stylesheet" type="text/css" href="../../css/main_style.css">
-  <link rel="stylesheet" type="text/css" href="../../css/grid.css">
-  <link rel="stylesheet" type="text/css" href="../../css/education.css">
-  <link rel="stylesheet" type="text/css" href="../../css/semesters_style.css">
-</head>
-
-<body>
 <?php
-  require_once(__DIR__."/../../php/SemestersGenerator.php");
+  require_once(__DIR__."../../../php/PageGenerator.php");
+  require_once(__DIR__."../../../php/SemestersGenerator.php");
+
+
+
+  $pageGenerator = new PageGenerator;
+  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
+  $head      = $pageGenerator->generateHead("Semestr I", $cssStyles, null);
+
+  $contentGenerator = new SemestersGenerator;
+
+  $mainPagePath     = "../index.php";
+  $semestersPrefix  = "../../www/semesters/";
+  $hobbyPath        = "hobbies.php";
+  $imagePath        = "../../img/logo.png";
 
   $lectures = array(
     array("Analiza Matematyczna I", "Całkować", "Różniczkować"),
@@ -20,12 +21,11 @@
     array("Wstęp do Informatyki i Programowania", "Podstawowych pojęć informatycznych", "Podstaw języka C"),
     array("Logika i Struktury Formalne", "Tautologii", "Podstawowych kwantyfikatorów"));
 
-  // "Analiza Matematyczna I", "2" => "Algebra z Geometrią Analityczną", "3" => "Wstęp do Informatyki i Programowania", "4" => "Logika i Struktury Formalne"];
+  echo $contentGenerator->renderSemester($lectures);
 
-  $generator = new SemestersGenerator;
-  echo $generator->getNavbar();
-  echo $generator->renderSemester($lectures);
+  $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
+  $main   = $contentGenerator->generateMain(null);
 
+  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>
-</body>
-</html>

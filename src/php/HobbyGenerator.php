@@ -31,11 +31,11 @@ require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
       return $content .= "</div>";
     }
 
-    function renderHobbyPanel($title, $imagePath) {
+    function renderHobbyPanel($title, $pagePath, $imagePath) {
 
         return "
         <div class='col-2 hobbies-panel'>
-          <a href='reading.html'>
+          <a href='$pagePath'>
             <div class='button-tile'>
               <img src='$imagePath' alt='reading' />
               <div class='menu-button'>

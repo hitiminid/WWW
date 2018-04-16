@@ -2,7 +2,7 @@
   require_once(__DIR__."/../../php/EducationGenerator.php");
   require_once(__DIR__."/../../php/PageGenerator.php");
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css",
+  $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",
                      "../../css/grid.css",
                      "../../css/timeline.css",

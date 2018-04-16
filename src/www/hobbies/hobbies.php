@@ -13,8 +13,8 @@
   $imagePath = "../../img/logo.png";
   $panorama   = $contentGenerator->generatePanorama("Moje hobby", "../../img/hobbies.png");
   $hobbiesRow = array(
-    $contentGenerator->renderHobbyPanel("Czytanie", "../../img/reading.png"),
-    $contentGenerator->renderHobbyPanel("Rower", "../../img/cycling.png"));
+    $contentGenerator->renderHobbyPanel("Czytanie", "reading.php", "../../img/reading.png"),
+    $contentGenerator->renderHobbyPanel("Rower", "cycling.php", "../../img/cycling.png"));
   $hobbiesRow  = $contentGenerator->renderHobbiesRow($hobbiesRow);
   $hobbiesMenu = $contentGenerator->generateHobbiesMenu($hobbiesRow);
   $description = $contentGenerator->generateDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)

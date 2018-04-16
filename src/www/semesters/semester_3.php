@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>PHP intro</title>
-  <!-- <link rel="stylesheet" href="css/intro.css"> -->
-  <link rel="stylesheet" type="text/css" href="../../css/main_style.css">
-  <link rel="stylesheet" type="text/css" href="../../css/grid.css">
-  <link rel="stylesheet" type="text/css" href="../../css/education.css">
-  <link rel="stylesheet" type="text/css" href="../../css/semesters_style.css">
-</head>
-
-<body>
 <?php
-  require_once(__DIR__."/../../php/SemestersGenerator.php");
-
-
-  $generator = new BaseGenerator;
-  $lectures = aray("Technologia Programowania", "Bazy Danych i Systemy Informacyjne", "Architektura Komputerów i Systemy Operacyjne", "Metody Probablistyczne i Statystyka");
-
-  $generator->renderLecture("Analiza Matematyczna I")
+  require_once(__DIR__."../../../php/PageGenerator.php");
+  require_once(__DIR__."../../../php/SemestersGenerator.php");
 
 
 
-  echo $generator->renderNavbar();
-  echo $generator->renderMain(null);
+  $pageGenerator = new PageGenerator;
+  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
+  $head      = $pageGenerator->generateHead("Semestr III", $cssStyles, null);
+
+  $contentGenerator = new SemestersGenerator;
+
+  $mainPagePath     = "../index.php";
+  $semestersPrefix  = "../../www/semesters/";
+  $hobbyPath        = "hobbies.php";
+  $imagePath        = "../../img/logo.png";
+
+  $lectures = array("Technologia Programowania", "Bazy Danych i Systemy Informacyjne", "Architektura Komputerów i Systemy Operacyjne", "Metody Probablistyczne i Statystyka");
 
 
+  echo $contentGenerator->renderSemester($lectures);
+
+  $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
+  $main   = $contentGenerator->generateMain(null);
+
+  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>
-</body>
-</html>
