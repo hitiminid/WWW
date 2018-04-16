@@ -1,27 +1,11 @@
 <?php
-  class BaseGenerator
+
+  require_once(__DIR__. DIRECTORY_SEPARATOR . "Utility.php");
+
+  class BaseGenerator //extends Utility
   {
 
-    function debugTool($data) {
-      $output = $data;
-      if (is_array($output)) {
-        $output = implode(',', $output);
-      }
-      echo "<script>console.log('".$output."');</script>";
-    }
-
-    function appendElements($begin, $elements, $end) {
-      if (is_array($elements)) {
-        foreach ($elements as $element) {
-          $begin .= $element;
-        }
-      } else {
-        $begin .= $elements;
-      }
-      return $begin .= $end;
-    }
-
-    function generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
+    public function generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
 
       $semestersArray = $this->createSemestersArray($semestersPrefix);
       $navbar = "
@@ -51,7 +35,7 @@
       return $navbar;
     }
 
-    function createSemestersArray($semesterPath) {
+    private function createSemestersArray($semesterPath) {
       $semesters = [];
       array_push($semesters, $semesterPath."education.php");
       for ($semester = 1; $semester <= 6; $semester++) {
@@ -60,7 +44,7 @@
       return $semesters;
     }
 
-    function generatePanorama($title, $imagePath) {
+    public function generatePanorama($title, $imagePath) {
       $alt = substr($title, strrpos($title, '/'));
       $content = "
       <div id='panorama'>
@@ -72,11 +56,10 @@
       return $content;
     }
 
-    function renderMain($siteContent) {
+    public function generateMain($siteContent) {
       $mainBegin = "<div id='main'>";
       $middle = "";
-      if (is_array($siteContent))
-      {
+      if (is_array($siteContent)) {
         foreach ($siteContent as $content) {
           $middle .= $content;
         }
@@ -86,14 +69,14 @@
 
       $mainBegin .= $middle;
       $mainEnd  = "</div>";
-      echo $mainBegin .= $mainEnd;
+      return $mainBegin .= $mainEnd;
     }
 
-    function renderDivClosingTag() {
+    public function renderDivClosingTag() {
       return "</div>";
     }
 
-    function renderFooter() {
+    public function renderFooter() {
       return "<footer></footer>";
     }
   }
