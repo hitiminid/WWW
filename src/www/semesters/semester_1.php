@@ -4,7 +4,7 @@
 
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
+  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/semesters_style.css");
   $head      = $pageGenerator->generateHead("Semestr I", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
@@ -24,10 +24,10 @@
   $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
 
   $semesters = $contentGenerator->generateLectures(array(
-    $contentGenerator->generateLecture("Analiza Matematyczna I", array("całkować", "2"), array("3", "4")),
-    $contentGenerator->generateLecture("Analiza Matematyczna I", array("całkować", "2"), array("3", "4")),
-    $contentGenerator->generateLecture("Analiza Matematyczna I", array("całkować", "2"), array("3", "4")),
-    $contentGenerator->generateLecture("Analiza Matematyczna I", array("całkować", "2"), array("3", "4"))
+    $contentGenerator->generateLecture("Analiza Matematyczna I", array("całkować", "Różniczkować"), array("Dokładną treść tw. Cauchy'ego", "Zastosowania całek w przemyśle")),
+    $contentGenerator->generateLecture("Algebra z Geometrią Analityczną", array("Operacje na macierzach", "Obliczenia na liczbach zespolonych"), array("Lepiej rozwiązywać układy liniowe", "Ortogonalizacji")),
+    $contentGenerator->generateLecture("Wstęp do Informatyki i Programowania", array("Podstawowych pojęć informatycznych", "Podstaw języka C"), array("Operacji na wskaźnikach", "Najnowszego standardu języka C")),
+    $contentGenerator->generateLecture("Logika i Struktury Formalne", array("Tautologii", "Podstawowych kwantyfikatorów"), array("Struktur Formalnych", "Więcej nt. kwantyfikatorów"))
   ));
 
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr I", "2015/2016", $semesters);
