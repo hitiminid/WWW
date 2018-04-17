@@ -33,6 +33,6 @@
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr I", "2015/2016", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>

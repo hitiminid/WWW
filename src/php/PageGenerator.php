@@ -3,15 +3,14 @@
 
   class PageGenerator
   {
-    private $utilityManager; //TODO: find how to initialize it once and for all
+    private $utilityManager;
 
     function __construct() {
-
+      $this->utilityManager = new Utility();
     }
 
     public function generatePageStructure($content) {
-      $utilityManager = new Utility();
-      return $utilityManager->appendElements("<!DOCTYPE html><html lang='pl'>", $content, "</html>");
+      return $this->utilityManager->appendElements("<!DOCTYPE html><html lang='pl'>", $content, "</html>");
     }
 
     public function generateHead($title, $cssPaths, $jsPaths) {
@@ -23,8 +22,7 @@
     }
 
     public function generateBody($content) {
-      $utilityManager = new Utility();
-      return $utilityManager->appendElements("<body>", $content, "</body>");
+      return $this->utilityManager->appendElements("<body>", $content, "</body>");
     }
 
     private function generateTitle($title) {

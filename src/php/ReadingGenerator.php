@@ -3,10 +3,14 @@
 
   class ReadingGenerator extends HobbyGenerator
   {
+    private $utilityManager;
+
+    public function __construct() {
+      $this->utilityManager = new Utility();
+    }
 
     function generateYearsSection($years) {
-      $utilityManager = new Utility();
-      return $utilityManager->appendElements("<div id='content'>", $years, "</div>");
+      return $this->utilityManager->appendElements("<div id='content'>", $years, "</div>");
     }
 
     function generateYear($year, $bookPanels) {

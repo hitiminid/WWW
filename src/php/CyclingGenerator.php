@@ -1,10 +1,8 @@
 <?php
   require_once(__DIR__. DIRECTORY_SEPARATOR ."HobbyGenerator.php");
 
-
   class CyclingGenerator extends HobbyGenerator
   {
-
     private $utilityManager;
 
     public function __construct() {

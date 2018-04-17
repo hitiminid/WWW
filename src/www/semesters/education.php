@@ -26,6 +26,6 @@
   $navbar = $contentGenerator->generateNavbar("../index.php", "../../img/logo.png", "", "../hobbies/hobbies.php");
   $main   = $contentGenerator->generateMain(array($panorama, $description, $timeline));
 
-  $body = $pageGenerator->generateBody(array($navbar, $main));
+  $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator->generatePageStructure(array($head, $body));
 ?>

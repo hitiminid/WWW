@@ -28,10 +28,10 @@
       $contentGenerator->generateLecture("Nowoczesne Technologie WWW", array("Przypomniałem sobie HTML", "Selektory CSS", "Tworzyć listy tego czego się nauczyłem na studiach"), array("Frameworków JavaScriptowych", "Preprocesorów CSS", "UX / UI")),
     ));
 
-    $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "2017/2018", $semesters);
+    $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr VI", "2017/2018", $semesters);
 
     $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-    $body   = $pageGenerator->generateBody(array($navbar, $main));
+    $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
     echo $pageGenerator-> generatePageStructure(array($head, $body));
 
 

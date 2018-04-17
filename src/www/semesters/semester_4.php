@@ -27,10 +27,10 @@
     $contentGenerator->generateLecture("Podstawy Marketingu", array("Zasad kierowania firmą", "Działania rynku"), array("Podstaw ekonomii", "Podstaw marketingu")),
   ));
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr III", "2016/2017", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr IV", "2016/2017", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
 
 

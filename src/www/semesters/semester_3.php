@@ -27,7 +27,7 @@
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr II", "2015/2016", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
 
 
