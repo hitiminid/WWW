@@ -1,5 +1,5 @@
 <?php
-   require_once(__DIR__."\BaseGenerator.php");
+   require_once(__DIR__. DIRECTORY_SEPARATOR ."BaseGenerator.php");
 
   class SemestersGenerator extends BaseGenerator
   {

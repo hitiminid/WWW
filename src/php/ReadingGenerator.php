@@ -1,5 +1,5 @@
 <?php
-  require_once(__DIR__."\HobbyGenerator.php");
+  require_once(__DIR__. DIRECTORY_SEPARATOR ."HobbyGenerator.php");
 
   class ReadingGenerator extends HobbyGenerator
   {
