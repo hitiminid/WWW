@@ -2,11 +2,10 @@
 
   require_once(__DIR__. DIRECTORY_SEPARATOR . "Utility.php");
 
-  class BaseGenerator //extends Utility
+  class BaseGenerator
   {
 
     public function generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath) {
-
       $semestersArray = $this->createSemestersArray($semestersPrefix);
       $navbar = "
       <header>
@@ -76,7 +75,7 @@
       return "</div>";
     }
 
-    public function renderFooter() {
+    public function generateFooter() {
       return "<footer></footer>";
     }
   }

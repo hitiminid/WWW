@@ -4,8 +4,14 @@
 
   class CyclingGenerator extends HobbyGenerator
   {
-    function renderDescription($description)
-    {
+
+    private $utilityManager;
+
+    public function __construct() {
+      $this->utilityManager = new Utility();
+    }
+
+    function generateDescription($description) {
       $content = "
       <div id='cycling-description'>
         <p>
@@ -15,8 +21,11 @@
       return $content;
     }
 
-    function renderRoutePanel($mapFilePath, $routeDescription)
-    {
+    function generateMapSection($mapPanels) {
+      return $this->utilityManager->appendElements("<div id='maps' class='row'>", $mapPanels, "</div>");
+    }
+
+    function generateRoutePanel($mapFilePath, $routeDescription) {
       $content = "
       <div class='col-2 route-panel'>
         <img src='$mapFilePath' />
@@ -25,6 +34,7 @@
         </div>
       </div>
       ";
+      return $content;
     }
   }
 ?>

@@ -3,6 +3,7 @@ require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
 
   class HobbyGenerator extends BaseGenerator
   {
+    
     function generateDescription($content) {
       return  "<div id='main-description'><p>$content</p></div>";
     }
@@ -31,6 +32,7 @@ require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
       return $content .= "</div>";
     }
 
+    //TODO: alt
     function renderHobbyPanel($title, $pagePath, $imagePath) {
 
         return "

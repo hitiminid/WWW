@@ -3,13 +3,27 @@
 }
 
 #panorama {
-  background: url('../images/reading_bg.png');
-  background-size: cover;
   height: 500px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  display:inline-block;
+}
+
+#panorama > img {
+  width:  100%;
+  height:100%;
+}
+
+#title-panel {
+  position:absolute;
+  top: 200px; left: 0; right:0;
+  text-align: center;
+  margin:auto;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  font-size: 30px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
 #content {
@@ -79,6 +93,7 @@
   background-color: #8B8B8B;
   height:     150px;
   max-height: 150px;
+  width: 100%;
   padding-left:   30px;
   padding-right:  30px;
   padding-top:    20px;

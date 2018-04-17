@@ -4,53 +4,27 @@
   class SemestersGenerator extends BaseGenerator
   {
 
+    private $utilityManager;
     private $mainPagePath = "../index.php";
     private $imagePath = "../../img/logo.png";
     private $semestersPrefix = "";
     private $hobbyPath = "../hobbies/hobbies.php";
 
-    public function getNavbar()
-    {
-        return parent::renderNavbar($this->mainPagePath, $this->imagePath, $this->semestersPrefix, $this->hobbyPath);
+    public function __construct() {
+      $this->utilityManager = new Utility();
     }
 
-    public function renderSemester($lecturesArray)
-    {
-      // $head = "<div id='lectures'>";
-      // $tail = "</div>";
-      //
-      // foreach ($lecturesArray as $lecture)
-      // {
-      //   $head .= $lecture;
-      // }
-      // for ()
-      // return $head .= $tail;
-
-      $rowsNumber = count($lecturesArray);
-      for ($row = 0; $row < $rowsNumber; $row++) {
-           $colsNumber = count($lecturesArray[$row]);
-
-           for($col = 0; $col < $colsNumber; $col++ ) {
-
-           }
-      }
-
-      // fill what i learnt array
-
-      //fill todo array
-
-      return null;
+    public function generateSemesterWithHeader($semester, $time, $lectures) {
+      return $this->utilityManager->appendElements("<div id='lectures'<h1>$semester</h1><h2>$time</h2>", $lectures, "</div>");
     }
 
-    //semestr 1 2015/2016
-     public function renderHeader()
-    {
-      return null;
+    public function generateLectures($lectures) {
+      return $this->utilityManager->appendElements("", $lectures, "");
     }
 
-    private function renderLecture($lectureName, $whatIHaveLearnedArray, $whatIIntendToLearnArray)
-    {
-      $lecture = "<div class='lecture'>
+    public function generateLecture($lectureName, $whatIHaveLearnedArray, $whatIIntendToLearnArray) {
+      $lecture = "
+      <div class='lecture'>
         <div class='lecture-header'>
           <h2>$lectureName</h2>
         </div>
@@ -63,8 +37,8 @@
               <div class='faculty-content'>
                 <div class='list'>
                   <ol>
-                    <li>$whatIHaveLearnedArray</li>
-                    <li>$whatIHaveLearnedArray</li>
+                    <li>$whatIHaveLearnedArray[0]</li>
+                    <li>$whatIHaveLearnedArray[1]</li>
                   </ol>
                 </div>
               </div>
@@ -76,8 +50,8 @@
               <div class='faculty-content'>
                 <div class='list'>
                   <ol>
-                    <li>$whatIIntendToLearnArray</li>
-                    <li>$whatIIntendToLearnArray</li>
+                    <li>$whatIIntendToLearnArray[0]</li>
+                    <li>$whatIIntendToLearnArray[1]</li>
                   </ol>
                 </div>
               </div>

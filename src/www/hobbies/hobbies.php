@@ -23,6 +23,6 @@
   $navbar = $contentGenerator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   $main   = $contentGenerator->generateMain(array($panorama, $description, $hobbiesMenu));
 
-  $body   = $pageGenerator->generateBody(array($navbar, $main));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
 echo $pageGenerator -> generatePageStructure(array($head, $body));
 ?>

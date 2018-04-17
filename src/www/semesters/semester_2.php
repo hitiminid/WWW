@@ -13,16 +13,21 @@
 
   $mainPagePath     = "../index.php";
   $semestersPrefix  = "../../www/semesters/";
-  $hobbyPath        = "hobbies.php";
+  $hobbyPath        = "../hobbies/hobbies.php";
   $imagePath        = "../../img/logo.png";
 
-    $lectures = array("Analiza Matematyczna II", "Algebra Abstrakcyjna i Kodowanie", "Matematyka Dyskretna", "Problemy Prawne Informatyki", "Kurs Programowania", "Fizyka");
-
-  echo $contentGenerator->renderSemester($lectures);
-
   $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
-  $main   = $contentGenerator->generateMain(null);
 
+  $semesters = $contentGenerator->generateLectures(array(
+    $contentGenerator->generateLecture("Analiza Matematyczna II", array("Całek podwójnych", "Podstawowych metryk"), array("Liczenia całek potrójnych", "Nowych metryk")),
+    $contentGenerator->generateLecture("Algebra Abstrakcyjna i Kodowanie", array("Operacji w ciałach", "Kodowania Huffmana"), array("Więcej nt. operacji w grupach i pierścieniach", "Dodatkowych algorytmów kodowania")),
+    $contentGenerator->generateLecture("Matematyka Dyskretna", array("Funkcji tworzące", "Podstaw grafów"), array("Więcej nt. permutacji", "Multizbiorów")),
+    $contentGenerator->generateLecture("Problemy Prawne Informatyki", array("Podstawowych założeń dot. prawa autorskiego", "Podstaw prawa patentowego"), array("Więcej nt. licencji", "Więcej nt. prawa autorskiego"))
+  ));
+
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr II", "2015/2016", $semesters);
+
+  $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>

@@ -12,17 +12,28 @@
 
   $mainPagePath     = "../index.php";
   $semestersPrefix  = "../../www/semesters/";
-  $hobbyPath        = "hobbies.php";
+  $hobbyPath        = "../hobbies/hobbies.php";
   $imagePath        = "../../img/logo.png";
 
-    $lectures = array("Systemy Wbudowane", "Wprowadzenie do Funkcji Zespolonych", "Programowanie w Logice", "Grafika Komputerowa i Wizualizacja", "Nowoczesne Technologie WWW");
+    $lectures = array("", "", "", "", "");
 
 
-  echo $contentGenerator->renderSemester($lectures);
+    $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
 
-  $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
-  $main   = $contentGenerator->generateMain(null);
+    $semesters = $contentGenerator->generateLectures(array(
+      $contentGenerator->generateLecture("Systemy Wbudowane", array("Podstaw języka VHDL", "Budowa LFSR'a"), array("Podstaw elektroniki", "Zaawansowanych operacji w języku VHDL")),
+      $contentGenerator->generateLecture("Wprowadzenie do Funkcji Zespolonych", array("Obliczenia w ciałach liczb zespolonych", "Pochodne zespolone"), array("Analizy funkcji zespolonych", "Wykorzystanie funkcji zespolonych")),
+      $contentGenerator->generateLecture("Programowanie w Logice", array("Podstaw języka Prolog", "Optymalizację zapytań prologowych"), array("Języków używanych w SI", "Dalszych zagadnień związanych z logiką")),
+      $contentGenerator->generateLecture("Grafika Komputerowa i Wizualizacja", array("Operacji na macierzach afinicznych", "Programowania w JavaScript"), array("Poszerzyć wiedzę dot. WebGL", "OpenGL")),
+      $contentGenerator->generateLecture("Nowoczesne Technologie WWW", array("Przypomniałem sobie HTML", "Selektory CSS", "Tworzyć listy tego czego się nauczyłem na studiach"), array("Frameworków JavaScriptowych", "Preprocesorów CSS", "UX / UI")),
+    ));
 
-  $body   = $pageGenerator->generateBody(array($navbar, $main));
-  echo $pageGenerator-> generatePageStructure(array($head, $body));
+    $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "2017/2018", $semesters);
+
+    $main   = $contentGenerator->generateMain(array($semestersWithHeader));
+    $body   = $pageGenerator->generateBody(array($navbar, $main));
+    echo $pageGenerator-> generatePageStructure(array($head, $body));
+
+
+
 ?>

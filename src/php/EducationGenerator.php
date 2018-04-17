@@ -6,13 +6,16 @@
 
       private $utilityManager; //TODO: find how to initialize it once and for all
 
+      public function __construct() {
+        $this->utilityManager = new Utility();
+      }
+
       function generateDescription($description) {
         return "<div id='about-me'><p>$description</p></div>";
       }
 
       function generateTimeline($timelineElements) {
-        $utilityManager = new Utility();
-        return $utilityManager->appendElements("<div class='timeline'>", $timelineElements, "</div>");
+        return $this->utilityManager->appendElements("<div class='timeline'>", $timelineElements, "</div>");
       }
 
       function generateTimelineElement($side, $semester, $link) {

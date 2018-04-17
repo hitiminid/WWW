@@ -4,16 +4,12 @@
   class ReadingGenerator extends HobbyGenerator
   {
 
-    function renderYears($years)
-    {
-      foreach ($years as $$year)
-      {
-        echo $year;
-      }
+    function generateYearsSection($years) {
+      $utilityManager = new Utility();
+      return $utilityManager->appendElements("<div id='content'>", $years, "</div>");
     }
 
-    function renderYear($year, $bookPanels)
-    {
+    function generateYear($year, $bookPanels) {
       $content = "
       <div class='year'>
         <div class='year-content'>
@@ -27,8 +23,7 @@
       return $content;
     }
 
-    function renderDescription($description)
-    {
+    function renderDescription($description) {
       $content = "
       <div class='description'>
         <p>$description</p>
@@ -37,15 +32,15 @@
       return $content;
     }
 
-    function renderBookPanel($author, $imagePath, $description)
-    {
+    function generateBookPanel($author, $imagePath, $description) {
+      $alt = substr($imagePath, strrpos($imagePath, '/'));
       $content = "
       <div class='col-2 book-panel'>
         <div class='author'>
           <h2>$author</h2>
         </div>
         <div class='book-cover'>
-          <img src='$imagePath' alt='zrozumiec_programowanie' />
+          <img src='$imagePath' alt='$alt' />
         </div>
         <div class='description'>
           <p>
