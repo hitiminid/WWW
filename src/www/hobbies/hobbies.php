@@ -3,7 +3,11 @@
   require_once(__DIR__."/../../php/PageGenerator.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css","../../css/main_style.css", "../../css/grid.css", "../../css/hobbies_style.css");
+  $cssStyles = array("../css/reset.css",
+                     "../../css/grid.css",
+                     "../../css/main_style.css",
+                     "../../css/panorama.css",
+                     "../../css/hobbies_style.css");
   $head = $pageGenerator->generateHead("Moje przygody z edukacją - Hobby", $cssStyles, null);
 
   $contentGenerator = new HobbyGenerator;

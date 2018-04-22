@@ -15,7 +15,12 @@
   left: 50%;
   margin-left: -3px;
 }
-
+.timeline-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .container {
   padding: 10px 40px;
   position: relative;

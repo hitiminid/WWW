@@ -1,43 +1,15 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #474e5d;
-    font-family: Helvetica, sans-serif;
-}
-
-#panorama {
-  height: 500px;
-  width: 100%;
-  position: relative;
-  display:inline-block;
-}
-
-#panorama > img {
-  width:  100%;
-  height: 100%;
-}
-
-#person-panel {
-  position:absolute;
-  top: 100px; left: 0; right:0;
-  text-align: center;
-  margin:auto;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 3px;
+#panorama-panel {
+  font-size: 45px;
+  top: 90px;
   padding-top:30px;
-  font-size: 30px;
-  width: 300px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  padding-bottom: 30px;
 }
-
-#person-panel > img {
+#panorama-panel > img {
   border-radius: 50%;
   width:  200px;
   height: 200px;
+  margin-bottom: 30px;
 }
-
 #about-me {
   width: 100%;
   margin:auto;
@@ -48,19 +20,18 @@ body {
   padding-bottom: 20px;
   padding-top:20px;
 }
-
 .panels {
   background: #fcfcfc;
   padding-left:   15px;
   padding-right:  15px;
   padding-bottom: 30px;
 }
-
 .menu-button {
   background: transparent;
   border:solid 3px;
   cursor: pointer;
   text-align: center;
+  margin-top: 20px;
   padding-top: 25px;
   text-decoration: none;
   color: #333333;
@@ -69,7 +40,6 @@ body {
   height: 80px;
   font-size: 25px;
 }
-
 .menu-button:hover {
   border-color: transparent;
   color: #f1f1f1;
@@ -83,12 +53,12 @@ body {
   flex-direction: column;
   border-radius: 7px;
   background: #dbd9d9;
-  padding: 20px;
+  padding-left:   20px;
+  padding-right:  20px;
+  padding-top:    30px;
+  padding-bottom: 30px;
   text-align: justify;
-}
 
-ul {
-  width: 100%;
 }
 
 

@@ -18,6 +18,7 @@
       $head .= $this->generateTitle($title);
       $head .= $this->addCSSFiles($cssPaths);
       $head .= $this->addJSFiles($jsPaths);
+      $head .= "<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>";
       return $head .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'></head>";
     }
 

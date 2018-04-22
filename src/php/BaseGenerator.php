@@ -48,7 +48,7 @@
       $content = "
       <div id='panorama'>
         <img src='$imagePath' alt='$alt' />
-        <div id='title-panel'>
+        <div id='panorama-panel'>
           <h2>$title</h2>
         </div>
       </div>";

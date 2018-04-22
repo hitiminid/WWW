@@ -3,10 +3,11 @@
   require_once(__DIR__."/../../php/PageGenerator.php");
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
-                     "../../css/main_style.css",
                      "../../css/grid.css",
+                     "../../css/main_style.css",
                      "../../css/timeline.css",
-                     "../../css/semesters_style.css",
+                     "../../css/panorama.css",
+                     // "../../css/semesters_style.css",
                      "../../css/education.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, null); //TODO: change title
 

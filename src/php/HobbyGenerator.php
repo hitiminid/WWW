@@ -32,9 +32,8 @@ require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
       return $content .= "</div>";
     }
 
-    //TODO: alt
     function renderHobbyPanel($title, $pagePath, $imagePath) {
-      $alt = substr($facePath, strrpos($facePath, '/') + 1);
+      $alt = substr($imagePath, strrpos($imagePath, '/') + 1);
         return "
         <div class='col-2 hobbies-panel'>
           <a href='$pagePath'>
