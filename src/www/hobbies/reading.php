@@ -4,7 +4,11 @@
 
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../css/index_style.css", "../../css/reading_style.css", "../../css/education.css");
+  $cssStyles = array("../../css/reset.css",
+                     "../../css/main_style.css",
+                     "../../css/grid.css",
+                     "../../css/panorama.css",
+                     "../../css/reading_style.css");
   $head      = $pageGenerator->generateHead("Moja Przygoda z Edukacją - Rower", $cssStyles, null);
 
   $contentGenerator = new ReadingGenerator;

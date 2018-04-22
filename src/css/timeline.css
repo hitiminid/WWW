@@ -17,6 +17,7 @@
 }
 .timeline-element {
   display: flex;
+  font-size: 18px;
   justify-content: center;
   align-items: center;
   flex-direction: column;

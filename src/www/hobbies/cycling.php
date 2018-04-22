@@ -4,7 +4,12 @@
 
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css", "../../css/grid.css", "../../css/education.css", "../../css/semesters_style.css", "../../css/cycling_style.css");
+  $cssStyles = array("../../css/reset.css",
+                     "../../css/main_style.css",
+                     "../../css/grid.css",
+                     "../../css/panorama.css",
+                     "../../css/hobbies_style.css",
+                     "../../css/cycling_style.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, null);
 
   $contentGenerator = new CyclingGenerator;

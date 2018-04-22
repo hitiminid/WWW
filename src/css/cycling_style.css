@@ -1,13 +1,9 @@
-#panorama {
-  background: url('../images/cycling_bg.png');
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#panorama-panel {
+  font-size:      50px;
+  font-weight:    bold;
+  padding-top:    40px;
+  padding-bottom: 40px;
 }
-
 #maps {
   padding-left:   30px;
   padding-right:  30px;
@@ -24,10 +20,8 @@
 }
 
 #cycling-description {
-  padding-left:   40px;
-  padding-right:  40px;
-  padding-top:    20px;
-  padding-bottom: 20px;
+  font-size: 18px;
+  padding: 40px;
   text-align: center;
 }
 

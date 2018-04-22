@@ -12,15 +12,14 @@
 }
 #about-me {
   width: 100%;
+  font-size: 18px;
   margin:auto;
   text-align:justify;
   background: #fcfcfc;
-  padding-left:   30px;
-  padding-right:  30px;
-  padding-bottom: 20px;
-  padding-top:20px;
+  padding: 30px;
 }
 .panels {
+  font-size: 18px;
   background: #fcfcfc;
   padding-left:   15px;
   padding-right:  15px;
