@@ -98,7 +98,12 @@
   header {
     width: 90%;
   }
-  #person-panel {
-    width: 70%;
+  #panorama {
+    height:300px;
+  }
+  #panorama-panel {
+    height: 80px;
+    top: 100px;
+    font-size: 30px;
   }
 }

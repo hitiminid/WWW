@@ -61,3 +61,17 @@
     margin-bottom:30px;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  #panorama-panel {
+    width: 70%;
+  }
+  #panorama {
+    height:300px;
+  }
+  #panorama-panel {
+    height: 100px;
+    top: 100px;
+    font-size: 40px;
+  }
+}

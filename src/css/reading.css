@@ -139,4 +139,12 @@
   .description > p{
     font-size: 15px;
   }
+  #panorama-panel {
+    height:100px;
+    top:100px;
+    font-size: 24px;
+  }
+  #panorama {
+    height: 300px;
+  }
 }
