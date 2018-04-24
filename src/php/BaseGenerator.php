@@ -30,7 +30,7 @@
           </li>
         </ul>
       </div>
-      </header>";
+      </header>\n";
       return $navbar;
     }
 
@@ -51,12 +51,12 @@
         <div id='panorama-panel'>
           <h2>$title</h2>
         </div>
-      </div>";
+      </div>\n";
       return $content;
     }
 
     public function generateMain($siteContent) {
-      $mainBegin = "<div id='main'>";
+      $mainBegin = "<div id='main'>\n";
       $middle = "";
       if (is_array($siteContent)) {
         foreach ($siteContent as $content) {
@@ -67,7 +67,7 @@
       }
 
       $mainBegin .= $middle;
-      $mainEnd  = "</div>";
+      $mainEnd  = "</div>\n";
       return $mainBegin .= $mainEnd;
     }
 
@@ -76,7 +76,7 @@
     }
 
     public function generateFooter() {
-      return "<footer></footer>";
+      return "<footer></footer>\n";
     }
   }
  ?>

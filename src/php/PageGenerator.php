@@ -10,46 +10,50 @@
     }
 
     public function generatePageStructure($content) {
-      return $this->utilityManager->appendElements("<!DOCTYPE html><html lang='pl'>", $content, "</html>");
+      return $this->utilityManager->appendElements("<!DOCTYPE html>\n<html lang='pl'>\n", $content, "</html>");
     }
 
     public function generateHead($title, $cssPaths, $jsPaths) {
-      $head = "<head><meta charset='utf-8'>";
+      $head = "<head>\n<meta charset='utf-8'>\n<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
       $head .= $this->generateTitle($title);
       $head .= $this->addCSSFiles($cssPaths);
       $head .= $this->addJSFiles($jsPaths);
-      $head .= "<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>";
-      return $head .= "<meta name='viewport' content='width=device-width, initial-scale=1.0'></head>";
+      $head .= "<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>\n";
+      return $head .= "</head>\n";
     }
 
     public function generateBody($content) {
-      return $this->utilityManager->appendElements("<body>", $content, "</body>");
+      return $this->utilityManager->appendElements("<body>\n", $content, "</body>\n");
     }
 
     private function generateTitle($title) {
-      return "<title>$title</title>";
+      return "<title>$title</title>\n";
     }
 
     public function addCSSFiles($cssPaths){
-      $css = "";
-      if (is_array($cssPaths)) {
-        foreach ($cssPaths as $path) {
-          $css .= "<link rel='stylesheet' type='text/css' href='$path'>\n";
+      if (!empty($cssPaths) || !is_null($cssPaths)) {
+        $css = "";
+        if (is_array($cssPaths)) {
+          foreach ($cssPaths as $path) {
+            $css .= "<link rel='stylesheet' type='text/css' href='$path'>\n";
+          }
+        } else {
+            $css = "<link rel='stylesheet' type='text/css' href='$cssPaths'>\n";
         }
-      } else {
-          $css = "<link rel='stylesheet' type='text/css' href='$cssPaths'>\n";
+        return $css;
       }
-      return $css;
     }
 
     private function addJSFiles($jsPaths){
-      $js = "";
-      if (is_array($jsPaths)) {
-        foreach ($jsPaths as $path) {
-          $js .= "<script type='text/javascript' src='$path'></script>\n";
+      if (!empty($jsPaths) || !is_null($jsPaths)) {
+        $js = "";
+        if (is_array($jsPaths)) {
+          foreach ($jsPaths as $path) {
+            $js .= "<script type='text/javascript' src='$path'></script>\n";
+          }
+        } else {
+            $js = "<script type='text/javascript' src='$jsPaths'></script>\n";
         }
-      } else {
-          $js = "<script type='text/javascript' src='$jsPaths'></script>\n";
       }
       return $js;
     }
