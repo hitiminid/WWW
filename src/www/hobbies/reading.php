@@ -8,7 +8,7 @@
                      "../../css/main_style.css",
                      "../../css/grid.css",
                      "../../css/panorama.css",
-                     "../../css/reading_style.css");
+                     "../../css/reading.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, null);
 
   $contentGenerator = new ReadingGenerator;

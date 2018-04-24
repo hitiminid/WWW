@@ -2,9 +2,11 @@
   require_once(__DIR__."../../../php/PageGenerator.php");
   require_once(__DIR__."../../../php/SemestersGenerator.php");
 
-
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/semesters_style.css");
+  $cssStyles = array("../../css/reset.css",
+                     "../../css/main_style.css",
+                     "../../css/grid.css",
+                     "../../css/semesters.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr I", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;

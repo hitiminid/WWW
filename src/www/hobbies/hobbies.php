@@ -7,7 +7,7 @@
                      "../../css/grid.css",
                      "../../css/main_style.css",
                      "../../css/panorama.css",
-                     "../../css/hobbies_style.css");
+                     "../../css/hobbies.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, null);
 
   $contentGenerator = new HobbyGenerator;
@@ -28,5 +28,5 @@
   $main   = $contentGenerator->generateMain(array($panorama, $description, $hobbiesMenu));
 
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-echo $pageGenerator -> generatePageStructure(array($head, $body));
+  echo $pageGenerator -> generatePageStructure(array($head, $body));
 ?>

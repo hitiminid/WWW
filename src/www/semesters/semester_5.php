@@ -3,7 +3,10 @@
   require_once(__DIR__."../../../php/SemestersGenerator.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
+  $cssStyles = array("../../css/reset.css",
+                     "../../css/main_style.css",
+                     "../../css/grid.css",
+                     "../../css/semesters.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr V", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
@@ -24,13 +27,9 @@
     $contentGenerator->generateLecture("Metody Wytwarzania Oprogramowania", array("Organizować pracę i zasoby", "React Native"), array("Lepiej szacować ryzyko projektowe", "React JS"))
   ));
 
-
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "Zima 2017/2018", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
-
-
-
 ?>

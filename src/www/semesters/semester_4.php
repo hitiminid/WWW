@@ -2,14 +2,14 @@
   require_once(__DIR__."../../../php/PageGenerator.php");
   require_once(__DIR__."../../../php/SemestersGenerator.php");
 
-
-
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
+  $cssStyles = array("../../css/reset.css",
+                     "../../css/main_style.css",
+                     "../../css/grid.css",
+                     "../../css/semesters.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr IV", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
-
   $mainPagePath     = "../index.php";
   $semestersPrefix  = "../../www/semesters/";
   $hobbyPath        = "../hobbies/hobbies.php";
@@ -32,7 +32,4 @@
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
-
-
-
 ?>

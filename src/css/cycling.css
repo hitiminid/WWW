@@ -1,13 +1,9 @@
-#panorama {
-  background: url('../images/cycling_bg.png');
-  background-size: cover;
-  height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#panorama-panel {
+  font-size:      50px;
+  font-weight:    bold;
+  padding-top:    40px;
+  padding-bottom: 40px;
 }
-
 #maps {
   padding-left:   30px;
   padding-right:  30px;
@@ -24,19 +20,9 @@
 }
 
 #cycling-description {
-  padding-left:   40px;
-  padding-right:  40px;
-  padding-top:    20px;
-  padding-bottom: 20px;
+  font-size: 18px;
+  padding: 40px;
   text-align: center;
-}
-
-#map_1 {
-  background-image: url('../images/map_1.png');
-}
-
-#map_2 {
-  background-image: url('../images/map_2.png');
 }
 
 .route-panel {
@@ -48,10 +34,16 @@
   border-radius: 5px;
   font-size: 20px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  height:400px;
 }
 
 .route-panel > .map {
     border-radius: 5px;
+}
+
+.route-panel > img {
+  width: 100%;
+  height: 80%;
 }
 
 .map-description {
@@ -59,6 +51,7 @@
   border-bottom-left-radius:  5px;
   padding: 15px;
   font-size: 16px;
+  height: 20%;
   border-bottom-right-radius: 5px;
 }
 

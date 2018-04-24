@@ -1,3 +1,0 @@
-TODO: move index.php to a separate directory
-TODO: <img alt=''>
-TODO: paths

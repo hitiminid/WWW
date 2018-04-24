@@ -8,7 +8,6 @@
     function generatePanoramaWithInnerImage($backgroundPath, $facePath, $name) {
       $altBackground = substr($backgroundPath, strrpos($backgroundPath, '/') + 1);
       $altFace       = substr($facePath, strrpos($facePath, '/') + 1);
-
       $content = "
       <div id='panorama'>
         <img src='$backgroundPath' alt='$altBackground'/>

@@ -21,6 +21,4 @@
       return $begin .= $end;
     }
   }
-
-
 ?>
