@@ -10,7 +10,7 @@
                      "../../css/panorama.css",
                      "../../css/hobbies_style.css",
                      "../../css/cycling_style.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, null);
 
   $contentGenerator = new CyclingGenerator;
   $mainPagePath     = "../index.php";

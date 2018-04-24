@@ -15,7 +15,7 @@
     }
 
     public function generateSemesterWithHeader($semester, $time, $lectures) {
-      return $this->utilityManager->appendElements("<div id='lectures'><h1 id='semester-number'>$semester</h1><h2 id='semester-time'>$time</h2>", $lectures, "</div>");
+      return $this->utilityManager->appendElements("<div id='lectures'>\n<h1 id='semester-number'>$semester</h1>\n<h2 id='semester-time'>$time</h2>", $lectures, "</div>");
     }
 
     public function generateLectures($lectures) {
@@ -58,7 +58,7 @@
             </div>
           </div>
         </div>
-      </div>";
+      </div>\n";
       return $lecture;
     }
   }

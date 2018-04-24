@@ -16,7 +16,7 @@
           <img src='$facePath' alt='$altFace'/>
           <h2>$name</h2>
         </div>
-      </div>";
+      </div>\n";
       return $content;
 
     }

@@ -4,7 +4,7 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
-  $head      = $pageGenerator->generateHead("Semestr V", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr V", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -25,7 +25,7 @@
   ));
 
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "2017/2018", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "Zima 2017/2018", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));

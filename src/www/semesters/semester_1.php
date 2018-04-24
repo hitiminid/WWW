@@ -5,7 +5,7 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/semesters_style.css");
-  $head      = $pageGenerator->generateHead("Semestr I", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr I", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -30,7 +30,7 @@
     $contentGenerator->generateLecture("Logika i Struktury Formalne", array("Tautologii", "Podstawowych kwantyfikatorów"), array("Struktur Formalnych", "Więcej nt. kwantyfikatorów"))
   ));
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr I", "2015/2016", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr I", "Zima 2015/2016", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));

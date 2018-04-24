@@ -7,7 +7,7 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
-  $head      = $pageGenerator->generateHead("Semestr II", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr II", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -25,7 +25,7 @@
     $contentGenerator->generateLecture("Problemy Prawne Informatyki", array("Podstawowych założeń dot. prawa autorskiego", "Podstaw prawa patentowego"), array("Więcej nt. licencji", "Więcej nt. prawa autorskiego"))
   ));
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr II", "2015/2016", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr II", "Lato 2015/2016", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));

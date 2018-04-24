@@ -6,7 +6,7 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
-  $head      = $pageGenerator->generateHead("Semestr IV", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr IV", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -27,7 +27,7 @@
     $contentGenerator->generateLecture("Podstawy Marketingu", array("Zasad kierowania firmą", "Działania rynku"), array("Podstaw ekonomii", "Podstaw marketingu")),
   ));
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr IV", "2016/2017", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr IV", "Lato 2016/2017", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));

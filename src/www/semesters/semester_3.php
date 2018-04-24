@@ -6,7 +6,7 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css","../../css/main_style.css","../../css/grid.css", "../../css/education.css", "../../css/education.css", "../../css/semesters_style.css");
-  $head      = $pageGenerator->generateHead("Semestr III", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr III", $cssStyles, null);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -24,7 +24,7 @@
     $contentGenerator->generateLecture("Metody Probablistyczne i Statystyka", array("Podstaw obliczania prawdopodobieństwa", "Kombinatoryki"), array("Grafy losowe", "Więcej nt. przestrzeni probablistycznych"))
   ));
 
-  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr II", "2015/2016", $semesters);
+  $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr III", "Zima 2016/2017", $semesters);
 
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));

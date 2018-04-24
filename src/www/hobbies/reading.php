@@ -9,7 +9,7 @@
                      "../../css/grid.css",
                      "../../css/panorama.css",
                      "../../css/reading_style.css");
-  $head      = $pageGenerator->generateHead("Moja Przygoda z Edukacją - Rower", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, null);
 
   $contentGenerator = new ReadingGenerator;
   $mainPagePath     = "../index.php";
