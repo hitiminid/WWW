@@ -24,9 +24,10 @@
     }
 
     function generateRoutePanel($mapFilePath, $routeDescription) {
+      $alt = substr($mapFilePath, strrpos($mapFilePath, '/') + 1);
       $content = "
       <div class='col-2 route-panel'>
-        <img src='$mapFilePath' />
+        <img src='$mapFilePath' alt='$alt'/>
         <div class='map-description'>
           $routeDescription
         </div>

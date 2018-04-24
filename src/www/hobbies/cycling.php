@@ -23,7 +23,7 @@
 
   $panels = array(
     $contentGenerator->generateRoutePanel("../../img/map_1.png", "Krótka lecz intensywna wycieczka, średnia prędkość 25km/h. Wspaniałe widoki i super wspomnienia."),
-    $contentGenerator->generateRoutePanel("../../img/map_1.png", "Trasa ta z pewnością była o wiele dłuższa niż zazwyczaj, jednakże średnia prędkość była żałosna.")
+    $contentGenerator->generateRoutePanel("../../img/map_2.png", "Trasa ta z pewnością była o wiele dłuższa niż zazwyczaj, jednakże średnia prędkość była żałosna.")
   );
 
   $mapSection = $contentGenerator->generateMapSection($panels);

@@ -10,11 +10,11 @@
       }
 
       function generateDescription($description) {
-        return "<div id='about-me'><p>$description</p></div>";
+        return "<div id='about-me'>\n<p>$description</p>\n</div>\n";
       }
 
       function generateTimeline($timelineElements) {
-        return $this->utilityManager->appendElements("<div class='timeline'>", $timelineElements, "</div>");
+        return $this->utilityManager->appendElements("<div class='timeline'>\n", $timelineElements, "</div>\n");
       }
 
       function generateTimelineElement($side, $semester, $link) {

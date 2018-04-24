@@ -54,8 +54,8 @@
         } else {
             $js = "<script type='text/javascript' src='$jsPaths'></script>\n";
         }
+        return $js;
       }
-      return $js;
     }
   }
 ?>
