@@ -33,8 +33,7 @@
       return $content;
     }
 
-    function generatePanel($description, $link, $buttonText)
-    {
+    function generatePanel($description, $link, $buttonText) {
         $content = "
         <div class='col-2 panel'>
           <p>$description</p>
