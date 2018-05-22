@@ -26,23 +26,6 @@
       margin-left: 5px; }
     #app .comment-field .comment-header .comment-date {
       opacity: 0.5; }
-    #app .comment-field .comment-header .stars-field .rating {
-      unicode-bidi: bidi-override;
-      direction: rtl;
-      text-align: center; }
-    #app .comment-field .comment-header .stars-field .rating > span {
-      display: inline-block;
-      position: relative;
-      width: 1.1em; }
-    #app .comment-field .comment-header .stars-field .rating > span:hover,
-    #app .comment-field .comment-header .stars-field .rating > span:hover ~ span {
-      color: transparent; }
-    #app .comment-field .comment-header .stars-field .rating > span:hover:before,
-    #app .comment-field .comment-header .stars-field .rating > span:hover ~ span:before {
-      content: "\2605";
-      position: absolute;
-      left: 0;
-      color: gold; }
   #app .comment-field .comment-body {
     background-color: #f1f1f1;
     padding: 10px; }
@@ -51,6 +34,8 @@
       padding: 0; }
   #app #create-comment-field {
     margin-top: 150px; }
+    #app #create-comment-field #comment-author-input-field {
+      width: 50%; }
     #app #create-comment-field .comment-input-field {
       width: 100%;
       height: 30px;
@@ -58,5 +43,11 @@
     #app #create-comment-field #comment-text-area {
       width: 100%;
       height: 150px;
-      background-color: red;
+      background-color: #f4f4f4;
       resize: none; }
+  #app .comment-input-header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between; }
