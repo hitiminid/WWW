@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moje przygody z edukacją</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./styles/grid.css">
+  <link rel="stylesheet" type="text/css" href="./styles/index_style.css">
+  <link rel="stylesheet" type="text/css" href="./styles/main_style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+
+
+  <div class="navigation">
+    <ul>
+      <li class="navigation-item navigation-left-item">
+        <a href="index.html"><img src='./images/logo.png' alt="logo"/></a>
+      </li>
+      <li id="hobby-link" class="navigation-item navigation-right-item">
+        <a href="./hobbies/hobbies.html">Hobby</a>
+      </li>
+      <li class="dropdown navigation-right-item">
+        <a href="./semesters/semesters.html" class="dropbtn">Semestr</a>
+        <div class="dropdown-content">
+          <a href="./semesters/semester_1.html">Semestr I</a>
+          <a href="./semesters/semester_2.html">Semestr II</a>
+          <a href="./semesters/semester_3.html">Semestr III</a>
+          <a href="./semesters/semester_4.html">Semestr IV</a>
+          <a href="./semesters/semester_5.html">Semestr V</a>
+          <a href="./semesters/semester_6.html">Semestr VI</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</header>
+
+<div id="main">
+  <div id="panorama">
+    <div id="person-panel">
+      <img src="./images/face.png" alt="face"/>
+      <h2>Piotr Kawa</h2>
+    </div>
+  </div>
+
+  <div id="about-me">
+    <p>
+      Jestem Piotrek. Mam 21 lat i jestem studentem Politechniki Wrocławskiej. Studiuję informatykę na wydziale Podstawowych Problemów Techniki. Na tej stronie znaleźć możesz informacje dotyczące zarówno mojej nauki jak i form spędzania przeze mnie czasu wolnego. Moim głównym obszarem zainteresowań informatycznych jest programowanie aplikacji mobilnych na systemy Android. Jednym z ulubionych hobby to słaba książka, słaby film.
+    </p>
+  </div>
+
+  <div class="row panels">
+
+    <div class="col-2 panel">
+      <p>
+        Znajdziesz tutaj informacje dotyczące kursów w których brałem udział
+        podczas mojej już 3-letniej nauki na Politechnice Wrocławskiej.
+      </p>
+      <a class="menu-button" href="./semesters/semesters.html">Uczelnia</a>
+    </div>
+    <div class="col-2 panel">
+      <p>
+        Dzięki zakładce hobby dowiesz się trochę o moich
+        zainteresowaniach, które są mniej lub bardziej związane z nauką.
+      </p>
+      <!-- <button href="./hobbies/hobbies.html" class="menu-button"> -->
+        <a class="menu-button" href="./hobbies/hobbies.html">Hobby</a>
+      <!-- </button> -->
+    </div>
+  </div>
+</div>
+<footer></footer>
+</body>
+</html>

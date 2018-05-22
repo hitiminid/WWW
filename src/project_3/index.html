@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main_style.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <title>Example</title>
+</head>
+<body>
+    <div id="app">
+        <div class="comment-field">
+            <div class="comment-header">
+                <div class="children">
+                    <div class="image-panel">
+                        <img src="./img/avatar_placeholder.png">
+                    </div>
+                    <div class="comment-info">
+                        <h6 class="comment-author">Hello World!</h6>
+                        <h6 class="comment-date">14.12.1996</h6>
+                    </div>
+                    <div class="stars-field">
+
+                        <div class="rating">
+                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-body"> 
+                <p class="comment-text">
+                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                </p>
+            </div>
+        </div>
+
+
+        <div id="create-comment-field">
+            <form action="/action_page.php">
+                <div>
+                    <input class="comment-input-field" type="text" name="lastname" placeholder="Podpis">
+                </div>
+                <div>
+                    <input class="comment-input-field" type="text" name="firstname" placeholder="Tytuł Komentarza">
+                </div>
+                <div>
+                    <textarea id="comment-text-area"></textarea>            
+                </div>
+                <div>
+                    <input type="submit" value="Submit">
+                </div>
+            </form> 
+                  
+        </div>
+    </div>
+</body>
+</html>

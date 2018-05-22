@@ -1,0 +1,82 @@
+#panorama-panel {
+  font-size: 45px;
+  top: 90px;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+#panorama-panel > img {
+  border-radius: 50%;
+  width:  200px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+#about-me {
+  width: 100%;
+  font-size: 18px;
+  margin:auto;
+  text-align:justify;
+  background: #fcfcfc;
+  padding: 30px;
+}
+.panels {
+  font-size: 18px;
+  background: #fcfcfc;
+  padding-left:   15px;
+  padding-right:  15px;
+  padding-bottom: 30px;
+}
+.menu-button {
+  background: transparent;
+  border:solid 3px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 25px;
+  text-decoration: none;
+  color: #333333;
+  border-color: #333333;
+  width: 200px;
+  height: 80px;
+  font-size: 25px;
+}
+.menu-button:hover {
+  border-color: transparent;
+  color: #f1f1f1;
+  background: #333333;
+}
+
+.panel {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 7px;
+  background: #dbd9d9;
+  padding-left:   20px;
+  padding-right:  20px;
+  padding-top:    30px;
+  padding-bottom: 30px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 640px) {
+    #main {
+      width:90%;
+    }
+    #panorama {
+      height:300px;
+    }
+    #panorama-panel {
+      height: 200px;
+      top: 50px;
+      font-size: 24px;
+    }
+    #panorama-panel > img {
+      border-radius: 50%;
+      width:  100px;
+      height: 100px;
+    }
+    .panel {
+      margin-top:15px;
+    }
+}
