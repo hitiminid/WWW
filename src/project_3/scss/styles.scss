@@ -1,11 +1,48 @@
 #app {
     
     $inner-header-height: 30px;
-
     width: 500px;
     margin: auto;
 
-    .comment-field {
+
+    .left-element {
+        float: left;  
+    }
+
+    .right-element {
+        float: right;  
+    }
+
+    #comment-section {
+              
+        #comment-section-header {
+            height: 52px;
+            color: #f1f1f1;
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        select {
+            background-color: #EBEBEB;
+            border-radius: 15px;
+            // padding: 10px;
+        }
+
+
+        p {
+            margin-left: 10px;
+        }
+        
+        select { 
+            height: 26px;    
+            margin-top: 13px;
+            margin-right: 10px;
+        }
+    }
+
+    .comment {
+        
+        margin-bottom: 25px;
         
         .comment-header {
             display: flex;
@@ -13,17 +50,18 @@
             height: 50px;
             align-items: center;
             justify-content: space-between;
-            background: #949596;
+            background: #DBDBDB;
             padding: 10px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
 
             .children {
                 display: flex;
             }
 
+            // ????
             .child {
                 font-size: 30px;
-                background: #ccc;
-                color: #000;
             }
 
             img {
@@ -51,8 +89,10 @@
         }
 
         .comment-body {
-            background-color: #f1f1f1;
+            background-color: #fff;
             padding:10px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
 
             .comment-text {
                 margin: 0;
@@ -90,32 +130,5 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    // .stars-field {
-    //     .rating {
-    //         unicode-bidi: bidi-override;
-    //         direction: rtl;
-    //         text-align: center;
-    //     }
-
-    //     .rating > span {
-    //         display: inline-block;
-    //         position: relative;
-    //         width: 1.1em;
-    //     }
-
-    //     .rating > span:hover,
-    //     .rating > span:hover ~ span {
-    //         color: transparent;
-    //     }
-
-    //     .rating > span:hover:before,
-    //     .rating > span:hover ~ span:before {
-    //         content: "\2605";
-    //         position: absolute;
-    //         left: 0; 
-    //         color: gold;
-    //     }                    
-    // }
 }
 

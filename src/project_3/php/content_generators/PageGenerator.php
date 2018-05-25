@@ -18,6 +18,7 @@
       $head .= $this->generateTitle($title);
       $head .= $this->addCSSFiles($cssPaths);
       $head .= $this->addJSFiles($jsPaths);
+      $head .= "<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>";
       $head .= "<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>\n";
       return $head .= "</head>\n";
     }

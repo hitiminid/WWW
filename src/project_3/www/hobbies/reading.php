@@ -1,6 +1,6 @@
 <?php
-  require_once(__DIR__."../../../php/PageGenerator.php");
-  require_once(__DIR__."../../../php/ReadingGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/ReadingGenerator.php");
 
 
   $pageGenerator = new PageGenerator;

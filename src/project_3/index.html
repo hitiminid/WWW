@@ -11,42 +11,49 @@
 </head>
 <body>
     <div style="margin-top:100px;">
-            <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-            $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-            </p>
+        <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+        $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
     </div>
     <div id="app">
-        <div class="comment-field">
-            <div class="comment-header">
-                <div class="children">
-                    <div class="image-panel">
-                        <img src="./img/avatar_placeholder.png">
-                    </div>
-                    <div class="comment-info">
-                        <h6 class="comment-author">Hello World!</h6>
-                        <h6 class="comment-date">14.12.1996</h6>
-                    </div>
-                    <div>
-                        +1
-                    </div>
-                    <!-- <div class="stars-field">
-                        <div class="rating">
-                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                        </div>
-                    </div> -->
+        <div id="comment-section">
+            <div id="comment-section-header">
+                <div class="left-element">
+                    <p>Comments:</p>
+                </div>
+                <div class="right-element">
+                    <select id="comments-sort-type">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
                 </div>
             </div>
-            <div class="comment-body"> 
-                <p class="comment-text">
-                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
-                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
-                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
-                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
-                    Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
-                </p>
+
+            <div class="comment">
+                <div class="comment-header">
+                    <div class="children">
+                        <div class="image-panel">
+                            <img src="./img/avatar_placeholder.png">
+                        </div>
+                        <div class="comment-info">
+                            <h6 class="comment-author">Hello World!</h6>
+                            <h6 class="comment-date">14.12.1996</h6>
+                        </div>
+                        <div class="votes right-element">+1</div>
+                    </div>
+                </div>
+                <div class="comment-body"> 
+                    <p class="comment-text">
+                        Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                        Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                        Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                        Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                        Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, Lorem Ipsum, 
+                    </p>
+                </div>
             </div>
         </div>
-
         <div id="create-comment-field">
             <form action="/action_page.php">
                 <div>
@@ -54,7 +61,7 @@
                     <button>+</button>
                     <button>-</button>
                     <!--
-                     <div class="rating">
+                        <div class="rating">
                         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                     </div> 
                     --> 
@@ -71,8 +78,8 @@
                     <input type="submit" value="Submit"> <!-- float: right; -->
                 </div>
             </form>         
-        </div>
+        </div>            
     </div>
-    
-</body>
+</body> <!-- rename classes --->
+
 </html>

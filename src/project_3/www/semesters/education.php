@@ -1,6 +1,6 @@
 <?php
-  require_once(__DIR__."/../../php/EducationGenerator.php");
-  require_once(__DIR__."/../../php/PageGenerator.php");
+  require_once(__DIR__."/../../php/content_generators/EducationGenerator.php");
+  require_once(__DIR__."/../../php/content_generators/PageGenerator.php");
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
                      "../../css/grid.css",

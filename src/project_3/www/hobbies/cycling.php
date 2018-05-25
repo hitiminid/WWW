@@ -1,6 +1,6 @@
 <?php
-  require_once(__DIR__."../../../php/PageGenerator.php");
-  require_once(__DIR__."../../../php/CyclingGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/CyclingGenerator.php");
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
