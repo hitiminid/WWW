@@ -13,6 +13,8 @@
   #app #comment-section select {
     background-color: #EBEBEB;
     border-radius: 15px; }
+  #app #comment-section select:focus {
+    outline: none; }
   #app #comment-section p {
     margin-left: 10px; }
   #app #comment-section select {
@@ -61,12 +63,20 @@
     #app #create-comment-field .comment-input-field {
       width: 100%;
       height: 30px;
+      border-radius: 10px;
+      border: none;
+      padding-left: 5px;
       margin-bottom: 20px; }
+    #app #create-comment-field .comment-input-field:focus {
+      outline: none; }
     #app #create-comment-field #comment-text-area {
       width: 100%;
       height: 150px;
       background-color: #f4f4f4;
-      resize: none; }
+      resize: none;
+      padding: 10px; }
+    #app #create-comment-field #captcha-question {
+      width: 150px; }
   #app .comment-input-header {
     display: flex;
     width: 100%;

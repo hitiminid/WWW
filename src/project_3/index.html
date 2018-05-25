@@ -54,27 +54,24 @@
                 </div>
             </div>
         </div>
+
         <div id="create-comment-field">
             <form action="/action_page.php">
                 <div>
                     <input id="comment-author-input-field" class="comment-input-field" type="text" name="lastname" placeholder="Podpis">
                     <button>+</button>
                     <button>-</button>
-                    <!--
-                        <div class="rating">
-                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                    </div> 
-                    --> 
                 </div>
                 <div>
                     <input class="comment-input-field" type="text" name="firstname" placeholder="Tytuł Komentarza">
                 </div>
                 <div>
-                    <textarea id="comment-text-area"></textarea>            
+                    <textarea id="comment-text-area" class="comment-input-field"></textarea>            
                 </div>
-                <div>
-                    <p>2+2 = </p>
-                    <input type="text" value="Captcha">
+                <div class="row">
+
+                    <p id="captcha-question">2+2 = </p>
+                    <input id="captcha-answer" type="text" value="Captcha">
                     <input type="submit" value="Submit"> <!-- float: right; -->
                 </div>
             </form>         
