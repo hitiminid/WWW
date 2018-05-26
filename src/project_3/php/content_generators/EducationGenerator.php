@@ -1,4 +1,4 @@
-<?php
+w<?php
   require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
 
   class EducationGenerator extends BaseGenerator
