@@ -56,5 +56,9 @@
         public function generateCommentsSectionBody($comments) {
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $comments, "</div>");
         }
+
+        public function generateCaptcha() { 
+            
+        }
     }
 ?>
