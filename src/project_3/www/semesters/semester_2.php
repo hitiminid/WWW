@@ -22,7 +22,7 @@
   $semesters = $contentGenerator->generateLectures(array(
     $contentGenerator->generateLecture("Analiza Matematyczna II", array("\( \int_{1}^{\infty} \dfrac{dx}{x^p} \lt \infty \leftrightarrow p \gt 1 \)", "Podstawowych metryk"), array("Liczenia całek potrójnych", "Nowych metryk")),
     $contentGenerator->generateLecture("Algebra Abstrakcyjna i Kodowanie", array("Operacji w ciałach", "Kodowania Huffmana"), array("Więcej nt. operacji w grupach i pierścieniach", "Dodatkowych algorytmów kodowania")),
-    $contentGenerator->generateLecture("Matematyka Dyskretna", array("Funkcji tworzące", "Podstaw grafów"), array("Więcej nt. permutacji", "Multizbiorów")),
+    $contentGenerator->generateLecture("Matematyka Dyskretna", array("\( G(x) = \sum_{n=0}^{\infty} g_{n} x^{n}\)", "Podstaw grafów"), array("Więcej nt. permutacji", "Multizbiorów")),
     $contentGenerator->generateLecture("Problemy Prawne Informatyki", array("Podstawowych założeń dot. prawa autorskiego", "Podstaw prawa patentowego"), array("Więcej nt. licencji", "Więcej nt. prawa autorskiego"))
   ));
 

@@ -21,7 +21,7 @@
     $contentGenerator->generateLecture("Języki i Paradygmaty Programowania", array("Podstawy języka Erlang", "Podstawy języka Prolog"), array("Poszerzyć wiedzę na temat jezyków funkcyjnych", "Nauczyć języka Elixir")),
     $contentGenerator->generateLecture("Technologie Sieciowe", array("Pingować chińskie strony internetowe", "Podstawowych zasad działania HTTP"), array("Dogłębnie zgłębić protokół HTTP", "Obsługa PUTTY")),
     $contentGenerator->generateLecture("Algorytmy i Struktury Danych", array("Podstawowych algorytmów sortowania", "Podstawowych struktur danych"), array("Wyliczania złożoności obliczeniowej", "Algorytmów najkrótszej ścieżki")),
-    $contentGenerator->generateLecture("Wprowadzenie do Teorii Grafów", array("Podstawowych informacji nt. grafów", "Różnic pomiędzy różnymi typami grafów"), array("Zastosowania grafów w problemach NP", "Algorytmów przeszukiwania grafów")),
+    $contentGenerator->generateLecture("Wprowadzenie do Teorii Grafów", array("\(\sum_{v \in V} deg v = 2|E| \)", "Różnic pomiędzy różnymi typami grafów"), array("Zastosowania grafów w problemach NP", "Algorytmów przeszukiwania grafów")),
     $contentGenerator->generateLecture("Algorytmy Metaheurystyczne", array("Algorytmów genetycznych", "Algorytmu wyżarzania"), array("Wielowątkowych algorytmów", "Innych algorytmów metaheurystycznych")),
     $contentGenerator->generateLecture("Komunikacja Społeczna", array("Roli mediów w społeczeństwie", "Przyczyn zmian społecznych"), array("Socjologii", "Dziennikarstwa")),
     $contentGenerator->generateLecture("Podstawy Marketingu", array("Zasad kierowania firmą", "Działania rynku"), array("Podstaw ekonomii", "Podstaw marketingu")),

@@ -23,7 +23,7 @@
     $contentGenerator->generateLecture("Technologia Programowania", array("Najważniejszych wzorców projektowych", "Język Java"), array("Dokładniej poznać wzorce projektowe", "Wielowątkowość w Javie")),
     $contentGenerator->generateLecture("Bazy Danych i Systemy Informacyjne", array("Algebry Relacji", "Podstaw SQL"), array("Poszerzyć wiedzę dot. SQL", "Bazy danych NoSQL")),
     $contentGenerator->generateLecture("Architektura Komputerów i Systemy Operacyjne", array("Programować w Assembly", "Działania systemu Linux"), array("Więcej nt. programowania w Assembly", "Napisać własny OS")),
-    $contentGenerator->generateLecture("Metody Probablistyczne i Statystyka", array("Podstaw obliczania prawdopodobieństwa", "Kombinatoryki"), array("Grafy losowe", "Więcej nt. przestrzeni probablistycznych"))
+    $contentGenerator->generateLecture("Metody Probablistyczne i Statystyka", array("\( P(A) \in \langle0;1\\rangle \)", "Kombinatoryki"), array("Grafy losowe", "Więcej nt. przestrzeni probablistycznych"))
   ));
 
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr III", "Zima 2016/2017", $semesters);
