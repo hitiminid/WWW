@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database name="portfolio" defaultIdMethod="native" namespace="Portfolio">
+ 
+  <table name="comment" phpName="Comment">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="author_name"   type="varchar" size="64"/>
+    <column name="author_email"  type="varchar" size="64"/>
+    <column name="comment_title" type="varchar" size="128" required="true"/>
+    <column name="comment_text"  type="varchar" size="1024" required="true"/>
+    <column name="avatar_link"   type="varchar" size="1024"/>
+    <column name="comment_date"  type="timestamp" />
+    <column name="page_id"       type="integer" required="true"/>
+  <!-- <foreign-key foreignTable="page">
+  <reference local="page_id" foreign="id"/>
+  </foreign-key> -->
+  </table>
+
+  <!-- <table name="page" phpName="CommentPage"> -->
+    <!-- <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/> -->
+  <!-- </table> -->
+</database>
+
+
+
+<!-- 
  <table name="hobby" phpName="Hobby">
    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
    <column name="title" type="varchar" size="128" required="true" />
@@ -41,6 +64,4 @@
    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
    <column name="author" type="varchar" size="256" required="true" />
    <column name="comment" type="varchar" size="1024" required="true" />
- </table>
-
-</database>
+ </table>-->
