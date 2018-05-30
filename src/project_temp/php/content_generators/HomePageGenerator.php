@@ -12,7 +12,7 @@
       <div id='panorama'>
         <img src='$backgroundPath' alt='$altBackground'/>
         <div id='panorama-panel'>
-          <img src='$facePath' alt='$altFace'/>
+          <img id='face-image' src='$facePath' alt='$altFace'/>
           <h2>$name</h2>
         </div>
       </div>\n";
