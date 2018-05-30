@@ -1,5 +1,5 @@
 <?php
-  require_once('./pages/HomePage.php');
+/*  require_once('./pages/HomePage.php');
   require_once('./pages/SemesterPage.php');
   require_once('./pages/HobbyPage.php');
 
@@ -17,4 +17,5 @@
       header("Location: /");
       die();
     }
-  }
+  } */
+?>

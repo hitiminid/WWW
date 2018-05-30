@@ -1,7 +1,7 @@
 propel:
   database:
       connections:
-          portfolio:
+          my_page:
               adapter: pgsql
               classname: Propel\Runtime\Connection\ConnectionWrapper
               dsn: pgsql:host=db;dbname=postgres
@@ -9,10 +9,10 @@ propel:
               password: postgres 
               attributes:
   runtime:
-      defaultConnection: portfolio
+      defaultConnection: my_page
       connections:
-          - portfolio
+          - my_page
   generator:
-      defaultConnection: portfolio
+      defaultConnection: my_page
       connections:
-          - portfolio
+          - my_page
