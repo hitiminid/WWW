@@ -45,7 +45,7 @@
       }
     }
 
-    private function addJSFiles($jsPaths){
+    public function addJSFiles($jsPaths){
       if (!empty($jsPaths) || !is_null($jsPaths)) {
         $js = "";
         if (is_array($jsPaths)) {

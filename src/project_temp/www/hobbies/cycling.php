@@ -3,6 +3,8 @@
   require_once(__DIR__."../../../php/content_generators/CyclingGenerator.php");
 
   $pageGenerator = new PageGenerator;
+  // $jsFiles   = array("../../js/loadImage.js",
+  //                    "../../js/cycling.js");
   $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",
                      "../../css/grid.css",
@@ -28,6 +30,10 @@
 
   $mapSection = $contentGenerator->generateMapSection($panels);
   $main   = $contentGenerator->generateMain(array($panorama, $description, $mapSection));
+  
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  echo $pageGenerator-> generatePageStructure(array($head, $body));
+
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImage.js",
+                                                  "../../js/cycling.js"));
+  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

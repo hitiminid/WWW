@@ -47,7 +47,7 @@
       $alt = substr($title, strrpos($title, '/'));
       $content = "
       <div id='panorama'>
-        <img src='$imagePath' alt='$alt' />
+        <img id='panorama-image'src='$imagePath' alt='$alt' />
         <div id='panorama-panel'>
           <h2>$title</h2>
         </div>
