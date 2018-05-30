@@ -3,8 +3,6 @@
   require_once(__DIR__."../../../php/content_generators/CyclingGenerator.php");
 
   $pageGenerator = new PageGenerator;
-  // $jsFiles   = array("../../js/loadImage.js",
-  //                    "../../js/cycling.js");
   $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",
                      "../../css/grid.css",
@@ -20,12 +18,12 @@
   $imagePath        = "../../img/logo.png";
 
   $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
-  $panorama = $contentGenerator->generatePanorama("Rower", "../../img/cycling_bg.png");
+  $panorama = $contentGenerator->generatePanorama("Rower", "../../img/cycling_bg_low_res.png");
   $description = $contentGenerator->generateDescription("Rower od zawsze był moją pasją. Choć studia to okres intensywnej nauki to zawsze jestem w stanie wygospodarować odrobinę czasu na ruch na świeżym powietrzu. Mimo, iż mam swoje ulubione i dobrze znane trasy rowerowe, to największą przyjemność sprawia odkrywanie nowych miejsc.");
 
   $panels = array(
-    $contentGenerator->generateRoutePanel("../../img/map_1.png", "Krótka lecz intensywna wycieczka, średnia prędkość 25km/h. Wspaniałe widoki i super wspomnienia."),
-    $contentGenerator->generateRoutePanel("../../img/map_2.png", "Trasa ta z pewnością była o wiele dłuższa niż zazwyczaj, jednakże średnia prędkość była żałosna.")
+    $contentGenerator->generateRoutePanel("../../img/map_1_low_res.png", "Krótka lecz intensywna wycieczka, średnia prędkość 25km/h. Wspaniałe widoki i super wspomnienia."),
+    $contentGenerator->generateRoutePanel("../../img/map_2_low_res.png", "Trasa ta z pewnością była o wiele dłuższa niż zazwyczaj, jednakże średnia prędkość była żałosna.")
   );
 
   $mapSection = $contentGenerator->generateMapSection($panels);
@@ -33,7 +31,7 @@
   
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImage.js",
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js",
                                                   "../../js/cycling.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

@@ -3,19 +3,20 @@
   require_once(__DIR__."/../../php/content_generators/PageGenerator.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css",
+  $cssStyles = array("../../css/reset.css",
                      "../../css/grid.css",
                      "../../css/main_style.css",
                      "../../css/panorama.css",
                      "../../css/hobbies.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, null);
 
+  
   $contentGenerator = new HobbyGenerator;
   $mainPagePath     = "../index.php";
   $semestersPrefix  = "../../www/semesters/";
   $hobbyPath        = "hobbies.php";
   $imagePath = "../../img/logo.png";
-  $panorama   = $contentGenerator->generatePanorama("Moje hobby", "../../img/hobbies.png");
+  $panorama   = $contentGenerator->generatePanorama("Moje hobby", "../../img/hobbies_low_res.png");
   $hobbiesRow = array(
     $contentGenerator->renderHobbyPanel("Czytanie", "reading.php", "../../img/reading.png"),
     $contentGenerator->renderHobbyPanel("Rower", "cycling.php", "../../img/cycling.png"));
@@ -28,5 +29,8 @@
   $main   = $contentGenerator->generateMain(array($panorama, $description, $hobbiesMenu));
 
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  echo $pageGenerator -> generatePageStructure(array($head, $body));
+
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js",
+                                                  "../../js/hobbies.js"));
+  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>
