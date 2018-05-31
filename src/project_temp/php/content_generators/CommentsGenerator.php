@@ -49,9 +49,10 @@
                         </div>";
             $body = "<div class='comment-body'><p class='comment-text'>$text</p></div>";
             $commentContent = $header . $body;
-            $comment = "<div class='comment'>$commentContent</div>"
+            $comment = "<div class='comment'>$commentContent</div>";
             return $comment;
         }
+        //todo: WTF? 
 
         public function generateCommentsSectionBody($comments) {
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $comments, "</div>");

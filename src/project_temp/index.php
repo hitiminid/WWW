@@ -1,9 +1,11 @@
+<?php include 'php/database_utilities/submit_comment.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mockup.css">
     <link rel="stylesheet" href="css/main_style.css">
     <link rel="stylesheet" href="css/grid.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
@@ -57,14 +59,15 @@
         </div>
 
         <div id="create-comment-field">
-            <form action="submit_comment.php" method="POST">
+            <!-- <form action="php/database_utilities/submit_comment.php" method="POST"> -->
+            <form action="#" method="POST">
                 <div>
-                    <input id="comment-author-input-field" class="comment-input-field" type="text" name="displayName" placeholder="Podpis">
-                    <button>+</button>
-                    <button>-</button>
+                    <input id="comment-author-input-field" class="comment-input-field" type="text" name="commentAuthor" placeholder="Podpis">
+                    <!-- <button>+</button>
+                    <button>-</button> -->
                 </div>
                 <div>
-                    <input class="comment-input-field" type="text" name="commentName" placeholder="Tytuł Komentarza">
+                    <input class="comment-input-field" type="text" name="commentTitle" placeholder="Tytuł Komentarza">
                 </div>
                 <div>
                     <textarea id="comment-text-area"  name="commentText" class="comment-input-field"></textarea>            
@@ -72,11 +75,12 @@
                 <div class="row">
                     <p id="captcha-question">2+2 = </p>
                     <input id="captcha-answer" type="text" value="Captcha" name="captcha">
-                    <input type="submit" value="Submit"> <!-- float: right; -->
+                    <input id="createComment" name="createComment" type="submit" value="Submit"> <!-- float: right; -->
                 </div>
             </form>         
         </div>            
     </div>
-</body> <!-- rename classes --->
+</body> 
+<!-- <script src='js/formValidatorUtility.js'></script> -->
 
 </html>
