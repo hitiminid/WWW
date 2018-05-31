@@ -1,12 +1,15 @@
-var myForm  = document.querySelector('#createComment');
-var myInput = document.querySelector('#comment-text-area');
+setCustomRequiredFormMessage = (elementID, customMessage) => {
+    let element = document.getElementById(elementID);
+    element.oninvalid = function(e) {
+        e.target.setCustomValidity("");
+        if (!e.target.validity.valid) {
+            e.target.setCustomValidity(customMessage);
+        }
+    };
+    element.oninput = function(e) {
+        e.target.setCustomValidity("");
+    };
+}
 
-// console.log(213)
-
-myForm.addEventListener('submit', function(pEvent) {
-    if(myInput.value === '') {
-        pEvent.preventDefault(); //Prevents the form to be sent
-        alert('Ho! Stop!');
-        //Do whatever you want
-    }
-});
+setCustomRequiredFormMessage("comment-text-area", "Uzupełnij proszę treść komentarza!");
+setCustomRequiredFormMessage("captcha-answer", "Udowodnij, że nie jesteś robotem!");

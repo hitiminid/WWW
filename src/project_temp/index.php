@@ -63,24 +63,38 @@
             <form action="#" method="POST">
                 <div>
                     <input id="comment-author-input-field" class="comment-input-field" type="text" name="commentAuthor" placeholder="Podpis">
+                    <!-- TODO: mail! -->
                     <!-- <button>+</button>
                     <button>-</button> -->
                 </div>
                 <div>
-                    <input class="comment-input-field" type="text" name="commentTitle" placeholder="Tytuł Komentarza">
+                    <input 
+                        class="comment-input-field" type="text"  name="commentTitle" placeholder="Tytuł Komentarza">
                 </div>
                 <div>
-                    <textarea id="comment-text-area"  name="commentText" class="comment-input-field"></textarea>            
+                    <textarea 
+                        id="comment-text-area"  
+                        name="commentText" 
+                        required
+                        class="comment-input-field"></textarea>            
                 </div>
                 <div class="row">
                     <p id="captcha-question">2+2 = </p>
-                    <input id="captcha-answer" type="text" value="Captcha" name="captcha">
+                    <input 
+                        id="captcha-answer" 
+                        type="text" 
+                        required 
+                        name="captcha"
+                        >
                     <input id="createComment" name="createComment" type="submit" value="Submit"> <!-- float: right; -->
                 </div>
             </form>         
         </div>            
     </div>
 </body> 
-<!-- <script src='js/formValidatorUtility.js'></script> -->
+<script src='js/formValidatorUtility.js'></script>
+<script>
+    
 
+</script>
 </html>
