@@ -1,48 +1,39 @@
 #lectures {
-  padding-left:  30px;
+  padding-left: 30px;
   padding-right: 30px;
-  text-align:    center;
-  padding-top:   30px;
-}
-
-#lectures > h1 {
-  font-size: 60px;
-}
-
-#lectures > h2 {
-  font-size:     30px;
-  margin-bottom: 35px;
-}
+  text-align: center;
+  padding-top: 30px; }
+  #lectures > h1 {
+    font-size: 60px; }
+  #lectures > h2 {
+    font-size: 30px;
+    margin-bottom: 35px; }
 
 #main {
-  padding-bottom:30px;
-}
+  padding-bottom: 30px; }
 
 #semester-number {
   font-weight: bold;
   margin-bottom: 30px;
-  margin-top: 30px;
-}
+  margin-top: 30px; }
 
 .lecture {
   background: #4f535e;
   border-radius: 7px;
-  padding:0
-}
+  padding: 0; }
 
 .lecture-header {
-  background:  #7b7b7b;
-  width:100%;
+  background: #7b7b7b;
+  width: 100%;
   font-size: 24px;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
-  margin:0;
+  margin: 0;
   font-weight: bold;
-  text-align:center;
-  padding-top:    25px;
+  text-align: center;
+  padding-top: 25px;
   padding-bottom: 25px;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px; }
 
 .faculty {
   display: flex;
@@ -50,95 +41,75 @@
   align-items: center;
   background: #f0f0f0;
   flex-direction: column;
-  border-radius: 7px;
-}
+  border-radius: 7px; }
 
 .faculty-content {
-  width: 100%;
-}
+  width: 100%; }
 
 .faculty-header {
   font-size: 24px;
-  margin-top: -3px;
   font-weight: bold;
   text-align: center;
   background: #d1d1d1;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
-  padding-top:    30px;
+  padding-top: 30px;
   padding-bottom: 30px;
-  width: 100%;
-}
+  width: 100%; }
 
 .list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
-    font-size: 17px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  flex-direction: column;
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .list li {
+    padding-bottom: 4px; }
 
 button {
-    width:  150px;
-    height: 50px;
-    border: 2px solid;
-    border-color: #333333;
-    background:   transparent;
-}
-
-button:hover {
+  width: 150px;
+  height: 50px;
+  border: 2px solid;
+  border-color: #333333;
+  background: transparent; }
+  button:hover {
     background: #333333;
-    color: white;
-}
+    color: white; }
 
 .lecture-content {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  margin-bottom:30px;
-}
+  margin-bottom: 30px; }
 
 footer {
-  height: 100px;
-}
+  height: 100px; }
 
-@media only screen and (max-width:1300px) {
+@media only screen and (max-width: 1300px) {
   #person-panel {
-    padding-top:0px;
-  }
+    padding-top: 0px; }
   #main {
-    width: 80%;
-  }
+    width: 80%; }
   .lecture h3 {
-    font-size:20px
-  }
-}
+    font-size: 20px; } }
+
 @media only screen and (max-width: 900px) {
   #main {
-    width: 90%;
-  }
+    width: 90%; }
   .lecture > h2 {
-    font-size:25px
-  }
+    font-size: 25px; }
   .lecture h3 {
-    font-size:25px
-  }
+    font-size: 25px; }
   .faculty {
-    margin-top: 15px;
-  }
-
+    margin-top: 15px; }
   .row {
-      flex-direction: column;
-  }
+    flex-direction: column; }
   header {
-    width: 90%;
-  }
+    width: 90%; }
   #main {
-    width:90%;
-  }
+    width: 90%; }
   #person-panel {
-    width: 70%;
-  }
-}
+    width: 70%; } }

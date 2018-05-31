@@ -1,6 +1,6 @@
 <?php 
-// https://stackoverflow.com/questions/13447554/how-to-get-input-field-value-using-php
     require 'CommentValidator.php';
+    require 'DebugUtilities.php';
     
     if(isset($_POST['createComment'])){ //check if form was submitted
         $author = $_POST['commentAuthor'];

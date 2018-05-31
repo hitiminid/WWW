@@ -1,4 +1,10 @@
-<?php include 'php/database_utilities/submit_comment.php';?>
+<?php 
+
+require_once(__DIR__."/php/content_generators/PageGenerator.php");
+require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +23,14 @@
         $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
     </div>
     <div id="app">
-        <div id="comment-section">
+        <?php 
+        
+            $commentsGenerator = new CommentsGenerator;
+            echo $commentsGenerator->generateCommentsSectionHeader();
+        
+        
+        ?>
+        <!-- <div id="comment-section">
             <div id="comment-section-header">
                 <div class="left-element">
                     <p>Comments:</p>
@@ -56,11 +69,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> -->
         <div id="create-comment-field">
             <!-- <form action="php/database_utilities/submit_comment.php" method="POST"> -->
-            <form action="#" method="POST">
+            <form action="" method="POST">
                 <div>
                     <input id="comment-author-input-field" class="comment-input-field" type="text" name="commentAuthor" placeholder="Podpis">
                     <!-- TODO: mail! -->
@@ -93,8 +105,4 @@
     </div>
 </body> 
 <script src='js/formValidatorUtility.js'></script>
-<script>
-    
-
-</script>
 </html>
