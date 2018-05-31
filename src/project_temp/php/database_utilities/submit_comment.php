@@ -3,6 +3,8 @@
     require 'DebugUtilities.php';
     
     if(isset($_POST['createComment'])){ //check if form was submitted
+        
+    
         $author = $_POST['commentAuthor'];
         $title = $_POST['commentTitle'];
         $text = $_POST['commentText'];
@@ -15,8 +17,12 @@
         $textValid    = $commentValidator->validateText($text);
         $captchaValid = $commentValidator->validateCaptcha($captcha);
 
-        if ($authorValid && $titleValid && $textValid && $captchaValid) {
+        if ($authorValid && $titleValid && $textValid && $captchaValid) {    
             //TODO: send data to DB
+            $commentsUtility = new CommentsUtility();
+            $pageId = 1;
+            $commentsUtility->saveComment($author, $title, $text, $pageId);
+            
         } 
     } 
 ?>

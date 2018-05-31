@@ -26,8 +26,8 @@ require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
         <?php 
         
             $commentsGenerator = new CommentsGenerator;
-            echo $commentsGenerator->generateCommentsSectionHeader();
-        
+            // echo $commentsGenerator->generateCommentsSectionHeader();
+            echo gmdate('Y-m-d h:i:s \G\M\T', time());
         
         ?>
         <!-- <div id="comment-section">

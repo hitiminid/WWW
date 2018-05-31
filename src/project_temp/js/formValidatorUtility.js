@@ -11,5 +11,5 @@ setCustomRequiredFormMessage = (elementID, customMessage) => {
     };
 }
 
-setCustomRequiredFormMessage("comment-text-area", "Uzupełnij proszę treść komentarza!");
+setCustomRequiredFormMessage("comment-text-area", "Uzupełnij treść komentarza!");
 setCustomRequiredFormMessage("captcha-answer", "Udowodnij, że nie jesteś robotem!");

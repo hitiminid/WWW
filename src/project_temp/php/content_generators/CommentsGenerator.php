@@ -31,6 +31,18 @@
             return $content;
         }
 
+        public function generateCommentsSectionBody(/*objects' array*/$comments) {
+            $generatedComments = "";
+            foreach ($comments as $comment) {
+                $generatedComments .= $this->generateComment(
+                                        $comment->getAuthor(),
+                                        $comment->getTitle(), 
+                                        $comment->getText(), 
+                                        $comment->getPageId());
+            }
+            return $this->utilityManager->appendElements("<div id='comment-section-body'>", $generatedComments, "</div>");
+        }
+
         public function generateComment($user, $title, $text, $avatar, $date, $votes) {
             if ($avatar == NULL) {
                 $avatar = "./img/avatar_placeholder.png";
@@ -51,11 +63,6 @@
             $commentContent = $header . $body;
             $comment = "<div class='comment'>$commentContent</div>";
             return $comment;
-        }
-        //todo: WTF? 
-
-        public function generateCommentsSectionBody($comments) {
-            return $this->utilityManager->appendElements("<div id='comment-section-body'>", $comments, "</div>");
         }
 
         public function generateCaptcha() { 
