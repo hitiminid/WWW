@@ -1,6 +1,7 @@
 <?php
   require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
   require_once(__DIR__."../../../php/content_generators/SemestersGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/CommentsGenerator.php");
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
@@ -34,7 +35,9 @@
 
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr I", "Zima 2015/2016", $semesters);
 
+  $comments = (new CommentsGenerator())->generateCommentsSection(1);
+
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>

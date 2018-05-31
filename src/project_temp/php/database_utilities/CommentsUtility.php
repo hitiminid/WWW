@@ -1,5 +1,6 @@
 <?php
     class CommentsUtility {
+        
         /**
          * Method used for getting comments out of DataBase via passed PageID 
          * @param {String} author : comment's author
@@ -16,6 +17,7 @@
             $comment->setPageId = $pageId;
             $comment->save();
         }
+        
         /**
          * Method used for getting comments out of DataBase via passed PageID 
          * @param {integer} pageId : ID of Page 

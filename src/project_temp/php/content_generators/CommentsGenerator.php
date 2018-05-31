@@ -1,10 +1,13 @@
 <?php
 
     require_once(__DIR__. DIRECTORY_SEPARATOR . "Utility.php");
+    $dirname = realpath(__DIR__ . '/../database_utilities');
+    require_once($dirname . DIRECTORY_SEPARATOR . "CommentsUtility.php");
 
     class CommentsGenerator 
     {
         private $utilityManager;
+        private $commentsUtility;
         private $mainPagePath = "../index.php";
         private $imagePath = "../../img/logo.png";
         private $semestersPrefix = "";
@@ -12,9 +15,15 @@
 
         public function __construct() {
             $this->utilityManager = new Utility();
+            $this->commentsUtility = new CommentsUtility();
         }
 
-        public function generateCommentsSection($data) {
+        public function generateCommentsSection($pageId) {
+            $comments = $this->commentsUtility->getComments($pageId);
+            return $this->generateContent($comments);
+        }
+        
+        private function generateContent($comments) {
             $header = $this->generateCommentsSectionHeader();
             $comments = $this->generateCommentsSectionBody($comments);
             $commentsSection = "";
@@ -23,7 +32,7 @@
             return $commentSection;
         }
 
-        public function generateCommentsSectionHeader() {
+        private function generateCommentsSectionHeader() {
             $content = "<div id='comment-section-header'>
                             <div class='left-element'><p>Comments:</p></div>
                             <div class='right-element'></div>
@@ -31,7 +40,7 @@
             return $content;
         }
 
-        public function generateCommentsSectionBody(/*objects' array*/$comments) {
+        private function generateCommentsSectionBody(/*objects' array*/$comments) {
             $generatedComments = "";
             foreach ($comments as $comment) {
                 $generatedComments .= $this->generateComment(
@@ -43,7 +52,7 @@
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $generatedComments, "</div>");
         }
 
-        public function generateComment($user, $title, $text, $avatar, $date, $votes) {
+        private function generateComment($user, $title, $text, $avatar, $date, $votes) {
             if ($avatar == NULL) {
                 $avatar = "./img/avatar_placeholder.png";
             }
@@ -65,7 +74,7 @@
             return $comment;
         }
 
-        public function generateCaptcha() { 
+        private function generateCaptcha() { 
             
         }
     }
