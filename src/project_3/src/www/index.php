@@ -1,9 +1,15 @@
 <?php
+  require_once('../vendor/autoload.php');
+  require_once('../generated-conf/config.php');
+
   require_once(__DIR__."/../php/content_generators/HomePageGenerator.php");
   require_once(__DIR__."/../php/content_generators/PageGenerator.php");
+  require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
+  require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
+  
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css","../css/grid.css", "../css/main_style.css", "../css/panorama.css", "../css/index.css");
+  $cssStyles = array("../css/reset.css","../css/grid.css", "../css/main_style.css", "../css/panorama.css", "../css/index.css", "../css/styles.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, null);
 
   $contentGenerator = new HomePageGenerator;
@@ -12,7 +18,6 @@
 
   $hobbyPath = "hobbies/hobbies.php";
   $imagePath = "../img/logo.png";
-  // $panorama  = $contentGenerator->generatePanoramaWithInnerImage("../img/front.jpg", "../img/face.png", "Piotr Kawa");
   $panorama  = $contentGenerator->generatePanoramaWithInnerImage("../img/front.jpg", "", "Piotr Kawa");
   $aboutMe   = $contentGenerator->generateAboutMe("Jestem Piotrek. Mam 21 lat i jestem studentem Politechniki Wrocławskiej. Studiuję informatykę na wydziale Podstawowych Problemów Techniki. Na tej stronie znaleźć możesz informacje dotyczące zarówno mojej nauki jak i form spędzania przeze mnie czasu wolnego. Moim głównym obszarem zainteresowań informatycznych jest programowanie aplikacji mobilnych na systemy Android. Jednym z ulubionych hobby to słaba książka, słaby film.");
   $panels    = array(
@@ -24,9 +29,9 @@
   $navbar = $contentGenerator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   $main   = $contentGenerator->generateMain(array($panorama, $aboutMe, $subSectionPanels));
 
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
   
-  
+
   $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

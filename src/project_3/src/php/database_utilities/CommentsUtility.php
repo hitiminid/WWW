@@ -1,4 +1,10 @@
 <?php
+
+    use MyPage\Comment;
+    use MyPage\CommentQuery;
+    use MyPage\Captcha;
+    use MyPage\CaptchaQuery;
+
     class CommentsUtility {
         
         /**
@@ -8,13 +14,13 @@
          * @param {String} text : comment's content 
          * @param {Integer} pageId : ID of Page (where comment is located)
         */
-        public function saveComment($author, $title, $text, $pageId) {
+        public function saveComment($author, $text, $pageId) {
             $comment = new Comment();
-            $comment->setAuthorName = $author;
-            $comment->setCommentTitle = $title;
-            $comment->setCommentText = $text;
-            $comment->setCommentDate = gmdate('Y-m-d h:i:s \G\M\T', time());
-            $comment->setPageId = $pageId;
+            $comment->setAuthorName($author);
+            // $comment->setCommentTitle($title);
+            $comment->setCommentText($text);
+            $comment->setPageId($pageId);
+            $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
             $comment->save();
         }
         
@@ -24,7 +30,7 @@
          * @return {Objects' array} comments' objects
         */
         public function getComments($pageId) {
-            return AuthorQuery::create()->filterByPageId($pageId)->find();
+            return CommentQuery::create()->filterByPageId($pageId)->find();
         }
     }
 ?>
