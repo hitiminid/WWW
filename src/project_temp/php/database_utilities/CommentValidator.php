@@ -1,12 +1,6 @@
 <?php
-
     class CommentValidator
     {
-        
-        // public function __construct($author, $title, $text, $captcha) {
-
-        // }
-
         public function validateAuthor($author) {
             return $author != NULL;
         }
@@ -22,9 +16,5 @@
         public function validateCaptcha($captcha) {
             return $captcha != NULL;
         }
-
     }
-
-
-
 ?>
