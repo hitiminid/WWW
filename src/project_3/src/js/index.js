@@ -1,0 +1,1 @@
+new ImageLoader("face-image", "faceImageBase64", "../img/face.png").loadImage();
