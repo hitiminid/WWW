@@ -20,4 +20,18 @@ CREATE TABLE "comment"
     PRIMARY KEY ("id")
 );
 
+-----------------------------------------------------------------------
+-- captcha
+-----------------------------------------------------------------------
+
+DROP TABLE IF EXISTS "captcha" CASCADE;
+
+CREATE TABLE "captcha"
+(
+    "id" serial NOT NULL,
+    "question" VARCHAR(64) NOT NULL,
+    "answer" VARCHAR(64) NOT NULL,
+    PRIMARY KEY ("id")
+);
+
 COMMIT;

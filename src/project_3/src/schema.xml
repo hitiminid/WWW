@@ -11,4 +11,10 @@
     <column name="comment_date"  type="timestamp" />
     <column name="page_id"       type="integer" required="true"/>
   </table>
+
+  <table name="captcha" phpName="Captcha">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="question" type="varchar" size="64" required="true"/>
+    <column name="answer" type="varchar" size="64" required="true"/>
+  </table>
 </database>
