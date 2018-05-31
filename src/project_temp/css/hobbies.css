@@ -53,6 +53,8 @@
     border-color: transparent;
     color: white;
     background: #333333; }
+  .menu-button p {
+    margin-top: 25px; }
 
 @media only screen and (max-width: 640px) {
   #main {

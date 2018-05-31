@@ -12,7 +12,7 @@
 
   $contentGenerator   = new EducationGenerator;
   $description = $contentGenerator->generateDescription("W przeciągu 3 lat na Politechnice Wrocławskiej brałem udział w wielu przydatnych i ciekawych kursach z zakresu zarówno matematyki jak i informatyki. Poniższa oś czasu pokazuje każdy z semestrów, które odbyłem wraz z kursami które obejmowały.");
-  $panorama = $contentGenerator->generatePanorama("Edukacja", "../../img/pwr.png");
+  $panorama = $contentGenerator->generatePanorama("Edukacja", "../../img/politechnika_low_res.png");
   $timelineElements = array(
     $contentGenerator->generateTimelineElement("left",  "Semestr letni 2017/2018",  "semester_6.php"),
     $contentGenerator->generateTimelineElement("right", "Semestr zimowy 2017/2018", "semester_5.php"),
@@ -27,5 +27,7 @@
   $main   = $contentGenerator->generateMain(array($panorama, $description, $timeline));
 
   $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  echo $pageGenerator->generatePageStructure(array($head, $body));
+  
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js", "../../js/education.js"));
+  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

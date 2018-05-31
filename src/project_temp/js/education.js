@@ -1,0 +1,1 @@
+getHighResolutionImage('panorama-image', '../../img/politechnika.png');
