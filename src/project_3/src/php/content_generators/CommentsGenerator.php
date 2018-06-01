@@ -21,7 +21,7 @@
         public function generateCommentsSection($pageId) {
             $commentsData = $this->commentsUtility->getComments($pageId);
             $comments = $this->generateContent($commentsData);
-            echo $commentsData;
+            echo $comments;
             $createComment = $this->generateCreateCommentField("2+2=");
 
             return  $comments . $createComment;

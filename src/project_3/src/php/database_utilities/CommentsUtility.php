@@ -1,10 +1,13 @@
 <?php
+    
+
+    require_once("../../setup.php");
 
     use MyPage\Comment;
     use MyPage\CommentQuery;
     use MyPage\Captcha;
     use MyPage\CaptchaQuery;
-
+    
     class CommentsUtility {
         
         /**
@@ -15,11 +18,6 @@
          * @param {Integer} pageId : ID of Page (where comment is located)
         */
         public function saveComment($author, $text, $pageId) {
-            $con = Propel::getWriteConnection(\Map\BookTableMap::MyPage);
-            $sql = "drop table comment";
-            $stmt = $con->prepare($sql);
-            $stmt->execute(/*array(':name' => 'Austen')*/);
-            
             $comment = new Comment();
             $comment->setAuthorName($author);
             $comment->setCommentText($text);
@@ -37,4 +35,6 @@
             return CommentQuery::create()->filterByPageId($pageId)->find();
         }
     }
+    
+
 ?>

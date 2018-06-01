@@ -6,9 +6,9 @@
 
   require_once('../../vendor/autoload.php');
   require_once('../../generated-conf/config.php');
-  require_once(__DIR__ ."/../../php/database_utilities/submit_comment.php");
+  // require_once(__DIR__ ."/../../php/database_utilities/submit_comment.php");
 
-
+  
   use MyPage\Comment;
   use MyPage\CommentQuery;
   use MyPage\Captcha;
@@ -22,7 +22,7 @@
                      "../../css/hobbies.css",
                      "../../css/comments.css"
                     );
-  $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, null);
+  $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js");
 
   $contentGenerator = new HobbyGenerator;
   $mainPagePath     = "../index.php";
@@ -45,4 +45,28 @@
 
   $body   = $pageGenerator->generateBody(array($navbar, $main,$commentsSection, $contentGenerator->generateFooter()));
   echo $pageGenerator -> generatePageStructure(array($head, $body));
+
+  if(isset($_POST['createComment'])){ //check if form was submitted
+    echo "123123123";
+    
+    $author = $_POST['commentAuthor'];
+    $title = $_POST['commentTitle'];
+    $text = $_POST['commentText'];
+    $captcha = $_POST['captcha'];
+
+    $commentValidator = new CommentValidator(/*$author, $title, $text, $captcha*/);
+    
+    $authorValid  = $commentValidator->validateAuthor($author);
+    $titleValid   = $commentValidator->validateTitle($title);
+    $textValid    = $commentValidator->validateText($text);
+    $captchaValid = $commentValidator->validateCaptcha($captcha);
+
+    // if ($authorValid && $titleValid && $textValid && $captchaValid) {    
+        //TODO: send data to DB
+        $commentsUtility = new CommentsUtility();
+        $pageId = 1;
+        $commentsUtility->saveComment($author, $title, $text, $pageId);  
+        $commentsUtility->saveComment("123", "456", "123", 1);  
+    // } 
+} 
 ?>

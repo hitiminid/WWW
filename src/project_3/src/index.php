@@ -1,9 +1,28 @@
 <?php 
 
-require_once(__DIR__."/php/content_generators/PageGenerator.php");
-require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
+// require_once(__DIR__."/php/content_generators/PageGenerator.php");
+// require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
 // include __DIR__ . "/php/database_utilities/submit_comment.php";
+require_once('vendor/autoload.php');
+  require_once('generated-conf/config.php');
 
+  use MyPage\Comment;
+  use MyPage\CommentQuery;
+  use MyPage\Captcha;
+  use MyPage\CaptchaQuery;
+// $commentsUtility = new CommentsUtility();
+// $pageId = 1;
+// $commentsUtility->saveComment($author, $title, $text, $pageId);  
+// $commentsUtility->saveComment("123", "456", "12JAJAJAJ3", 1); 
+
+
+// require_once('vendor/autoload.php');
+// require_once('generated-conf/config.php');
+
+// use MyPage\Comment;
+// use MyPage\CommentQuery;
+// use MyPage\Captcha;
+// use MyPage\CaptchaQuery;
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +33,7 @@ require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
     <link rel="stylesheet" href="css/comments.css">
     <link rel="stylesheet" href="css/main_style.css">
     <link rel="stylesheet" href="css/grid.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <title>Example</title>
 </head>
@@ -66,7 +86,7 @@ require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
                     <input id="email-input-field" class="comment-input-field" type="text" name="displayName" placeholder="e-mail">
                 </div>
                 <div>
-                    <input class="comment-input-field" type="text" name="commentName" placeholder="Tytuł Komentarza">
+                    <input id='comment-title-input-field' class="comment-input-field" type="text" name="commentName" placeholder="Tytuł Komentarza">
                 </div>
                 
                 <div>
@@ -86,7 +106,7 @@ require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
                         <input type="text" id="avatar-input-field" placeholder="Link do Twojego avatara"/>
                     </div>
                     <div id="submit-comment-button-field" class="col-1">
-                        <input id="submit-comment-button" type="submit" value="Wyślij">
+                        <div id="submit-comment-button" style="width:100px; height:100px;">WYŚLIJ</div>
                     </div>
                 </div>
             </form>         
