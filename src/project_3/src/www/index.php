@@ -6,6 +6,11 @@
   require_once(__DIR__."/../php/content_generators/PageGenerator.php");
   require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
+
+  use MyPage\Comment;
+  use MyPage\CommentQuery;
+  use MyPage\Captcha;
+  use MyPage\CaptchaQuery;
   
 
   $pageGenerator = new PageGenerator;

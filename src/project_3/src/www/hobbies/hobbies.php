@@ -18,7 +18,9 @@
                      "../../css/grid.css",
                      "../../css/main_style.css",
                      "../../css/panorama.css",
-                     "../../css/hobbies.css");
+                     "../../css/hobbies.css",
+                     "../../css/comments.css"
+                    );
   $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, null);
 
   $contentGenerator = new HobbyGenerator;

@@ -11,15 +11,16 @@
       float: right; }
   #comment-section select {
     background-color: #EBEBEB;
-    border-radius: 15px; }
-  #comment-section select:focus {
-    outline: none; }
-  #comment-section p {
-    margin-left: 10px; }
-  #comment-section select {
     height: 26px;
     margin-top: 13px;
-    margin-right: 10px; }
+    margin-right: 10px;
+    border-radius: 15px;
+    text-align: center;
+    text-align-last: center; }
+    #comment-section select:focus {
+      outline: none; }
+  #comment-section p {
+    margin-left: 10px; }
 
 .comment {
   width: 600px;
@@ -62,23 +63,87 @@
       padding: 0; }
 
 #create-comment-field {
+  width: 500px;
   margin-top: 150px; }
   #create-comment-field #comment-author-input-field {
-    width: 50%; }
-  #create-comment-field .comment-input-field {
+    margin-right: 25px; }
+  #create-comment-field .comment-input-field, #create-comment-field .avatar-input-field {
     width: 100%;
     height: 30px;
     border-radius: 10px;
     border: none;
     padding-left: 5px;
     margin-bottom: 20px; }
-  #create-comment-field .comment-input-field:focus {
-    outline: none; }
+  #create-comment-field input, #create-comment-field textarea {
+    padding: 16px;
+    font-size: 16px; }
+    #create-comment-field input:focus, #create-comment-field textarea:focus {
+      outline: none; }
   #create-comment-field #comment-text-area {
     width: 100%;
     height: 150px;
     background-color: #f4f4f4;
     resize: none;
     padding: 10px; }
-  #create-comment-field #captcha-question {
-    width: 150px; }
+  #create-comment-field #captcha-field {
+    height: 60px; }
+    #create-comment-field #captcha-field #captcha-question-field {
+      width: 40%;
+      background-color: red; }
+      #create-comment-field #captcha-field #captcha-question-field #captcha-question {
+        height: 40px;
+        margin-top: 20px;
+        padding: 0px; }
+    #create-comment-field #captcha-field #captcha-answer-field {
+      background-color: blue;
+      width: 60%; }
+      #create-comment-field #captcha-field #captcha-answer-field #captcha-answer {
+        height: 40px;
+        width: 60%;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-size: 15px; }
+  #create-comment-field #submit-comment-field {
+    height: 70px;
+    background-color: green; }
+    #create-comment-field #submit-comment-field #attach-avatar-field {
+      margin-top: 10px;
+      width: 40px;
+      height: 50px;
+      background-color: purple;
+      position: relative; }
+      #create-comment-field #submit-comment-field #attach-avatar-field #attach-icon {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 15px;
+        margin-top: 10px;
+        background-image: url("../img/attachment.png");
+        background-repeat: no-repeat;
+        background-color: blueviolet;
+        padding: 3px;
+        background-position: center; }
+        #create-comment-field #submit-comment-field #attach-avatar-field #attach-icon:hover {
+          background-image: url("../img/attachment_hover.png"); }
+    #create-comment-field #submit-comment-field #avatar-input-field {
+      display: none;
+      width: 100%;
+      padding: 0px; }
+    #create-comment-field #submit-comment-field #submit-comment-button-field {
+      position: relative;
+      background-color: yellow; }
+    #create-comment-field #submit-comment-field #submit-comment-button {
+      padding: 10px;
+      position: absolute;
+      font-size: 15px;
+      right: 0px;
+      height: 60px;
+      width: 100%;
+      margin-top: 5px;
+      border: #333333 2px solid;
+      color: #333333;
+      background-color: #f1f1f1; }
+      #create-comment-field #submit-comment-field #submit-comment-button:hover {
+        color: #f1f1f1;
+        background-color: #333333;
+        border-color: #f1f1f1; }

@@ -3,20 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comments.css">
     <link rel="stylesheet" href="css/main_style.css">
     <link rel="stylesheet" href="css/grid.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     <title>Example</title>
 </head>
 <body>
-    <div style="margin-top:100px;">
-        <!-- <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-        $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
-        <p></p>
-        <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-        $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-    </div>
     <div id="app">
         <div id="comment-section">
             <div id="comment-section-header">
@@ -25,10 +18,10 @@
                 </div>
                 <div class="right-element">
                     <select id="comments-sort-type">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                        <option value="1">Data (od najstarszych)</option>
+                        <option value="2">Data (od najnowszych)</option>
+                        <option value="3">Autor: A-Z</option>
+                        <option value="4">Autor: Z-A</option>
                     </select>
                 </div>
             </div>
@@ -60,25 +53,39 @@
 
         <div id="create-comment-field">
             <form action="submit_comment.php" method="POST">
-                <div>
+                <div class="row">
                     <input id="comment-author-input-field" class="comment-input-field" type="text" name="displayName" placeholder="Podpis">
-                    <button>+</button>
-                    <button>-</button>
+                    <input id="email-input-field" class="comment-input-field" type="text" name="displayName" placeholder="e-mail">
                 </div>
                 <div>
                     <input class="comment-input-field" type="text" name="commentName" placeholder="Tytuł Komentarza">
                 </div>
+                
                 <div>
-                    <textarea id="comment-text-area"  name="commentText" class="comment-input-field"></textarea>            
+                    <textarea id="comment-text-area" placeholder="Miejsce na Twój komentarz" name="commentText" class="comment-input-field"></textarea>            
                 </div>
-                <div class="row">
-                    <p id="captcha-question">2+2 = </p>
-                    <input id="captcha-answer" type="text" value="Captcha" name="captcha">
-                    <input type="submit" value="Submit"> <!-- float: right; -->
+                <div id="captcha-field" class="row">
+                    <div id="captcha-question-field">
+                        <p id="captcha-question">\( x^2 + y^2 = \)</p>
+                    </div>
+                    <div id="captcha-answer-field">
+                        <input id="captcha-answer" type="text" value="Captcha" name="captcha">
+                    </div>
+                </div>
+                <div id="submit-comment-field" style="display:flex;">
+                    <!-- <input value="Wyślij"> -->
+                    <div id="attach-avatar-field"  class="col-3">
+                        <div id="attach-icon"></div>
+                        <input type="text" id="avatar-input-field" placeholder="Link do Twojego avatara"/>
+                    </div>
+                    <div id="submit-comment-button-field" class="col-1">
+                        <input id="submit-comment-button" type="submit" value="Wyślij">
+                    </div>
                 </div>
             </form>         
         </div>            
     </div>
-</body> <!-- rename classes --->
+</body>
+<script src="js/comments.js"></script>
 
 </html>

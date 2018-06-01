@@ -19,8 +19,6 @@
         }
 
         public function generateCommentsSection($pageId) {
-            // echo $comments;            
-            // echo $pageId;            
             $comments = $this->commentsUtility->getComments($pageId);
             return $this->generateContent($comments);
         }
@@ -83,5 +81,7 @@
         private function generateCaptcha() { 
             
         }
+
+        // private function 
     }
 ?>
