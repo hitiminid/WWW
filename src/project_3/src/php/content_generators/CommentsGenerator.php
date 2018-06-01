@@ -21,6 +21,7 @@
         public function generateCommentsSection($pageId) {
             $commentsData = $this->commentsUtility->getComments($pageId);
             $comments = $this->generateContent($commentsData);
+            echo $commentsData;
             $createComment = $this->generateCreateCommentField("2+2=");
 
             return  $comments . $createComment;
@@ -87,7 +88,7 @@
 
         private function generateCreateCommentField($captchaQuestion) {
             $content = "<div id='create-comment-field'>
-            <form action='submit_comment.php' method='POST'>
+            <form action='' method='POST'>
                 <div class='row'>
                     <input id='comment-author-input-field' class='comment-input-field' type='text' name='displayName' placeholder='Podpis'>
                     <input id='email-input-field' class='comment-input-field' type='text' name='displayName' placeholder='e-mail'>

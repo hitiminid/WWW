@@ -1,3 +1,11 @@
+<?php 
+
+require_once(__DIR__."/php/content_generators/PageGenerator.php");
+require_once(__DIR__."/php/content_generators/CommentsGenerator.php");
+// include __DIR__ . "/php/database_utilities/submit_comment.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

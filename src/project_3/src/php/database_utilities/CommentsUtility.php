@@ -15,9 +15,13 @@
          * @param {Integer} pageId : ID of Page (where comment is located)
         */
         public function saveComment($author, $text, $pageId) {
+            $con = Propel::getWriteConnection(\Map\BookTableMap::MyPage);
+            $sql = "drop table comment";
+            $stmt = $con->prepare($sql);
+            $stmt->execute(/*array(':name' => 'Austen')*/);
+            
             $comment = new Comment();
             $comment->setAuthorName($author);
-            // $comment->setCommentTitle($title);
             $comment->setCommentText($text);
             $comment->setPageId($pageId);
             $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));

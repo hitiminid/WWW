@@ -1,9 +1,10 @@
 <?php 
     require 'CommentValidator.php';
     // include 'DebugUtilities.php';
-    require 'CommentsUtility.php';
+    // require 'CommentsUtility.php';
     
     if(isset($_POST['createComment'])){ //check if form was submitted
+        echo "123123123";
         
         $author = $_POST['commentAuthor'];
         $title = $_POST['commentTitle'];
@@ -17,11 +18,12 @@
         $textValid    = $commentValidator->validateText($text);
         $captchaValid = $commentValidator->validateCaptcha($captcha);
 
-        if ($authorValid && $titleValid && $textValid && $captchaValid) {    
+        // if ($authorValid && $titleValid && $textValid && $captchaValid) {    
             //TODO: send data to DB
             $commentsUtility = new CommentsUtility();
             $pageId = 1;
             $commentsUtility->saveComment($author, $title, $text, $pageId);  
-        } 
+            $commentsUtility->saveComment("123", "456", "123", 1);  
+        // } 
     } 
 ?>
