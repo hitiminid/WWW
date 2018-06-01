@@ -7,7 +7,7 @@
   require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css",
+  $cssStyles = array("../../css/reset.css",
                      "../../css/grid.css",
                      "../../css/main_style.css",
                      "../../css/panorama.css",

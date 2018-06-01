@@ -1,5 +1,6 @@
 #comment-section {
-  width: 500px; }
+  width: 700px;
+  margin: auto; }
   #comment-section #comment-section-header {
     height: 52px;
     color: #f1f1f1;
@@ -64,7 +65,8 @@
 
 #create-comment-field {
   width: 500px;
-  margin-top: 150px; }
+  margin: auto;
+  margin-top: 100px; }
   #create-comment-field #comment-author-input-field {
     margin-right: 25px; }
   #create-comment-field .comment-input-field, #create-comment-field .avatar-input-field {

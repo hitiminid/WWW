@@ -1,12 +1,9 @@
 <?php
   
-
   require_once(__DIR__."/../php/content_generators/HomePageGenerator.php");
   require_once(__DIR__."/../php/content_generators/PageGenerator.php");
   require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
-
-  
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../css/reset.css","../css/grid.css", "../css/main_style.css", "../css/panorama.css", "../css/index.css", "../css/styles.css");
@@ -31,7 +28,6 @@
 
   $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
   
-
   $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));

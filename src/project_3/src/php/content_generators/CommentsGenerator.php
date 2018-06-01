@@ -20,20 +20,20 @@
 
         public function generateCommentsSection($pageId) {
             $commentsData = $this->commentsUtility->getComments($pageId);
-            $comments = $this->generateContent($commentsData);
-            // echo $comments;
-            $createComment = $this->generateCreateCommentField("2+2=");
-
-            return  $comments . $createComment;
+            $commentsSection = $this->generateContent($commentsData);
+            return $commentsSection;
         }
         
         private function generateContent($comments) {
             $header = $this->generateCommentsSectionHeader();
             $comments = $this->generateCommentsSectionBody($comments);
+            $createComment = $this->generateCreateCommentField("2+2=");            
             $commentsSection = "";
             $commentsSection .= $header;
             $commentsSection .= $comments;
-            return $commentsSection;
+            $commentsSection .= $createComment;
+
+            return "<div id='comment-section'>$commentsSection</div>";
         }
 
         private function generateCommentsSectionHeader() {

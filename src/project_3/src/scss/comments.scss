@@ -2,7 +2,8 @@
 
 
 #comment-section {
-    width: 500px;
+    width: 700px;
+    margin:auto;
             
     #comment-section-header {
         height: 52px;
@@ -107,7 +108,8 @@
     $fontSize: 16px;
 
     width: $createCommentSectionWidth;    
-    margin-top: 150px;
+    margin:auto;
+    margin-top: 100px;
 
     #comment-author-input-field {
         margin-right:25px;

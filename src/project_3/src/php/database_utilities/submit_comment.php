@@ -9,9 +9,9 @@
     use MyPage\Captcha;
     use MyPage\CaptchaQuery;
 
-    // CommentQuery::create()
-    // ->filterByCommentText('TEXT')
-    // ->delete();
+    CommentQuery::create()
+    ->filterByCommentText('')
+    ->delete();
 
     $author = $_POST['commentAuthor'];
     $title  = $_POST['commentTitle'];
