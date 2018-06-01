@@ -6,7 +6,6 @@ attachIcon.addEventListener("click", function(){
     avatarInput.style.display = 'block';
 });
 
-
 validateData = () => {
     let author = document.getElementById("comment-author-input-field").value;
     let title  = document.getElementById("comment-title-input-field").value;
@@ -43,11 +42,13 @@ function sendComment(event) {
             commentAuthor: $('#comment-author-input-field').val(),
             commentTitle: $('#comment-author-input-field').val(),
             commentText: $('#comment-text-area').val(),
+            pageId: 1
         };
-    
-        //todo: parametryzacja ścieżki
+        // phpScriptURL = getProperPHPFilePath(event.data.pageId);
+        phpScriptURL = "../../php/database_utilities/submit_comment.php";
+
         $.ajax({
-            url: event.data.phpURL,
+            url: phpScriptURL,
             type: 'POST',
             dataType: 'json',
             data: myData,
@@ -63,4 +64,12 @@ function sendComment(event) {
     }
 }
 
-$("#submit-comment-button").click({phpURL:"../../php/database_utilities/submit_comment.php"}, sendComment);
+getProperPHPFilePath = (pageId) => {
+    switch (pageId) {
+        case 1:
+            return '12';
+    }
+}
+
+$("#submit-comment-button").click({pageId: 1}, sendComment);
+// todo: kazda strona ma miec wlasny skrypt i przekazywac pageId

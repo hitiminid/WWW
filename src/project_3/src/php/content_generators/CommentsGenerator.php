@@ -12,6 +12,7 @@
         private $imagePath = "../../img/logo.png";
         private $semestersPrefix = "";
         private $hobbyPath = "../hobbies/hobbies.php";
+        private $pageId; 
 
         public function __construct() {
             $this->utilityManager = new Utility();
@@ -19,6 +20,7 @@
         }
 
         public function generateCommentsSection($pageId) {
+            $this->pageId = $pageId;
             $commentsData = $this->commentsUtility->getComments($pageId);
             $commentsSection = $this->generateContent($commentsData);
             return $commentsSection;
@@ -58,7 +60,7 @@
 
         private function generateComment($author, $text, $date, $avatar) {
             if ($avatar == NULL) {
-                $avatar = "../img/avatar_placeholder.png";
+                $avatar = "../../img/avatar_placeholder.png"; // todo: why call it every time?
             }
             $commentDate = "";
             if ($date != NULL) {
@@ -82,23 +84,8 @@
             return $comment;
         }
 
-        private function getPlaceholderPath($pageId) {
-            switch ($pageId) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    return "../img/avatar_placeholder.png";
-                case 5:
-                    return "../img/avatar_placeholder.png";
-                case 6:
-                    return "../img/avatar_placeholder.png";
-                case 7:
-                    return "../img/avatar_placeholder.png";
-                case 8:
-                    return "../img/avatar_placeholder.png";
-            }
-
+        private function getPlaceholderPath() {
+            //todo: probably not needed
         }
 
         private function generateCaptcha() { 

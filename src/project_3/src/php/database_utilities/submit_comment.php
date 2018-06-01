@@ -15,8 +15,8 @@
 
     $author = $_POST['commentAuthor'];
     $title  = $_POST['commentTitle'];
-    $text  = $_POST['commentText'];
-    $captcha  = $_POST['captcha'];
+    $text   = $_POST['commentText'];
+    $pageId = $_POST['pageId'];
 
     $commentsUtility = new CommentsUtility();
     $pageId = 1;

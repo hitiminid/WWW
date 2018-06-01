@@ -91,5 +91,4 @@ require_once("setup.php");
     </div>
 </body>
 <script src="js/comments.js"></script>
-
 </html>

@@ -126,6 +126,7 @@
         background-position: center; }
         #create-comment-field #submit-comment-field #attach-avatar-field #attach-icon:hover {
           background-color: #333333;
+          cursor: pointer;
           background-image: url("../img/attachment_hover.png"); }
     #create-comment-field #submit-comment-field #avatar-input-field {
       display: none;
@@ -147,4 +148,5 @@
       #create-comment-field #submit-comment-field #submit-comment-button:hover {
         color: #f1f1f1;
         background-color: #333333;
-        border-color: #f1f1f1; }
+        border-color: #f1f1f1;
+        cursor: pointer; }

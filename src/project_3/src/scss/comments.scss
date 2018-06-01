@@ -207,6 +207,7 @@
 
                 &:hover {
                     background-color: #333333;
+                    cursor: pointer;        
                     background-image: url("../img/attachment_hover.png");
                 }
             }
@@ -245,6 +246,7 @@
                 color: #f1f1f1;
                 background-color: #333333;
                 border-color: #f1f1f1;
+                cursor: pointer;
             }
         }
     }
