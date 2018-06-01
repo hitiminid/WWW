@@ -34,10 +34,5 @@
 
   $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
 
-  // $c = new CommentsUtility();
-  
-  // $c->saveComment("JA", "UWIELBIAM JĄ", 1);
-
-
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

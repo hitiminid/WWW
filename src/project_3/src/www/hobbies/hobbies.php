@@ -4,15 +4,7 @@
   require_once(__DIR__."/../../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../../php/database_utilities/CommentsUtility.php");
 
-  require_once('../../vendor/autoload.php');
-  require_once('../../generated-conf/config.php');
-  // require_once(__DIR__ ."/../../php/database_utilities/submit_comment.php");
-
-  
-  use MyPage\Comment;
-  use MyPage\CommentQuery;
-  use MyPage\Captcha;
-  use MyPage\CaptchaQuery;
+  require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../css/reset.css",
@@ -43,30 +35,11 @@
 
   $commentsSection = (new CommentsGenerator)->generateCommentsSection(1);
 
-  $body   = $pageGenerator->generateBody(array($navbar, $main,$commentsSection, $contentGenerator->generateFooter()));
-  echo $pageGenerator -> generatePageStructure(array($head, $body));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
 
-  if(isset($_POST['createComment'])){ //check if form was submitted
-    echo "123123123";
-    
-    $author = $_POST['commentAuthor'];
-    $title = $_POST['commentTitle'];
-    $text = $_POST['commentText'];
-    $captcha = $_POST['captcha'];
 
-    $commentValidator = new CommentValidator(/*$author, $title, $text, $captcha*/);
-    
-    $authorValid  = $commentValidator->validateAuthor($author);
-    $titleValid   = $commentValidator->validateTitle($title);
-    $textValid    = $commentValidator->validateText($text);
-    $captchaValid = $commentValidator->validateCaptcha($captcha);
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
 
-    // if ($authorValid && $titleValid && $textValid && $captchaValid) {    
-        //TODO: send data to DB
-        $commentsUtility = new CommentsUtility();
-        $pageId = 1;
-        $commentsUtility->saveComment($author, $title, $text, $pageId);  
-        $commentsUtility->saveComment("123", "456", "123", 1);  
-    // } 
-} 
+  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
+  // echo $pageGenerator -> generatePageStructure(array($head, $body));
 ?>

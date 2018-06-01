@@ -1,13 +1,14 @@
 <?php
     
-
     require_once("../../setup.php");
 
     use MyPage\Comment;
     use MyPage\CommentQuery;
     use MyPage\Captcha;
     use MyPage\CaptchaQuery;
-    
+
+    //todo: builder pattern
+
     class CommentsUtility {
         
         /**
@@ -22,7 +23,7 @@
             $comment->setAuthorName($author);
             $comment->setCommentText($text);
             $comment->setPageId($pageId);
-            $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
+            // $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
             $comment->save();
         }
         
@@ -34,7 +35,13 @@
         public function getComments($pageId) {
             return CommentQuery::create()->filterByPageId($pageId)->find();
         }
-    }
-    
 
+        public function mockDataBase() {
+            for ($i = 0; $i < 10; $i++) {
+                $author = "author" . $i;
+                $text   = "text" . $i;
+                $this->saveComment($author, $text, 1);
+            }
+        }
+    }
 ?>

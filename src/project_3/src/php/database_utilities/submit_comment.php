@@ -1,7 +1,7 @@
 <?php 
     
     require_once("../../setup.php");
-    // require 'CommentsUtility.php';
+    require 'CommentsUtility.php';
 
 
     use MyPage\Comment;
@@ -18,20 +18,9 @@
     $text  = $_POST['commentText'];
     $captcha  = $_POST['captcha'];
 
-    // $commentsUtility = new CommentsUtility();
-    // $pageId = 1;
-    // $commentsUtility->saveComment("debug", "AAAAAAAA", "123", 1);  
-
-
-    $comment = new Comment();
-    $comment->setAuthorName($author);
-    // $comment->setCommentTitle($title);
-    $comment->setCommentText($text);
-
-    // $comment->setCommentText($text);
-    $comment->setPageId(1);
-    $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
-    $comment->save();
+    $commentsUtility = new CommentsUtility();
+    $pageId = 1;
+    $commentsUtility->saveComment($author, $text, 1);  
 
     $aResult = array();
 

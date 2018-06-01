@@ -21,7 +21,7 @@
         public function generateCommentsSection($pageId) {
             $commentsData = $this->commentsUtility->getComments($pageId);
             $comments = $this->generateContent($commentsData);
-            echo $comments;
+            // echo $comments;
             $createComment = $this->generateCreateCommentField("2+2=");
 
             return  $comments . $createComment;
@@ -87,39 +87,37 @@
         }
 
         private function generateCreateCommentField($captchaQuestion) {
-            $content = "<div id='create-comment-field'>
-            <form action='' method='POST'>
+            $content = " <div id='create-comment-field'>
+            <form action='/php/database_utilities/submit_comment.php' method='POST'>
                 <div class='row'>
                     <input id='comment-author-input-field' class='comment-input-field' type='text' name='displayName' placeholder='Podpis'>
                     <input id='email-input-field' class='comment-input-field' type='text' name='displayName' placeholder='e-mail'>
                 </div>
                 <div>
-                    <input class='comment-input-field' type='text' name='commentName' placeholder='Tytuł Komentarza'>
+                    <input id='comment-title-input-field' class='comment-input-field' type='text' name='commentName' placeholder='Tytuł Komentarza'>
                 </div>
-                
                 <div>
-                    <textarea id='comment-text-area' placeholder='Miejsce na Twój komentarz' name='commentText' class='comment-input-field'></textarea>            
+                    <textarea id='comment-text-area' placeholder='Miejsce na Twój komentarz' required name='commentText' class='comment-input-field'></textarea>            
                 </div>
                 <div id='captcha-field' class='row'>
                     <div id='captcha-question-field'>
-                        <p id='captcha-question'>$captchaQuestion</p>
+                        <p id='captcha-question'>\( x^2 + y^2 = \)</p>
                     </div>
                     <div id='captcha-answer-field'>
                         <input id='captcha-answer' type='text' name='captcha'>
                     </div>
                 </div>
                 <div id='submit-comment-field' style='display:flex;'>
-                    <!-- <input value='Wyślij'> -->
                     <div id='attach-avatar-field'  class='col-3'>
                         <div id='attach-icon'></div>
                         <input type='text' id='avatar-input-field' placeholder='Link do Twojego avatara'/>
                     </div>
                     <div id='submit-comment-button-field' class='col-1'>
-                        <input id='submit-comment-button' type='submit' value='Wyślij'>
+                        <div id='submit-comment-button' style='width:100px; height:100px;'>WYŚLIJ</div>
                     </div>
                 </div>
             </form>         
-        </div>";
+        </div>            ";
         return $content;
         }
 
