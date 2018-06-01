@@ -3,6 +3,8 @@
   require_once(__DIR__."../../../php/content_generators/SemestersGenerator.php");
   require_once(__DIR__."../../../php/content_generators/CommentsGenerator.php");
 
+  require_once("../../setup.php");
+  
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",

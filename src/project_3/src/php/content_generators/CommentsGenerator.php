@@ -82,6 +82,25 @@
             return $comment;
         }
 
+        private function getPlaceholderPath($pageId) {
+            switch ($pageId) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    return "../img/avatar_placeholder.png";
+                case 5:
+                    return "../img/avatar_placeholder.png";
+                case 6:
+                    return "../img/avatar_placeholder.png";
+                case 7:
+                    return "../img/avatar_placeholder.png";
+                case 8:
+                    return "../img/avatar_placeholder.png";
+            }
+
+        }
+
         private function generateCaptcha() { 
             
         }

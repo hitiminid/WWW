@@ -1,9 +1,11 @@
 <?php
   
+  require_once("../setup.php");
   require_once(__DIR__."/../php/content_generators/HomePageGenerator.php");
   require_once(__DIR__."/../php/content_generators/PageGenerator.php");
   require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
+
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../css/reset.css","../css/grid.css", "../css/main_style.css", "../css/panorama.css", "../css/index.css", "../css/styles.css");

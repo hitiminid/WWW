@@ -1,6 +1,6 @@
 <?php
     
-    require_once("../../setup.php");
+    // require_once("../setup.php");
 
     use MyPage\Comment;
     use MyPage\CommentQuery;

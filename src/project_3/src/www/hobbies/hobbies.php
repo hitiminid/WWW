@@ -41,5 +41,4 @@
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
-  // echo $pageGenerator -> generatePageStructure(array($head, $body));
 ?>
