@@ -52,7 +52,7 @@
         </div>
 
         <div id="create-comment-field">
-            <form action="submit_comment.php" method="POST">
+            <form action="/php/database_utilities/submit_comment.php" method="POST">
                 <div class="row">
                     <input id="comment-author-input-field" class="comment-input-field" type="text" name="displayName" placeholder="Podpis">
                     <input id="email-input-field" class="comment-input-field" type="text" name="displayName" placeholder="e-mail">
@@ -69,11 +69,10 @@
                         <p id="captcha-question">\( x^2 + y^2 = \)</p>
                     </div>
                     <div id="captcha-answer-field">
-                        <input id="captcha-answer" type="text" value="Captcha" name="captcha">
+                        <input id="captcha-answer" type="text" name="captcha">
                     </div>
                 </div>
                 <div id="submit-comment-field" style="display:flex;">
-                    <!-- <input value="Wyślij"> -->
                     <div id="attach-avatar-field"  class="col-3">
                         <div id="attach-icon"></div>
                         <input type="text" id="avatar-input-field" placeholder="Link do Twojego avatara"/>

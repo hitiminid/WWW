@@ -104,13 +104,11 @@
         margin-left: 10px;
         font-size: 15px; }
   #create-comment-field #submit-comment-field {
-    height: 70px;
-    background-color: green; }
+    height: 70px; }
     #create-comment-field #submit-comment-field #attach-avatar-field {
       margin-top: 10px;
       width: 40px;
       height: 50px;
-      background-color: purple;
       position: relative; }
       #create-comment-field #submit-comment-field #attach-avatar-field #attach-icon {
         width: 30px;
@@ -118,20 +116,21 @@
         position: absolute;
         left: 15px;
         margin-top: 10px;
+        border-radius: 4px;
         background-image: url("../img/attachment.png");
         background-repeat: no-repeat;
-        background-color: blueviolet;
+        background-color: #f1f1f1;
         padding: 3px;
         background-position: center; }
         #create-comment-field #submit-comment-field #attach-avatar-field #attach-icon:hover {
+          background-color: #333333;
           background-image: url("../img/attachment_hover.png"); }
     #create-comment-field #submit-comment-field #avatar-input-field {
       display: none;
       width: 100%;
       padding: 0px; }
     #create-comment-field #submit-comment-field #submit-comment-button-field {
-      position: relative;
-      background-color: yellow; }
+      position: relative; }
     #create-comment-field #submit-comment-field #submit-comment-button {
       padding: 10px;
       position: absolute;

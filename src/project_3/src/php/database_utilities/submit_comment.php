@@ -1,6 +1,6 @@
 <?php 
     require 'CommentValidator.php';
-    require 'DebugUtilities.php';
+    // include 'DebugUtilities.php';
     require 'CommentsUtility.php';
     
     if(isset($_POST['createComment'])){ //check if form was submitted
