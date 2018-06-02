@@ -73,7 +73,7 @@
             $avatar = $comment->getAvatarLink();
 
             if ($avatar == NULL) {
-                $avatar = "../../img/avatar_placeholder.png"; // todo: why call it every time?
+                $avatar = "../../img/avatar_placeholder.png"; 
             }
 
             $authorField = $this->getAuthorField($author, $email);

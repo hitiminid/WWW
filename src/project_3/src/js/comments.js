@@ -22,7 +22,23 @@ hideNoCommentsSection = () => {
     }
 }
 
-appendCurrentlyCreatedComment = (author, avatar, date,text) => {
+getAuthorField = (author, email) => {
+    if (email != null || email != "") {
+        return `<h6 class='comment-author'>${author} (${email})</h6>`;
+    } else {
+        return `<h6 class='comment-author'>${author}</h6>`;
+    }
+}
+
+getCommentBody = (title, text) => {
+    if (title != null || title != "") {
+        return `<div class='comment-body'><p class='comment-title'>${title}</p><p class='comment-text'>${text}</p></div></div>`;
+    } else {
+        return `<div class='comment-body'><p class='comment-text'>${text}</p></div></div>`;
+    }
+}
+
+appendCurrentlyCreatedComment = (author, email, avatar, date, title, text) => {
     hideNoCommentsSection(); 
     if (avatar === "") {
         avatar = '../../img/avatar_placeholder.png';
@@ -30,9 +46,10 @@ appendCurrentlyCreatedComment = (author, avatar, date,text) => {
     //todo: render title
     let commentStart_1 = "<div class='comment'><div class='comment-header'><div class='children'>";
     let commentStart_2 = `<div class='image-panel'><img src='${avatar}'></div>`;
-    let commentStart_3 = `<div class='comment-info'><h6 class='comment-author'>${author}</h6><h6 class='comment-date'>${date}</h6></div></div></div>`;
-    let commentBody    = `<div class='comment-body'><p class='comment-text'>${text}</p></div></div>`;
-    let comment = commentStart_1 + commentStart_2 + commentStart_3 + commentBody;
+    let commentStart_3 = `<div class='comment-info'>` + getAuthorField(author, email);
+    let dateField = `<h6 class='comment-date'>${date}</h6></div></div></div>`;
+    let commentBody = getCommentBody(title, text);
+    let comment = commentStart_1 + commentStart_2 + commentStart_3 + dateField + commentBody;
     console.log(comment);
     $("#comment-section-body").append(comment);
 }
@@ -78,7 +95,7 @@ function sendComment(event) {
             success: function( obj, textstatus ) {
                 if( !('error' in obj) ) {
                     console.log("all correct");
-                    appendCurrentlyCreatedComment(author, avatar, obj['creationDate'], title, text);        
+                    appendCurrentlyCreatedComment(author, email, avatar, obj['creationDate'], title, text);        
                     clearInputFields();
                 } else {
                     alert(obj["error"]);
