@@ -4,10 +4,9 @@
     
     class CaptchaUtility {
     
+        private $currentCaptcha;
         
         public function getCaptcha() {
-            // $numberOfCaptchas = ;
-            // $this->mockCaptchas();
             $query = new CaptchaQuery();
             $result = $query->find();
             $numberOfCaptchas = sizeof($result);
@@ -17,23 +16,27 @@
             } else {
 
             }
-            // echo $result[$captchaNumber];//
-            return $result[$captchaNumber];
-            // echo '213';
-            // echo CaptchaQuery::create()->find();            
-            // $captchaNumber = rand(1, $numberOfCaptchas);
+            $this->currentCaptcha = $result[$captchaNumber];
+            return $this->currentCaptcha;
         }
 
-        private function saveCaptcha() {
 
+        public function validateCaptcha($answer) {
+            $question = $this->currentCaptcha->getQuestion();
+            $query    = new CaptchaQuery();
+            $result   = $query->filterByQuestion($question)->filterByAnswer($answer)->find();
+            
+            if (sizeof($result) > 0) {
+                echo "true";
+                return true;
+            } else {
+                echo "false";
+                return false;
+            }
         }
+
 
         public function mockCaptchas() {
-            // $captcha = new Captcha();
-            // $captcha->setQuestion("2+2=");
-            // $captcha->setAnswer("4");
-            // $captcha->save();
-
             $captcha1 = new Captcha();
             $captcha1->setQuestion("5*5=");
             $captcha1->setAnswer("25");
@@ -45,7 +48,4 @@
             $captcha2->save();
         }
     }
-
-
-
 ?>

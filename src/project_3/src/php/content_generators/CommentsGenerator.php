@@ -22,7 +22,13 @@
             $this->commentsUtility = new CommentsUtility();
             $this->captchaUtility = new CaptchaUtility();
             $this->captcha = $this->captchaUtility->getCaptcha();
-            echo $this->captcha->getQuestion();
+            $validation = $this->captchaUtility->validateCaptcha("2");
+            if ($validation == true) {
+                echo "true";
+            } else {
+                echo "false";
+            }
+            // echo $validation;
         }
 
         public function generateCommentsSection($pageId) {
