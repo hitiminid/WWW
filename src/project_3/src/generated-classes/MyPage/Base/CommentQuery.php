@@ -23,6 +23,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildCommentQuery orderByAuthorName($order = Criteria::ASC) Order by the author_name column
  * @method     ChildCommentQuery orderByAuthorEmail($order = Criteria::ASC) Order by the author_email column
  * @method     ChildCommentQuery orderByCommentText($order = Criteria::ASC) Order by the comment_text column
+ * @method     ChildCommentQuery orderByCommentTitle($order = Criteria::ASC) Order by the comment_title column
  * @method     ChildCommentQuery orderByAvatarLink($order = Criteria::ASC) Order by the avatar_link column
  * @method     ChildCommentQuery orderByCommentDate($order = Criteria::ASC) Order by the comment_date column
  * @method     ChildCommentQuery orderByPageId($order = Criteria::ASC) Order by the page_id column
@@ -31,6 +32,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildCommentQuery groupByAuthorName() Group by the author_name column
  * @method     ChildCommentQuery groupByAuthorEmail() Group by the author_email column
  * @method     ChildCommentQuery groupByCommentText() Group by the comment_text column
+ * @method     ChildCommentQuery groupByCommentTitle() Group by the comment_title column
  * @method     ChildCommentQuery groupByAvatarLink() Group by the avatar_link column
  * @method     ChildCommentQuery groupByCommentDate() Group by the comment_date column
  * @method     ChildCommentQuery groupByPageId() Group by the page_id column
@@ -50,6 +52,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildComment findOneByAuthorName(string $author_name) Return the first ChildComment filtered by the author_name column
  * @method     ChildComment findOneByAuthorEmail(string $author_email) Return the first ChildComment filtered by the author_email column
  * @method     ChildComment findOneByCommentText(string $comment_text) Return the first ChildComment filtered by the comment_text column
+ * @method     ChildComment findOneByCommentTitle(string $comment_title) Return the first ChildComment filtered by the comment_title column
  * @method     ChildComment findOneByAvatarLink(string $avatar_link) Return the first ChildComment filtered by the avatar_link column
  * @method     ChildComment findOneByCommentDate(string $comment_date) Return the first ChildComment filtered by the comment_date column
  * @method     ChildComment findOneByPageId(int $page_id) Return the first ChildComment filtered by the page_id column *
@@ -61,6 +64,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildComment requireOneByAuthorName(string $author_name) Return the first ChildComment filtered by the author_name column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildComment requireOneByAuthorEmail(string $author_email) Return the first ChildComment filtered by the author_email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildComment requireOneByCommentText(string $comment_text) Return the first ChildComment filtered by the comment_text column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildComment requireOneByCommentTitle(string $comment_title) Return the first ChildComment filtered by the comment_title column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildComment requireOneByAvatarLink(string $avatar_link) Return the first ChildComment filtered by the avatar_link column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildComment requireOneByCommentDate(string $comment_date) Return the first ChildComment filtered by the comment_date column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildComment requireOneByPageId(int $page_id) Return the first ChildComment filtered by the page_id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -70,6 +74,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildComment[]|ObjectCollection findByAuthorName(string $author_name) Return ChildComment objects filtered by the author_name column
  * @method     ChildComment[]|ObjectCollection findByAuthorEmail(string $author_email) Return ChildComment objects filtered by the author_email column
  * @method     ChildComment[]|ObjectCollection findByCommentText(string $comment_text) Return ChildComment objects filtered by the comment_text column
+ * @method     ChildComment[]|ObjectCollection findByCommentTitle(string $comment_title) Return ChildComment objects filtered by the comment_title column
  * @method     ChildComment[]|ObjectCollection findByAvatarLink(string $avatar_link) Return ChildComment objects filtered by the avatar_link column
  * @method     ChildComment[]|ObjectCollection findByCommentDate(string $comment_date) Return ChildComment objects filtered by the comment_date column
  * @method     ChildComment[]|ObjectCollection findByPageId(int $page_id) Return ChildComment objects filtered by the page_id column
@@ -171,7 +176,7 @@ abstract class CommentQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, author_name, author_email, comment_text, avatar_link, comment_date, page_id FROM comment WHERE id = :p0';
+        $sql = 'SELECT id, author_name, author_email, comment_text, comment_title, avatar_link, comment_date, page_id FROM comment WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -375,6 +380,31 @@ abstract class CommentQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(CommentTableMap::COL_COMMENT_TEXT, $commentText, $comparison);
+    }
+
+    /**
+     * Filter the query on the comment_title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCommentTitle('fooValue');   // WHERE comment_title = 'fooValue'
+     * $query->filterByCommentTitle('%fooValue%', Criteria::LIKE); // WHERE comment_title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $commentTitle The value to use as filter.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildCommentQuery The current query, for fluid interface
+     */
+    public function filterByCommentTitle($commentTitle = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($commentTitle)) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(CommentTableMap::COL_COMMENT_TITLE, $commentTitle, $comparison);
     }
 
     /**

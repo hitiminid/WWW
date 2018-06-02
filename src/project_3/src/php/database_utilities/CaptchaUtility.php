@@ -3,8 +3,6 @@
     use MyPage\CaptchaQuery;
     
     class CaptchaUtility {
-    
-        // private $currentCaptcha;
         
         public function getCaptcha() {
             $query = new CaptchaQuery();
@@ -16,25 +14,14 @@
             } else {
 
             }
-            // $this->currentCaptcha = $result[$captchaNumber];
             return $result[$captchaNumber];
         }
-
 
         public function validateCaptcha($question, $answer) {
             $query    = new CaptchaQuery();
             $result   = $query->filterByQuestion($question)->filterByAnswer($answer)->find();
-            
             return (sizeof($result) > 0);
-            // if (sizeof($result) > 0) {
-                // echo "true";
-                // return true;
-            // } else {
-                // echo "false";
-                // return false;
-            // }
         }
-
 
         public function mockCaptchas() {
             $captcha1 = new Captcha();

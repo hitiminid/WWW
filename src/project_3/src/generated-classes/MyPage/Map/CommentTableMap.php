@@ -59,7 +59,7 @@ class CommentTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 8;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class CommentTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /**
      * the column name for the id field
@@ -90,6 +90,11 @@ class CommentTableMap extends TableMap
      * the column name for the comment_text field
      */
     const COL_COMMENT_TEXT = 'comment.comment_text';
+
+    /**
+     * the column name for the comment_title field
+     */
+    const COL_COMMENT_TITLE = 'comment.comment_title';
 
     /**
      * the column name for the avatar_link field
@@ -118,11 +123,11 @@ class CommentTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'AuthorName', 'AuthorEmail', 'CommentText', 'AvatarLink', 'CommentDate', 'PageId', ),
-        self::TYPE_CAMELNAME     => array('id', 'authorName', 'authorEmail', 'commentText', 'avatarLink', 'commentDate', 'pageId', ),
-        self::TYPE_COLNAME       => array(CommentTableMap::COL_ID, CommentTableMap::COL_AUTHOR_NAME, CommentTableMap::COL_AUTHOR_EMAIL, CommentTableMap::COL_COMMENT_TEXT, CommentTableMap::COL_AVATAR_LINK, CommentTableMap::COL_COMMENT_DATE, CommentTableMap::COL_PAGE_ID, ),
-        self::TYPE_FIELDNAME     => array('id', 'author_name', 'author_email', 'comment_text', 'avatar_link', 'comment_date', 'page_id', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'AuthorName', 'AuthorEmail', 'CommentText', 'CommentTitle', 'AvatarLink', 'CommentDate', 'PageId', ),
+        self::TYPE_CAMELNAME     => array('id', 'authorName', 'authorEmail', 'commentText', 'commentTitle', 'avatarLink', 'commentDate', 'pageId', ),
+        self::TYPE_COLNAME       => array(CommentTableMap::COL_ID, CommentTableMap::COL_AUTHOR_NAME, CommentTableMap::COL_AUTHOR_EMAIL, CommentTableMap::COL_COMMENT_TEXT, CommentTableMap::COL_COMMENT_TITLE, CommentTableMap::COL_AVATAR_LINK, CommentTableMap::COL_COMMENT_DATE, CommentTableMap::COL_PAGE_ID, ),
+        self::TYPE_FIELDNAME     => array('id', 'author_name', 'author_email', 'comment_text', 'comment_title', 'avatar_link', 'comment_date', 'page_id', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -132,11 +137,11 @@ class CommentTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'AuthorName' => 1, 'AuthorEmail' => 2, 'CommentText' => 3, 'AvatarLink' => 4, 'CommentDate' => 5, 'PageId' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'authorName' => 1, 'authorEmail' => 2, 'commentText' => 3, 'avatarLink' => 4, 'commentDate' => 5, 'pageId' => 6, ),
-        self::TYPE_COLNAME       => array(CommentTableMap::COL_ID => 0, CommentTableMap::COL_AUTHOR_NAME => 1, CommentTableMap::COL_AUTHOR_EMAIL => 2, CommentTableMap::COL_COMMENT_TEXT => 3, CommentTableMap::COL_AVATAR_LINK => 4, CommentTableMap::COL_COMMENT_DATE => 5, CommentTableMap::COL_PAGE_ID => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'author_name' => 1, 'author_email' => 2, 'comment_text' => 3, 'avatar_link' => 4, 'comment_date' => 5, 'page_id' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'AuthorName' => 1, 'AuthorEmail' => 2, 'CommentText' => 3, 'CommentTitle' => 4, 'AvatarLink' => 5, 'CommentDate' => 6, 'PageId' => 7, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'authorName' => 1, 'authorEmail' => 2, 'commentText' => 3, 'commentTitle' => 4, 'avatarLink' => 5, 'commentDate' => 6, 'pageId' => 7, ),
+        self::TYPE_COLNAME       => array(CommentTableMap::COL_ID => 0, CommentTableMap::COL_AUTHOR_NAME => 1, CommentTableMap::COL_AUTHOR_EMAIL => 2, CommentTableMap::COL_COMMENT_TEXT => 3, CommentTableMap::COL_COMMENT_TITLE => 4, CommentTableMap::COL_AVATAR_LINK => 5, CommentTableMap::COL_COMMENT_DATE => 6, CommentTableMap::COL_PAGE_ID => 7, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'author_name' => 1, 'author_email' => 2, 'comment_text' => 3, 'comment_title' => 4, 'avatar_link' => 5, 'comment_date' => 6, 'page_id' => 7, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -161,6 +166,7 @@ class CommentTableMap extends TableMap
         $this->addColumn('author_name', 'AuthorName', 'VARCHAR', false, 64, null);
         $this->addColumn('author_email', 'AuthorEmail', 'VARCHAR', false, 64, null);
         $this->addColumn('comment_text', 'CommentText', 'VARCHAR', true, 1024, null);
+        $this->addColumn('comment_title', 'CommentTitle', 'VARCHAR', false, 128, null);
         $this->addColumn('avatar_link', 'AvatarLink', 'VARCHAR', false, 1024, null);
         $this->addColumn('comment_date', 'CommentDate', 'TIMESTAMP', false, null, null);
         $this->addColumn('page_id', 'PageId', 'INTEGER', true, null, null);
@@ -318,6 +324,7 @@ class CommentTableMap extends TableMap
             $criteria->addSelectColumn(CommentTableMap::COL_AUTHOR_NAME);
             $criteria->addSelectColumn(CommentTableMap::COL_AUTHOR_EMAIL);
             $criteria->addSelectColumn(CommentTableMap::COL_COMMENT_TEXT);
+            $criteria->addSelectColumn(CommentTableMap::COL_COMMENT_TITLE);
             $criteria->addSelectColumn(CommentTableMap::COL_AVATAR_LINK);
             $criteria->addSelectColumn(CommentTableMap::COL_COMMENT_DATE);
             $criteria->addSelectColumn(CommentTableMap::COL_PAGE_ID);
@@ -326,6 +333,7 @@ class CommentTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.author_name');
             $criteria->addSelectColumn($alias . '.author_email');
             $criteria->addSelectColumn($alias . '.comment_text');
+            $criteria->addSelectColumn($alias . '.comment_title');
             $criteria->addSelectColumn($alias . '.avatar_link');
             $criteria->addSelectColumn($alias . '.comment_date');
             $criteria->addSelectColumn($alias . '.page_id');

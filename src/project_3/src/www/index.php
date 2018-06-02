@@ -5,6 +5,7 @@
   require_once(__DIR__."/../php/content_generators/PageGenerator.php");
   require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
+  require_once(__DIR__."/../php/database_utilities/CaptchaUtility.php");
 
 
   $pageGenerator = new PageGenerator;
@@ -33,4 +34,8 @@
   $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
+
+  // $util = new CaptchaUtility();
+  // $util->mockCaptchas();
+
 ?>

@@ -6,6 +6,7 @@
     <column name="author_name"   type="varchar" size="64"/>
     <column name="author_email"  type="varchar" size="64"/>
     <column name="comment_text"  type="varchar" size="1024" required="true"/>
+    <column name="comment_title" type="varchar" size="128"/>
     <column name="avatar_link"   type="varchar" size="1024"/>
     <column name="comment_date"  type="timestamp" />
     <column name="page_id"       type="integer" required="true"/>

@@ -23,11 +23,11 @@ hideNoCommentsSection = () => {
 }
 
 appendCurrentlyCreatedComment = (author, avatar, date,text) => {
-    
     hideNoCommentsSection(); 
     if (avatar === "") {
         avatar = '../../img/avatar_placeholder.png';
     }
+    //todo: render title
     let commentStart_1 = "<div class='comment'><div class='comment-header'><div class='children'>";
     let commentStart_2 = `<div class='image-panel'><img src='${avatar}'></div>`;
     let commentStart_3 = `<div class='comment-info'><h6 class='comment-author'>${author}</h6><h6 class='comment-date'>${date}</h6></div></div></div>`;
@@ -35,13 +35,15 @@ appendCurrentlyCreatedComment = (author, avatar, date,text) => {
     let comment = commentStart_1 + commentStart_2 + commentStart_3 + commentBody;
     console.log(comment);
     $("#comment-section-body").append(comment);
-    // todo: append 
 }
 
 clearInputFields = () => {
     document.getElementById("comment-author-input-field").value = '';
     document.getElementById("comment-title-input-field").value = '';
     document.getElementById("comment-text-area").value = '';
+    document.getElementById('avatar-input-field').value = '';
+    document.getElementById('email-input-field').value = '';
+    document.getElementById('captcha-answer').value = '';
 }
 
 function sendComment(event) {
@@ -49,7 +51,7 @@ function sendComment(event) {
 
         let author   = document.getElementById('comment-author-input-field').value;
         let avatar   = document.getElementById('avatar-input-field').value;
-        let title    = document.getElementById('comment-author-input-field').value;
+        let title    = document.getElementById('comment-title-input-field').value;
         let text     = document.getElementById('comment-text-area').value;
         let email    = document.getElementById('email-input-field').value;
         let date     = "";
@@ -76,11 +78,9 @@ function sendComment(event) {
             success: function( obj, textstatus ) {
                 if( !('error' in obj) ) {
                     console.log("all correct");
-                    appendCurrentlyCreatedComment(author, avatar, obj['creationDate'], text);        
+                    appendCurrentlyCreatedComment(author, avatar, obj['creationDate'], title, text);        
                     clearInputFields();
                 } else {
-                    // console.log();
-                    console.log(123);
                     alert(obj["error"]);
                 }
             }

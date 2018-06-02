@@ -67,9 +67,11 @@
     padding: 10px;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px; }
-    .comment .comment-body .comment-text {
+    .comment .comment-body p {
       margin: 0;
       padding: 0; }
+    .comment .comment-body .comment-title {
+      font-weight: bold; }
 
 #create-comment-field {
   width: 500px;

@@ -22,8 +22,8 @@
     $response = array();
     
     if ($captchaUtility->validateCaptcha($question, $answer)) {
-        $commentsUtility->saveComment($author, $text, $email, $pageId);  
-        $response['creationDate'] = gmdate('h:m d-m-Y \C\E\S\T', time());
+        $commentsUtility->saveComment($author, $title, $text, $email, $pageId);  
+        $response['creationDate'] = gmdate('h:m d-m-Y', time());
     } else {
         $response['error'] = 'Wrong Captcha';
     }

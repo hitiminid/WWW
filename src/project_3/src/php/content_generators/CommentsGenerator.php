@@ -39,7 +39,6 @@
             $commentsSection .= $header;
             $commentsSection .= $comments;
             $commentsSection .= $createComment;
-
             return "<div id='comment-section'>$commentsSection</div>";
         }
 
@@ -69,6 +68,7 @@
             $author = $comment->getAuthorName();
             $email  = $comment->getAuthorEmail(); 
             $text   = $comment->getCommentText(); 
+            $title  = $comment->getCommentTitle();
             $date   = $comment->getCommentDate(); 
             $avatar = $comment->getAvatarLink();
 
@@ -89,7 +89,7 @@
                             <div class='comment-info'>$authorField<h6 class='comment-date'>$commentDate</h6></div>
                         </div>
                     </div>";
-            $body = "<div class='comment-body'><p class='comment-text'>$text</p></div>";
+            $body = $this->getCommentBody($title, $text);
             $commentContent = $header . $body;
             $comment = "<div class='comment'>$commentContent</div>";
             return $comment;
@@ -100,6 +100,14 @@
                 return "<h6 class='comment-author'>$author</h6>";
             } else {
                 return "<h6 class='comment-author'>$author ($email)</h6>";
+            }
+        }
+
+        private function getCommentBody($title, $text) {
+            if ($title == NULL || $title == "") {
+                return $body = "<div class='comment-body'><p class='comment-text'>$text</p></div>";
+            } else {
+                return "<div class='comment-body'><p class='comment-title'>$title</p><p class='comment-text'>$text</p></div>";
             }
         }
 

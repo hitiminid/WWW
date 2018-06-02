@@ -90,6 +90,13 @@ abstract class Comment implements ActiveRecordInterface
     protected $comment_text;
 
     /**
+     * The value for the comment_title field.
+     *
+     * @var        string
+     */
+    protected $comment_title;
+
+    /**
      * The value for the avatar_link field.
      *
      * @var        string
@@ -384,6 +391,16 @@ abstract class Comment implements ActiveRecordInterface
     }
 
     /**
+     * Get the [comment_title] column value.
+     *
+     * @return string
+     */
+    public function getCommentTitle()
+    {
+        return $this->comment_title;
+    }
+
+    /**
      * Get the [avatar_link] column value.
      *
      * @return string
@@ -504,6 +521,26 @@ abstract class Comment implements ActiveRecordInterface
     } // setCommentText()
 
     /**
+     * Set the value of [comment_title] column.
+     *
+     * @param string $v new value
+     * @return $this|\MyPage\Comment The current object (for fluent API support)
+     */
+    public function setCommentTitle($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->comment_title !== $v) {
+            $this->comment_title = $v;
+            $this->modifiedColumns[CommentTableMap::COL_COMMENT_TITLE] = true;
+        }
+
+        return $this;
+    } // setCommentTitle()
+
+    /**
      * Set the value of [avatar_link] column.
      *
      * @param string $v new value
@@ -611,13 +648,16 @@ abstract class Comment implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : CommentTableMap::translateFieldName('CommentText', TableMap::TYPE_PHPNAME, $indexType)];
             $this->comment_text = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : CommentTableMap::translateFieldName('AvatarLink', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : CommentTableMap::translateFieldName('CommentTitle', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->comment_title = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : CommentTableMap::translateFieldName('AvatarLink', TableMap::TYPE_PHPNAME, $indexType)];
             $this->avatar_link = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : CommentTableMap::translateFieldName('CommentDate', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : CommentTableMap::translateFieldName('CommentDate', TableMap::TYPE_PHPNAME, $indexType)];
             $this->comment_date = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : CommentTableMap::translateFieldName('PageId', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : CommentTableMap::translateFieldName('PageId', TableMap::TYPE_PHPNAME, $indexType)];
             $this->page_id = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -627,7 +667,7 @@ abstract class Comment implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = CommentTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = CommentTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\MyPage\\Comment'), 0, $e);
@@ -849,6 +889,9 @@ abstract class Comment implements ActiveRecordInterface
         if ($this->isColumnModified(CommentTableMap::COL_COMMENT_TEXT)) {
             $modifiedColumns[':p' . $index++]  = 'comment_text';
         }
+        if ($this->isColumnModified(CommentTableMap::COL_COMMENT_TITLE)) {
+            $modifiedColumns[':p' . $index++]  = 'comment_title';
+        }
         if ($this->isColumnModified(CommentTableMap::COL_AVATAR_LINK)) {
             $modifiedColumns[':p' . $index++]  = 'avatar_link';
         }
@@ -880,6 +923,9 @@ abstract class Comment implements ActiveRecordInterface
                         break;
                     case 'comment_text':
                         $stmt->bindValue($identifier, $this->comment_text, PDO::PARAM_STR);
+                        break;
+                    case 'comment_title':
+                        $stmt->bindValue($identifier, $this->comment_title, PDO::PARAM_STR);
                         break;
                     case 'avatar_link':
                         $stmt->bindValue($identifier, $this->avatar_link, PDO::PARAM_STR);
@@ -958,12 +1004,15 @@ abstract class Comment implements ActiveRecordInterface
                 return $this->getCommentText();
                 break;
             case 4:
-                return $this->getAvatarLink();
+                return $this->getCommentTitle();
                 break;
             case 5:
-                return $this->getCommentDate();
+                return $this->getAvatarLink();
                 break;
             case 6:
+                return $this->getCommentDate();
+                break;
+            case 7:
                 return $this->getPageId();
                 break;
             default:
@@ -999,12 +1048,13 @@ abstract class Comment implements ActiveRecordInterface
             $keys[1] => $this->getAuthorName(),
             $keys[2] => $this->getAuthorEmail(),
             $keys[3] => $this->getCommentText(),
-            $keys[4] => $this->getAvatarLink(),
-            $keys[5] => $this->getCommentDate(),
-            $keys[6] => $this->getPageId(),
+            $keys[4] => $this->getCommentTitle(),
+            $keys[5] => $this->getAvatarLink(),
+            $keys[6] => $this->getCommentDate(),
+            $keys[7] => $this->getPageId(),
         );
-        if ($result[$keys[5]] instanceof \DateTimeInterface) {
-            $result[$keys[5]] = $result[$keys[5]]->format('c');
+        if ($result[$keys[6]] instanceof \DateTimeInterface) {
+            $result[$keys[6]] = $result[$keys[6]]->format('c');
         }
 
         $virtualColumns = $this->virtualColumns;
@@ -1058,12 +1108,15 @@ abstract class Comment implements ActiveRecordInterface
                 $this->setCommentText($value);
                 break;
             case 4:
-                $this->setAvatarLink($value);
+                $this->setCommentTitle($value);
                 break;
             case 5:
-                $this->setCommentDate($value);
+                $this->setAvatarLink($value);
                 break;
             case 6:
+                $this->setCommentDate($value);
+                break;
+            case 7:
                 $this->setPageId($value);
                 break;
         } // switch()
@@ -1105,13 +1158,16 @@ abstract class Comment implements ActiveRecordInterface
             $this->setCommentText($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setAvatarLink($arr[$keys[4]]);
+            $this->setCommentTitle($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCommentDate($arr[$keys[5]]);
+            $this->setAvatarLink($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setPageId($arr[$keys[6]]);
+            $this->setCommentDate($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setPageId($arr[$keys[7]]);
         }
     }
 
@@ -1165,6 +1221,9 @@ abstract class Comment implements ActiveRecordInterface
         }
         if ($this->isColumnModified(CommentTableMap::COL_COMMENT_TEXT)) {
             $criteria->add(CommentTableMap::COL_COMMENT_TEXT, $this->comment_text);
+        }
+        if ($this->isColumnModified(CommentTableMap::COL_COMMENT_TITLE)) {
+            $criteria->add(CommentTableMap::COL_COMMENT_TITLE, $this->comment_title);
         }
         if ($this->isColumnModified(CommentTableMap::COL_AVATAR_LINK)) {
             $criteria->add(CommentTableMap::COL_AVATAR_LINK, $this->avatar_link);
@@ -1264,6 +1323,7 @@ abstract class Comment implements ActiveRecordInterface
         $copyObj->setAuthorName($this->getAuthorName());
         $copyObj->setAuthorEmail($this->getAuthorEmail());
         $copyObj->setCommentText($this->getCommentText());
+        $copyObj->setCommentTitle($this->getCommentTitle());
         $copyObj->setAvatarLink($this->getAvatarLink());
         $copyObj->setCommentDate($this->getCommentDate());
         $copyObj->setPageId($this->getPageId());
@@ -1306,6 +1366,7 @@ abstract class Comment implements ActiveRecordInterface
         $this->author_name = null;
         $this->author_email = null;
         $this->comment_text = null;
+        $this->comment_title = null;
         $this->avatar_link = null;
         $this->comment_date = null;
         $this->page_id = null;

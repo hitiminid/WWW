@@ -13,6 +13,7 @@ CREATE TABLE "comment"
     "author_name" VARCHAR(64),
     "author_email" VARCHAR(64),
     "comment_text" VARCHAR(1024) NOT NULL,
+    "comment_title" VARCHAR(128),
     "avatar_link" VARCHAR(1024),
     "comment_date" TIMESTAMP,
     "page_id" INTEGER NOT NULL,

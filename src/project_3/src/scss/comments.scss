@@ -116,9 +116,13 @@
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
 
-        .comment-text {
+        p {
             margin: 0;
             padding: 0;
+        }
+
+        .comment-title {
+            font-weight: bold;
         }
     }   
 }
