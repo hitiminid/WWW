@@ -85,7 +85,7 @@
         }
 
         private function getPlaceholderPath() {
-            //todo: probably not needed
+            //todo: probabl y not needed
         }
 
         private function generateCaptcha() { 
@@ -113,13 +113,13 @@
                         <input id='captcha-answer' type='text' name='captcha'>
                     </div>
                 </div>
-                <div id='submit-comment-field' style='display:flex;'>
-                    <div id='attach-avatar-field'  class='col-3'>
+                <div id='submit-comment-field'>
+                    <div id='attach-avatar-field' class='col-3'>
                         <div id='attach-icon'></div>
                         <input type='text' id='avatar-input-field' placeholder='Link do Twojego avatara'/>
                     </div>
                     <div id='submit-comment-button-field' class='col-1'>
-                        <div id='submit-comment-button' style='width:100px; height:100px;'>WYŚLIJ</div>
+                        <div id='submit-comment-button'><p>Wyślij</p></div>
                     </div>
                 </div>
             </form>         

@@ -101,12 +101,15 @@
       width: 60%; }
       #create-comment-field #captcha-field #captcha-answer-field #captcha-answer {
         height: 40px;
-        width: 60%;
+        border: none;
+        border-radius: 10px;
+        width: 90%;
         margin-top: 10px;
         margin-left: 10px;
         font-size: 15px; }
   #create-comment-field #submit-comment-field {
-    height: 70px; }
+    height: 70px;
+    display: flex; }
     #create-comment-field #submit-comment-field #attach-avatar-field {
       margin-top: 10px;
       width: 40px;
@@ -131,7 +134,10 @@
     #create-comment-field #submit-comment-field #avatar-input-field {
       display: none;
       width: 100%;
-      padding: 0px; }
+      padding: 0px;
+      padding-left: 10px;
+      border-radius: 10px;
+      border: none; }
     #create-comment-field #submit-comment-field #submit-comment-button-field {
       position: relative; }
     #create-comment-field #submit-comment-field #submit-comment-button {
@@ -141,12 +147,19 @@
       right: 0px;
       height: 60px;
       width: 100%;
+      display: flex;
       margin-top: 5px;
       border: #333333 2px solid;
       color: #333333;
-      background-color: #f1f1f1; }
+      background-color: #f1f1f1;
+      text-align: center; }
       #create-comment-field #submit-comment-field #submit-comment-button:hover {
         color: #f1f1f1;
         background-color: #333333;
         border-color: #f1f1f1;
         cursor: pointer; }
+      #create-comment-field #submit-comment-field #submit-comment-button p {
+        padding: 0;
+        margin: 0;
+        margin: auto;
+        margin-top: 10px; }
