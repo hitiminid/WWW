@@ -38,7 +38,7 @@
   $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
 
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/hobbies.js", "../../js/comments.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/comments.js",  "../../js/hobbies.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

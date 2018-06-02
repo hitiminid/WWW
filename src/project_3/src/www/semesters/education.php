@@ -28,6 +28,6 @@
 
   $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/education.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/comments.js", "../../js/education.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

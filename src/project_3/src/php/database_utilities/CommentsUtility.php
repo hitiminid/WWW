@@ -22,6 +22,7 @@
             $comment->setCommentText($text);
             $comment->setPageId($pageId);
             // $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
+            $comment->setCommentDate(gmdate('Y-m-d h:m:s \G\M\T', time())); 
             $comment->save();
         }
         

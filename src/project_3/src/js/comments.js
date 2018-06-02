@@ -48,14 +48,13 @@ function sendComment(event) {
 
     //todo: data validation
     //todo: append div
+    console.log(123)
 
     let isDataValid = validateData();
     // let isDataValid = true;
     // let isDataValid = true;
 
     if (isDataValid) {
-        // console.log(pageId);
-        // console.log(event.data.pageId);
 
         let author   = document.getElementById('comment-author-input-field').value;
         let avatar   = document.getElementById('avatar-input-field').value;
@@ -64,9 +63,6 @@ function sendComment(event) {
         let date     = "";
         let question = document.getElementById('captcha-question').innerHTML;
         let answer   = document.getElementById('captcha-answer').value;
-
-        console.log(question);
-        console.log(answer);
 
         var myData = {
             commentAuthor: author,
@@ -77,7 +73,7 @@ function sendComment(event) {
             captchaAnswer: answer
         };
 
-        phpScriptURL = "../../php/database_utilities/submit_comment.php";
+        const phpScriptURL = "../../php/database_utilities/submit_comment.php";
 
         $.ajax({
             url: phpScriptURL,
@@ -87,9 +83,8 @@ function sendComment(event) {
             success: function( obj, textstatus ) {
                 if( !('error' in obj) ) {
                     console.log("all correct");
-                    appendCurrentlyCreatedComment(author, avatar, date, text);        
+                    appendCurrentlyCreatedComment(author, avatar, obj['creationDate'], text);        
                     clearInputFields();
-
                 } else {
                     // console.log();
                     console.log(123);
@@ -99,13 +94,3 @@ function sendComment(event) {
         });
     }
 }
-
-getProperPHPFilePath = (pageId) => {
-    // switch (pageId) {
-        // case 1:
-            // return '../../img/avatar_placeholder.png';
-    // }
-}
-
-// $("#submit-comment-button").click({pageId: 1}, sendComment);
-// todo: kazda strona ma miec wlasny skrypt i przekazywac pageId
