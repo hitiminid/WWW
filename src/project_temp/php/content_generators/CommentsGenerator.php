@@ -49,7 +49,7 @@
                         </div>";
             $body = "<div class='comment-body'><p class='comment-text'>$text</p></div>";
             $commentContent = $header . $body;
-            $comment = "<div class='comment'>$commentContent</div>"
+            $comment = "<div class='comment'>$commentContent</div>";
             return $comment;
         }
 

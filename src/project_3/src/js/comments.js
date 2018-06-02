@@ -53,6 +53,9 @@ function sendComment(event) {
     // let isDataValid = true;
 
     if (isDataValid) {
+        // console.log(pageId);
+        console.log(event.data.pageId);
+
         let author = document.getElementById('comment-author-input-field').value;
         let avatar = document.getElementById('avatar-input-field').value;
         let title  = document.getElementById('comment-author-input-field').value;
@@ -63,7 +66,7 @@ function sendComment(event) {
             commentAuthor: author,
             commentTitle: title,
             commentText: text,
-            pageId: 1
+            pageId: event.data.pageId
         };
 
         appendCurrentlyCreatedComment(author, avatar, date, text);
@@ -87,11 +90,11 @@ function sendComment(event) {
 }
 
 getProperPHPFilePath = (pageId) => {
-    switch (pageId) {
-        case 1:
-            return '../../img/avatar_placeholder.png';
-    }
+    // switch (pageId) {
+        // case 1:
+            // return '../../img/avatar_placeholder.png';
+    // }
 }
 
-$("#submit-comment-button").click({pageId: 1}, sendComment);
+// $("#submit-comment-button").click({pageId: 1}, sendComment);
 // todo: kazda strona ma miec wlasny skrypt i przekazywac pageId

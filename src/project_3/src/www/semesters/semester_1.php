@@ -43,7 +43,7 @@
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js", "../../js/semester_1.js"));
   
   echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
 ?>

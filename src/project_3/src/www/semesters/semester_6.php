@@ -20,8 +20,6 @@
   $hobbyPath        = "../hobbies/hobbies.php";
   $imagePath        = "../../img/logo.png";
 
-  $lectures = array("", "", "", "", "");
-
   $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
 
   $semesters = $contentGenerator->generateLectures(array(
@@ -34,9 +32,9 @@
 
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr VI", "Lato 2017/2018", $semesters);
 
-  $commentsSection = (new CommentsGenerator())->generateCommentsSection(8);  
+  $commentsSection = (new CommentsGenerator())->generateCommentsSection(10);  
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js", "../../js/semester_6.js"));
   echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
 ?>

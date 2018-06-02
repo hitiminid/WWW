@@ -19,8 +19,8 @@
     $pageId = $_POST['pageId'];
 
     $commentsUtility = new CommentsUtility();
-    $pageId = 1;
-    $commentsUtility->saveComment($author, $text, 1);  
+    // $pageId = $p;
+    $commentsUtility->saveComment($author, $text, $pageId);  
 
     $aResult = array();
 
