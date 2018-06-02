@@ -3,6 +3,7 @@
     require_once(__DIR__. DIRECTORY_SEPARATOR . "Utility.php");
     $dirname = realpath(__DIR__ . '/../database_utilities');
     require_once($dirname . DIRECTORY_SEPARATOR . "CommentsUtility.php");
+    require_once($dirname . DIRECTORY_SEPARATOR . "CaptchaUtility.php");
 
     class CommentsGenerator 
     {
@@ -13,10 +14,15 @@
         private $semestersPrefix = "";
         private $hobbyPath = "../hobbies/hobbies.php";
         private $pageId; 
+        private $captchaUtility; 
+        private $captcha;
 
         public function __construct() {
             $this->utilityManager = new Utility();
             $this->commentsUtility = new CommentsUtility();
+            $this->captchaUtility = new CaptchaUtility();
+            $this->captcha = $this->captchaUtility->getCaptcha();
+            echo $this->captcha->getQuestion();
         }
 
         public function generateCommentsSection($pageId) {
@@ -29,7 +35,7 @@
         private function generateContent($comments) {
             $header = $this->generateCommentsSectionHeader();
             $comments = $this->generateCommentsSectionBody($comments);
-            $createComment = $this->generateCreateCommentField("2+2=");            
+            $createComment = $this->generateCreateCommentField();            
             $commentsSection = "";
             $commentsSection .= $header;
             $commentsSection .= $comments;
@@ -97,7 +103,8 @@
             
         }
 
-        private function generateCreateCommentField($captchaQuestion) {
+        private function generateCreateCommentField() {
+            $captchaQuestion = $this->captcha->getQuestion();
             $content = " <div id='create-comment-field'>
             <form action='/php/database_utilities/submit_comment.php' method='POST'>
                 <div class='row'>
@@ -112,7 +119,7 @@
                 </div>
                 <div id='captcha-field' class='row'>
                     <div id='captcha-question-field'>
-                        <p id='captcha-question'>\( x^2 + y^2 = \)</p>
+                        <p id='captcha-question'>$captchaQuestion</p>
                     </div>
                     <div id='captcha-answer-field'>
                         <input id='captcha-answer' type='text' name='captcha'>
