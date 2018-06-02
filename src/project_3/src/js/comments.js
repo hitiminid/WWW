@@ -8,7 +8,6 @@ if (attachIcon != null) {
     });
 }
 
-
 validateData = () => {
     let author = document.getElementById("comment-author-input-field").value;
     let title  = document.getElementById("comment-title-input-field").value;
@@ -16,7 +15,19 @@ validateData = () => {
     return author != "" && title != "" && text != "";
 }
 
+hideNoCommentsSection = () => {
+    let noCommentsSection = document.getElementById('no-comments-info');
+    if (noCommentsSection != null) {
+        noCommentsSection.style.display = 'none';
+    }
+}
+
 appendCurrentlyCreatedComment = (author, avatar, date,text) => {
+    
+    hideNoCommentsSection(); 
+    if (avatar === "") {
+        avatar = '../../img/avatar_placeholder.png';
+    }
     let commentStart_1 = "<div class='comment'><div class='comment-header'><div class='children'>";
     let commentStart_2 = `<div class='image-panel'><img src='${avatar}'></div>`;
     let commentStart_3 = `<div class='comment-info'><h6 class='comment-author'>${author}</h6><h6 class='comment-date'>${date}</h6></div></div></div>`;
@@ -43,9 +54,10 @@ function sendComment(event) {
 
     if (isDataValid) {
         let author = document.getElementById('comment-author-input-field').value;
+        let avatar = document.getElementById('avatar-input-field').value;
         let title  = document.getElementById('comment-author-input-field').value;
         let text   = document.getElementById('comment-text-area').value;
-        let date = "";
+        let date   = "";
 
         var myData = {
             commentAuthor: author,
@@ -53,8 +65,8 @@ function sendComment(event) {
             commentText: text,
             pageId: 1
         };
-        appendCurrentlyCreatedComment(author, "", date, text);
-        // phpScriptURL = getProperPHPFilePath(event.data.pageId);
+
+        appendCurrentlyCreatedComment(author, avatar, date, text);
         phpScriptURL = "../../php/database_utilities/submit_comment.php";
 
         $.ajax({
@@ -77,7 +89,7 @@ function sendComment(event) {
 getProperPHPFilePath = (pageId) => {
     switch (pageId) {
         case 1:
-            return '12';
+            return '../../img/avatar_placeholder.png';
     }
 }
 

@@ -60,7 +60,6 @@
             } else {
                 $generatedComments = "<div id='no-comments-info'><p id='no-comments-info-header'>Nie ma komentarzy!</p><p id='no-comments-info-body'>Bądź pierwszy!</p></div>";
             }
-            
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $generatedComments, "</div>");
         }
 
