@@ -98,14 +98,14 @@
   #create-comment-field #captcha-field {
     height: 60px; }
     #create-comment-field #captcha-field #captcha-question-field {
-      width: 40%;
-      background-color: red; }
+      width: 40%; }
       #create-comment-field #captcha-field #captcha-question-field #captcha-question {
         height: 40px;
-        margin-top: 20px;
-        padding: 0px; }
+        margin-top: 18px;
+        padding: 0px;
+        font-size: 20px;
+        text-align: right; }
     #create-comment-field #captcha-field #captcha-answer-field {
-      background-color: blue;
       width: 60%; }
       #create-comment-field #captcha-field #captcha-answer-field #captcha-answer {
         height: 40px;

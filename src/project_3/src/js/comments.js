@@ -45,21 +45,13 @@ clearInputFields = () => {
 }
 
 function sendComment(event) {
-
-    //todo: data validation
-    //todo: append div
-    console.log(123)
-
-    let isDataValid = validateData();
-    // let isDataValid = true;
-    // let isDataValid = true;
-
-    if (isDataValid) {
+    if (validateData()) {
 
         let author   = document.getElementById('comment-author-input-field').value;
         let avatar   = document.getElementById('avatar-input-field').value;
         let title    = document.getElementById('comment-author-input-field').value;
         let text     = document.getElementById('comment-text-area').value;
+        let email    = document.getElementById('email-input-field').value;
         let date     = "";
         let question = document.getElementById('captcha-question').innerHTML;
         let answer   = document.getElementById('captcha-answer').value;
@@ -68,6 +60,7 @@ function sendComment(event) {
             commentAuthor: author,
             commentTitle: title,
             commentText: text,
+            authorEmail: email, 
             pageId: event.data.pageId,
             captchaQuestion: question,
             captchaAnswer: answer

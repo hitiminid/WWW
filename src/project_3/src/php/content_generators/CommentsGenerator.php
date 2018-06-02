@@ -22,13 +22,6 @@
             $this->commentsUtility = new CommentsUtility();
             $this->captchaUtility = new CaptchaUtility();
             $this->captcha = $this->captchaUtility->getCaptcha();
-            // $validation = $this->captchaUtility->validateCaptcha("2");
-            // if ($validation == true) {
-            //     echo "true";
-            // } else {
-            //     echo "false";
-            // }
-            // echo $validation;
         }
 
         public function generateCommentsSection($pageId) {
@@ -63,11 +56,7 @@
             
             if (sizeof($comments) > 0) {
                 foreach ($comments as $comment) {
-                    $generatedComments .= $this->generateComment(
-                                            $comment->getAuthorName(),
-                                            $comment->getCommentText(), 
-                                            $comment->getCommentDate(),
-                                            $comment->getAvatarLink());
+                    $generatedComments .= $this->generateComment($comment);
                 }
             } else {
                 $generatedComments = "<div id='no-comments-info'><p id='no-comments-info-header'>Nie ma komentarzy!</p><p id='no-comments-info-body'>Bądź pierwszy!</p></div>";
@@ -75,24 +64,29 @@
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $generatedComments, "</div>");
         }
 
-        private function generateComment($author, $text, $date, $avatar) {
+        private function generateComment($comment) {
+            
+            $author = $comment->getAuthorName();
+            $email  = $comment->getAuthorEmail(); 
+            $text   = $comment->getCommentText(); 
+            $date   = $comment->getCommentDate(); 
+            $avatar = $comment->getAvatarLink();
+
             if ($avatar == NULL) {
                 $avatar = "../../img/avatar_placeholder.png"; // todo: why call it every time?
             }
+
+            $authorField = $this->getAuthorField($author, $email);
             $commentDate = "";
+
             if ($date != NULL) {
                 $commentDate = $date->format('h:m d-m-Y');
             }
 
             $header = "<div class='comment-header'>
                         <div class='children'>
-                            <div class='image-panel'>
-                                <img src='$avatar'>
-                            </div>
-                            <div class='comment-info'>
-                                <h6 class='comment-author'>$author</h6>
-                                <h6 class='comment-date'>$commentDate</h6>
-                            </div>
+                            <div class='image-panel'><img src='$avatar'></div>
+                            <div class='comment-info'>$authorField<h6 class='comment-date'>$commentDate</h6></div>
                         </div>
                     </div>";
             $body = "<div class='comment-body'><p class='comment-text'>$text</p></div>";
@@ -101,12 +95,12 @@
             return $comment;
         }
 
-        private function getPlaceholderPath() {
-            //todo: probabl y not needed
-        }
-
-        private function generateCaptcha() { 
-            
+        private function getAuthorField($author, $email) {
+            if ($email == NULL || $email == "") {
+                return "<h6 class='comment-author'>$author</h6>";
+            } else {
+                return "<h6 class='comment-author'>$author ($email)</h6>";
+            }
         }
 
         private function generateCreateCommentField() {
@@ -141,10 +135,8 @@
                     </div>
                 </div>
             </form>         
-        </div>            ";
+        </div>";
         return $content;
         }
-
-        // private function 
     }
 ?>

@@ -16,13 +16,14 @@
          * @param {String} text : comment's content 
          * @param {Integer} pageId : ID of Page (where comment is located)
         */
-        public function saveComment($author, $text, $pageId) {
+        public function saveComment($author, $text, $email, $pageId) {
             $comment = new Comment();
             $comment->setAuthorName($author);
             $comment->setCommentText($text);
+            $comment->setAuthorEmail($email);
             $comment->setPageId($pageId);
             // $comment->setCommentDate(gmdate('Y-m-d h:i:s \G\M\T', time()));
-            $comment->setCommentDate(gmdate('Y-m-d h:m:s \G\M\T', time())); 
+            $comment->setCommentDate(gmdate('h:m d-m-Y \C\E\S\T', time())); 
             $comment->save();
         }
         

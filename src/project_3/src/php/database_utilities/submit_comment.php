@@ -12,6 +12,7 @@
     $author   = $_POST['commentAuthor'];
     $title    = $_POST['commentTitle'];
     $text     = $_POST['commentText'];
+    $email    = $_POST['authorEmail'];
     $pageId   = $_POST['pageId'];
     $question = $_POST['captchaQuestion'];
     $answer   = $_POST['captchaAnswer'];
@@ -21,8 +22,8 @@
     $response = array();
     
     if ($captchaUtility->validateCaptcha($question, $answer)) {
-        $commentsUtility->saveComment($author, $text, $pageId);  
-        $response['creationDate'] = gmdate('Y-m-d h:m:s \G\M\T', time());
+        $commentsUtility->saveComment($author, $text, $email, $pageId);  
+        $response['creationDate'] = gmdate('h:m d-m-Y \C\E\S\T', time());
     } else {
         $response['error'] = 'Wrong Captcha';
     }

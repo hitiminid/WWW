@@ -171,17 +171,19 @@
 
         #captcha-question-field {
             width: 40%;
-            background-color: red;    
+            // background-color: red;    
             
             #captcha-question { 
                 height: 40px;
-                margin-top: 20px;
-                padding:0px;
+                margin-top: 18px;
+                padding: 0px;
+                font-size: 20px;
+                text-align:right;
+                
             }
         }
         
         #captcha-answer-field {
-            background-color: blue;
             width: 60%;
             
             #captcha-answer {
