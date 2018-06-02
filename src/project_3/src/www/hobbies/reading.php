@@ -1,14 +1,17 @@
 <?php
   require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
   require_once(__DIR__."../../../php/content_generators/ReadingGenerator.php");
-
+  require_once(__DIR__."/../../php/content_generators/CommentsGenerator.php");
+  require_once(__DIR__."/../../php/database_utilities/CommentsUtility.php");
+  require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",
                      "../../css/grid.css",
                      "../../css/panorama.css",
-                     "../../css/reading.css");
+                     "../../css/reading.css",
+                    "../../css/comments.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new ReadingGenerator;
@@ -43,6 +46,10 @@
   $main   = $contentGenerator->generateMain(array($panorama, $yearsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js"));  
+  $commentsSection = (new CommentsGenerator)->generateCommentsSection(2);
+
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
+
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

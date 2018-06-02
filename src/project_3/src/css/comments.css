@@ -22,6 +22,14 @@
       outline: none; }
   #comment-section p {
     margin-left: 10px; }
+  #comment-section #comment-section-body #no-comments-info {
+    text-align: center;
+    margin: auto; }
+    #comment-section #comment-section-body #no-comments-info #no-comments-info-header {
+      font-size: 30px; }
+    #comment-section #comment-section-body #no-comments-info #no-comments-info-body {
+      margin-top: 10px;
+      font-size: 25px; }
 
 .comment {
   width: 600px;

@@ -21,7 +21,7 @@
 
         public function generateCommentsSection($pageId) {
             $this->pageId = $pageId;
-            $commentsData = $this->commentsUtility->getComments($pageId);
+            $commentsData = $this->commentsUtility->getComments($pageId);            
             $commentsSection = $this->generateContent($commentsData);
             return $commentsSection;
         }
@@ -48,13 +48,19 @@
 
         private function generateCommentsSectionBody(/*objects' array*/$comments) {
             $generatedComments = "";
-            foreach ($comments as $comment) {
-                $generatedComments .= $this->generateComment(
-                                        $comment->getAuthorName(),
-                                        $comment->getCommentText(), 
-                                        $comment->getCommentDate(),
-                                        $comment->getAvatarLink());
+            
+            if (sizeof($comments) > 0) {
+                foreach ($comments as $comment) {
+                    $generatedComments .= $this->generateComment(
+                                            $comment->getAuthorName(),
+                                            $comment->getCommentText(), 
+                                            $comment->getCommentDate(),
+                                            $comment->getAvatarLink());
+                }
+            } else {
+                $generatedComments = "<div id='no-comments-info'><p id='no-comments-info-header'>Nie ma komentarzy!</p><p id='no-comments-info-body'>Bądź pierwszy!</p></div>";
             }
+            
             return $this->utilityManager->appendElements("<div id='comment-section-body'>", $generatedComments, "</div>");
         }
 

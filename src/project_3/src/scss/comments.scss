@@ -20,7 +20,7 @@
         }
 
     }
-
+    
     select {
         background-color: #EBEBEB;
         height: 26px;    
@@ -37,6 +37,27 @@
     p {
         margin-left: 10px;
     }
+
+
+    #comment-section-body {
+        #no-comments-info {
+
+            text-align:center;
+            margin:auto;
+            
+            #no-comments-info-header {
+                font-size: 30px;
+            }
+
+            #no-comments-info-body {
+                margin-top: 10px;
+                font-size: 25px;
+            }
+        }
+    }
+
+
+
 }
 
 .comment {

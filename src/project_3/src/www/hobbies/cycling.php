@@ -1,6 +1,10 @@
 <?php
   require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
   require_once(__DIR__."../../../php/content_generators/CyclingGenerator.php");
+  require_once(__DIR__."/../../php/content_generators/CommentsGenerator.php");
+  require_once(__DIR__."/../../php/database_utilities/CommentsUtility.php");
+  require_once("../../setup.php");
+
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
@@ -8,7 +12,8 @@
                      "../../css/grid.css",
                      "../../css/panorama.css",
                      "../../css/hobbies.css",
-                     "../../css/cycling.css");
+                     "../../css/cycling.css",
+                     "../../css/comments.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new CyclingGenerator;
@@ -29,9 +34,10 @@
   $mapSection = $contentGenerator->generateMapSection($panels);
   $main   = $contentGenerator->generateMain(array($panorama, $description, $mapSection));
   
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
+  $commentsSection = (new CommentsGenerator)->generateCommentsSection(3);
+  
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js",
-                                                  "../../../js/cycling.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/cycling.js", "../../js/comments.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>
