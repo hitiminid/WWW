@@ -9,7 +9,7 @@
                      "../../css/panorama.css",
                      "../../css/hobbies.css",
                      "../../css/cycling.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new CyclingGenerator;
   $mainPagePath     = "../index.php";
@@ -32,6 +32,6 @@
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
 
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js",
-                                                  "../../js/cycling.js"));
+                                                  "../../../js/cycling.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

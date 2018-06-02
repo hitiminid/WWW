@@ -1,10 +1,13 @@
 let attachIcon = document.getElementById("attach-icon");
 let avatarInput = document.getElementById("avatar-input-field");
 
-attachIcon.addEventListener("click", function(){
-    attachIcon.style.display = 'none';
-    avatarInput.style.display = 'block';
-});
+if (attachIcon != null) {
+    attachIcon.addEventListener("click", function(){
+        attachIcon.style.display = 'none';
+        avatarInput.style.display = 'block';
+    });
+}
+
 
 validateData = () => {
     let author = document.getElementById("comment-author-input-field").value;

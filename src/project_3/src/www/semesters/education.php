@@ -8,7 +8,7 @@
                      "../../css/timeline.css",
                      "../../css/panorama.css",
                      "../../css/education.css");
-  $head = $pageGenerator->generateHead("Piotr Kawa - Edukacja", $cssStyles, null);
+  $head = $pageGenerator->generateHead("Piotr Kawa - Edukacja", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator   = new EducationGenerator;
   $description = $contentGenerator->generateDescription("W przeciągu 3 lat na Politechnice Wrocławskiej brałem udział w wielu przydatnych i ciekawych kursach z zakresu zarówno matematyki jak i informatyki. Poniższa oś czasu pokazuje każdy z semestrów, które odbyłem wraz z kursami które obejmowały.");
@@ -28,6 +28,6 @@
 
   $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/loadImageUtility.js", "../../js/education.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/education.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

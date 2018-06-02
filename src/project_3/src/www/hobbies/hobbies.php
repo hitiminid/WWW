@@ -14,7 +14,7 @@
                      "../../css/hobbies.css",
                      "../../css/comments.css"
                     );
-  $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js");
+  $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new HobbyGenerator;
   $mainPagePath     = "../index.php";
@@ -38,7 +38,7 @@
   $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
 
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/hobbies.js", "../../js/comments.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

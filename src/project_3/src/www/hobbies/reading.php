@@ -9,7 +9,7 @@
                      "../../css/grid.css",
                      "../../css/panorama.css",
                      "../../css/reading.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, null);
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new ReadingGenerator;
   $mainPagePath     = "../index.php";
@@ -19,7 +19,7 @@
 
   $navbar = $contentGenerator->generateNavbar($mainPagePath, $imagePath, $semestersPrefix, $hobbyPath);
 
-  $panorama = $contentGenerator->generatePanorama("Czytanie", "../../img/reading_bg.png");
+  $panorama = $contentGenerator->generatePanorama("Czytanie", "../../img/reading_bg_low_res.png");
 
   $year2018 = $contentGenerator->generateYear("2018",
                                               array(
@@ -42,5 +42,7 @@
   $yearsSection = $contentGenerator->generateYearsSection(array($year2018, $year2017, $year2016));
   $main   = $contentGenerator->generateMain(array($panorama, $yearsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  echo $pageGenerator-> generatePageStructure(array($head, $body));
+  
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js"));  
+  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>
