@@ -22,12 +22,12 @@
             $this->commentsUtility = new CommentsUtility();
             $this->captchaUtility = new CaptchaUtility();
             $this->captcha = $this->captchaUtility->getCaptcha();
-            $validation = $this->captchaUtility->validateCaptcha("2");
-            if ($validation == true) {
-                echo "true";
-            } else {
-                echo "false";
-            }
+            // $validation = $this->captchaUtility->validateCaptcha("2");
+            // if ($validation == true) {
+            //     echo "true";
+            // } else {
+            //     echo "false";
+            // }
             // echo $validation;
         }
 

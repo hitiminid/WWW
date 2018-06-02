@@ -4,7 +4,7 @@
     
     class CaptchaUtility {
     
-        private $currentCaptcha;
+        // private $currentCaptcha;
         
         public function getCaptcha() {
             $query = new CaptchaQuery();
@@ -16,23 +16,23 @@
             } else {
 
             }
-            $this->currentCaptcha = $result[$captchaNumber];
-            return $this->currentCaptcha;
+            // $this->currentCaptcha = $result[$captchaNumber];
+            return $result[$captchaNumber];
         }
 
 
-        public function validateCaptcha($answer) {
-            $question = $this->currentCaptcha->getQuestion();
+        public function validateCaptcha($question, $answer) {
             $query    = new CaptchaQuery();
             $result   = $query->filterByQuestion($question)->filterByAnswer($answer)->find();
             
-            if (sizeof($result) > 0) {
-                echo "true";
-                return true;
-            } else {
-                echo "false";
-                return false;
-            }
+            return (sizeof($result) > 0);
+            // if (sizeof($result) > 0) {
+                // echo "true";
+                // return true;
+            // } else {
+                // echo "false";
+                // return false;
+            // }
         }
 
 

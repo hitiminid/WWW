@@ -2,6 +2,7 @@
     
     require_once("../../setup.php");
     require 'CommentsUtility.php';
+    require 'CaptchaUtility.php';
 
 
     use MyPage\Comment;
@@ -13,16 +14,28 @@
     // ->filterByCommentText('')
     // ->delete();
 
-    $author = $_POST['commentAuthor'];
-    $title  = $_POST['commentTitle'];
-    $text   = $_POST['commentText'];
-    $pageId = $_POST['pageId'];
+    $author   = $_POST['commentAuthor'];
+    $title    = $_POST['commentTitle'];
+    $text     = $_POST['commentText'];
+    $pageId   = $_POST['pageId'];
+    $question = $_POST['captchaQuestion'];
+    $answer   = $_POST['captchaAnswer'];
 
     $commentsUtility = new CommentsUtility();
     // $pageId = $p;
-    $commentsUtility->saveComment($author, $text, $pageId);  
-
-    $aResult = array();
+    
+    $captchaUtility = new CaptchaUtility();
+    $response = array();
+    
+    if ($captchaUtility->validateCaptcha($question, $answer)) {
+        // doesnt work because captcha doesnt have a question !!!!!!!!!!
+        // $response['error'] = 'Wrong Captcha';
+    // if (true) {
+        $commentsUtility->saveComment($author, $text, $pageId);  
+    } else {
+        $response['error'] = 'Wrong Captcha';
+    }
+    
 
     // if( !isset($_POST['commentAuthor']) ) { 
     //     $aResult['error'] = '1!'; 
@@ -40,5 +53,5 @@
     //     $aResult['error'] = 'No comment text!'; 
     // }
     
-    echo json_encode($aResult)
+    echo json_encode($response);
 ?>

@@ -51,25 +51,32 @@ function sendComment(event) {
 
     let isDataValid = validateData();
     // let isDataValid = true;
+    // let isDataValid = true;
 
     if (isDataValid) {
         // console.log(pageId);
-        console.log(event.data.pageId);
+        // console.log(event.data.pageId);
 
-        let author = document.getElementById('comment-author-input-field').value;
-        let avatar = document.getElementById('avatar-input-field').value;
-        let title  = document.getElementById('comment-author-input-field').value;
-        let text   = document.getElementById('comment-text-area').value;
-        let date   = "";
+        let author   = document.getElementById('comment-author-input-field').value;
+        let avatar   = document.getElementById('avatar-input-field').value;
+        let title    = document.getElementById('comment-author-input-field').value;
+        let text     = document.getElementById('comment-text-area').value;
+        let date     = "";
+        let question = document.getElementById('captcha-question').innerHTML;
+        let answer   = document.getElementById('captcha-answer').value;
+
+        console.log(question);
+        console.log(answer);
 
         var myData = {
             commentAuthor: author,
             commentTitle: title,
             commentText: text,
-            pageId: event.data.pageId
+            pageId: event.data.pageId,
+            captchaQuestion: question,
+            captchaAnswer: answer
         };
 
-        appendCurrentlyCreatedComment(author, avatar, date, text);
         phpScriptURL = "../../php/database_utilities/submit_comment.php";
 
         $.ajax({
@@ -80,9 +87,13 @@ function sendComment(event) {
             success: function( obj, textstatus ) {
                 if( !('error' in obj) ) {
                     console.log("all correct");
+                    appendCurrentlyCreatedComment(author, avatar, date, text);        
                     clearInputFields();
+
                 } else {
-                    console.log(obj["error"]);
+                    // console.log();
+                    console.log(123);
+                    alert(obj["error"]);
                 }
             }
         });
