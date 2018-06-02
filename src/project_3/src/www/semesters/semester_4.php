@@ -1,13 +1,17 @@
 <?php
   require_once(__DIR__."../../../php/content_generators/PageGenerator.php");
   require_once(__DIR__."../../../php/content_generators/SemestersGenerator.php");
+  require_once(__DIR__."../../../php/content_generators/CommentsGenerator.php");
+  require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/reset.css",
                      "../../css/main_style.css",
                      "../../css/grid.css",
-                     "../../css/semesters.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr IV", $cssStyles, null);
+                     "../../css/semesters.css",
+                     "../../css/comments.css");
+                     
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr IV", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new SemestersGenerator;
   $mainPagePath     = "../index.php";
@@ -29,7 +33,9 @@
 
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr IV", "Lato 2016/2017", $semesters);
 
+  $commentsSection = (new CommentsGenerator())->generateCommentsSection(7);  
   $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  echo $pageGenerator-> generatePageStructure(array($head, $body));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js"));
+  echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
 ?>
