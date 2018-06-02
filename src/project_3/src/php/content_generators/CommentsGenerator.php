@@ -113,7 +113,7 @@
 
         private function generateCreateCommentField() {
             $captchaQuestion = $this->captcha->getQuestion();
-            $content = " <div id='create-comment-field'>
+            $content = " <div id='create-comment-field'><p id='join-discussion'>Dołącz do dyskusji:</p>
             <form action='/php/database_utilities/submit_comment.php' method='POST'>
                 <div class='row'>
                     <input id='comment-author-input-field' class='comment-input-field' type='text' name='displayName' placeholder='Podpis'>

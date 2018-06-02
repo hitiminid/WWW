@@ -43,6 +43,7 @@
         #no-comments-info {
 
             text-align:center;
+            color: #333333;
             margin:auto;
             
             #no-comments-info-header {
@@ -138,6 +139,13 @@
     margin:auto;
     margin-top: 100px;
 
+    #join-discussion {
+        font-size: 25px;
+        margin-bottom: 30px;
+        color: #333333;
+        margin-left: 0px;
+    }
+
     #comment-author-input-field {
         margin-right:25px;
     }
@@ -162,6 +170,7 @@
 
         &:focus {
             outline: none;
+            background-color:#fbfbfb;
         }
     }
 
