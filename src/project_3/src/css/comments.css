@@ -1,11 +1,16 @@
 #comment-section {
   width: 700px;
-  margin: auto; }
+  margin: auto;
+  margin-top: 100px; }
   #comment-section #comment-section-header {
+    width: 500px;
+    margin: auto;
     height: 52px;
-    color: #f1f1f1;
-    font-size: 19px;
+    color: #333333;
+    font-size: 26px;
     margin-bottom: 25px; }
+    #comment-section #comment-section-header p {
+      margin-left: 0; }
     #comment-section #comment-section-header .left-element {
       float: left; }
     #comment-section #comment-section-header .right-element {
@@ -33,7 +38,7 @@
       font-size: 25px; }
 
 .comment {
-  width: 600px;
+  width: 650px;
   margin: auto;
   margin-bottom: 40px; }
   .comment .comment-header {
@@ -69,7 +74,8 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     border: 2px solid #d1d1d1;
-    background-color: #f1f1f1; }
+    background-color: #f1f1f1;
+    word-wrap: break-word; }
     .comment .comment-body p {
       margin: 0;
       padding: 0; }
@@ -79,7 +85,8 @@
 #create-comment-field {
   width: 500px;
   margin: auto;
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-bottom: 50px; }
   #create-comment-field #join-discussion {
     font-size: 25px;
     margin-bottom: 30px;

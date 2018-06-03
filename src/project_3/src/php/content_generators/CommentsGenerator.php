@@ -44,7 +44,7 @@
 
         private function generateCommentsSectionHeader() {
             $content = "<div id='comment-section-header'>
-                            <div class='left-element'><p>Comments:</p></div>
+                            <div class='left-element'><p>Komentarze:</p></div>
                             <div class='right-element'></div>
                         </div>";
             return $content;
