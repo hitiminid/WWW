@@ -43,13 +43,9 @@
                                               ));
 
   $yearsSection = $contentGenerator->generateYearsSection(array($year2018, $year2017, $year2016));
-  $main   = $contentGenerator->generateMain(array($panorama, $yearsSection));
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  
   $commentsSection = (new CommentsGenerator)->generateCommentsSection(2);
-
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
-
+  $main   = $contentGenerator->generateMain(array($panorama, $yearsSection, $commentsSection));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

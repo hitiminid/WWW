@@ -34,10 +34,8 @@
 
   $commentsSection = (new CommentsGenerator())->generateCommentsSection(7);  
   $main   = $contentGenerator->generateMain(array($semestersWithHeader, $commentsSection));
-  $body   = $pageGenerator->generateBody(array($navbar, $main,/* $commentsSection, */$contentGenerator->generateFooter()));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js", "../../js/semester_3.js"));
   echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
-
-
 
 ?>

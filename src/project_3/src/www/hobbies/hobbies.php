@@ -30,15 +30,11 @@
   $description = $contentGenerator->generateDescription("Choć moje studia wymagają dużych nakładów pracy to zawsze jestem w stanie wygospodarować czas na odrobinę relaksu. Do moich ulubionych form spędzania czasu wolnego należy czytanie książek (zarówno beletrystyki jak i książek naukowych - związanych z informatyką)
   oraz jazda na rowerze.");
 
-  $navbar = $contentGenerator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
-  $main   = $contentGenerator->generateMain(array($panorama, $description, $hobbiesMenu));
-
   $commentsSection = (new CommentsGenerator)->generateCommentsSection(1);
+  $navbar = $contentGenerator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
+  $main   = $contentGenerator->generateMain(array($panorama, $description, $hobbiesMenu, $commentsSection));
 
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
-
-
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/comments.js",  "../../js/hobbies.js"));
-
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

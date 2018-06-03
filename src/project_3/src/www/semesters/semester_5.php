@@ -34,8 +34,8 @@
   $semestersWithHeader = $contentGenerator->generateSemesterWithHeader("Semestr V", "Zima 2017/2018", $semesters);
 
   $commentsSection = (new CommentsGenerator())->generateCommentsSection(9);  
-  $main   = $contentGenerator->generateMain(array($semestersWithHeader));
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
+  $main   = $contentGenerator->generateMain(array($semestersWithHeader, $commentsSection));
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js", "../../js/semester_5.js"));
   echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
 ?>
