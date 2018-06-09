@@ -1,3 +1,14 @@
+@import 'reset';
+@import 'grid';
+@import 'panorama';
+@import 'hobbies';
+@import 'cycling';
+@import 'reading';
+@import 'semesters';
+@import 'comments';
+@import 'education';
+@import 'timeline';
+
 $bg-color: #474e5d;
 $font-family: 'Lato', sans-serif;
 $content-background: #fcfcfc;
@@ -158,3 +169,5 @@ footer {
       width:90%;
     }
 }
+
+

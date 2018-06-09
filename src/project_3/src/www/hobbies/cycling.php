@@ -36,6 +36,6 @@
   $mapSection = $contentGenerator->generateMapSection($panels);
   $main   = $contentGenerator->generateMain(array($panorama, $description, $mapSection, $commentsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/comments.js", "../../js/cycling.js"));
+  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/cycling.js", "../../js/comments.js"));
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

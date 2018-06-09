@@ -9,7 +9,7 @@
             $result = $query->find();
             $numberOfCaptchas = sizeof($result);
 
-            if ($numberOfCaptchas > 0) { //todo: repair!!!
+            if ($numberOfCaptchas > 0) { 
                 $captchaNumber = rand(0, $numberOfCaptchas-1);
             } else {
 
