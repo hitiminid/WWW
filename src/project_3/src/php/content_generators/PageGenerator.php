@@ -50,10 +50,10 @@
         $js = "";
         if (is_array($jsPaths)) {
           foreach ($jsPaths as $path) {
-            $js .= "<script type='text/javascript' src='$path'></script>\n";
+            $js .= "<script src='$path'></script>\n";
           }
         } else {
-            $js = "<script type='text/javascript' src='$jsPaths'></script>\n";
+            $js = "<script src='$jsPaths'></script>\n";
         }
         return $js;
       }
