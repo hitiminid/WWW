@@ -6,12 +6,7 @@
   require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css",
-                     "../../css/main_style.css",
-                     "../../css/grid.css",
-                     "../../css/panorama.css",
-                     "../../css/reading.css",
-                    "../../css/comments.css");
+  $cssStyles = array("../../css/main_style.css");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new ReadingGenerator;

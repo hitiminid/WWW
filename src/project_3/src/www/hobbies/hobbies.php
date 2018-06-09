@@ -7,13 +7,7 @@
   require_once("../../setup.php");
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css",
-                     "../../css/grid.css",
-                     "../../css/main_style.css",
-                     "../../css/panorama.css",
-                     "../../css/hobbies.css",
-                     "../../css/comments.css"
-                    );
+  $cssStyles = array("../../css/main_style.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Hobby", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new HobbyGenerator;

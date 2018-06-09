@@ -9,7 +9,7 @@
 
 
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/reset.css","../css/grid.css", "../css/main_style.css", "../css/panorama.css", "../css/index.css", "../css/styles.css");
+  $cssStyles = array("../css/main_style.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator = new HomePageGenerator;
@@ -34,8 +34,4 @@
   $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
 
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
-
-  // $util = new CaptchaUtility();
-  // $util->mockCaptchas();
-
 ?>

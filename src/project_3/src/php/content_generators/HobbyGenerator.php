@@ -39,7 +39,7 @@ require_once(__DIR__. DIRECTORY_SEPARATOR . "BaseGenerator.php");
           <a href='$pagePath'>
             <div class='button-tile'>
               <img src='$imagePath' alt='$alt' />
-              <div class='menu-button'>
+              <div class='hobby-menu-button'>
                 <p>$title</p>
               </div>
             </div>

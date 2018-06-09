@@ -1,4 +1,5 @@
 #comment-section {
+    $darkColor: #333333;
     width: 700px;
     margin:auto;
     margin-top: 100px;
@@ -7,7 +8,7 @@
         width:700px; 
         margin: auto;
         height: 52px;
-        color: #333333;
+        color: $darkColor;
         font-size: 26px;
         margin-bottom: 25px;
 
@@ -22,7 +23,6 @@
         .right-element {
             float: right;  
         }
-
     }
     
     select {
@@ -45,7 +45,7 @@
     #comment-section-body {
         #no-comments-info {
             text-align:center;
-            color: #333333;
+            color: $darkColor;
             margin:auto;
             
             #no-comments-info-header {
@@ -61,11 +61,13 @@
 }
 
 .comment {
+    $borderRadius: 6px;
     width: 650px;
     margin:auto;
     margin-bottom: 40px;
     
     .comment-header {
+
         display: flex;
         width: 100%;
         height: 50px;
@@ -73,8 +75,8 @@
         justify-content: space-between;
         background: #DBDBDB;
         padding: 10px;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
 
         .children {
             display: flex;
@@ -111,8 +113,8 @@
     .comment-body {
         background-color: #fff;
         padding:10px;
-        border-bottom-left-radius: 6px;
-        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
         border: 2px solid #d1d1d1;
         background-color: #f1f1f1;
         word-wrap: break-word;
@@ -129,19 +131,20 @@
 }
 
 #create-comment-field {
-
+    $darkColor: #333333;
+    $lightGreyColor: #F1F1F1;
     $createCommentSectionWidth: 500px;
     $fontSize: 16px;
 
     width: $createCommentSectionWidth;    
-    margin:auto;
+    margin: auto;
     margin-top: 100px;
     margin-bottom: 50px;
 
     #join-discussion {
         font-size: 25px;
         margin-bottom: 30px;
-        color: #333333;
+        color: $darkColor;
         margin-left: 0px;
     }
 
@@ -156,7 +159,6 @@
         width: 100%;
         height: 30px;
         border-radius: 10px;
-        // border: none;
         padding-left: 5px;
         margin-bottom: 20px;
     }
@@ -165,7 +167,7 @@
         padding: 16px;
         font-size: $fontSize;
         background-color: #DBDBDB;
-        border: 1px solid #333333;
+        border: 1px solid $darkColor;
 
         &:focus {
             outline: none;
@@ -176,22 +178,19 @@
     #comment-text-area {
         width: 100%;
         height: 150px;
-        // background-color: rgba(244,244,244,30);
-
         resize: none;
         padding: 10px;
     }   
 
     #captcha-field {
-
+        $capchtaInputHeight: 40px;
         height:60px;
 
         #captcha-question-field {
             width: 40%;
-            // background-color: red;    
             
             #captcha-question { 
-                height: 40px;
+                height: $capchtaInputHeight;
                 margin-top: 20px;
                 margin-right: 10px;
                 padding: 0px;
@@ -204,30 +203,24 @@
             width: 60%;
             
             #captcha-answer {
-                height: 40px;
-                // border:none; 
-                border-radius:10px;
+                height: $capchtaInputHeight;
+                border-radius: 10px;
                 width: 100%;
-                margin-top:10px;
-                // margin-left: 10px;
-                font-size:15px;
+                margin-top: 10px;
+                font-size: 15px;
             }
         }
     }
 
 
     #submit-comment-field {
-        
         height: 70px;
         display: flex;
-        // background-color: green;
 
         #attach-avatar-field {
-            // width: $createCommentSectionWidth * (2/3);
             margin-top: 10px;
             width: 40px;
             height: 50px;
-            // background-color: purple;
             position:relative;
     
             #attach-icon {
@@ -239,13 +232,13 @@
                 border-radius: 4px;
                 background-image: url("../img/attachment.png");
                 background-repeat: no-repeat;
-                border: 1px solid #333333;
-                background-color: #f1f1f1;
+                border: 1px solid $darkColor;
+                background-color: $lightGreyColor;
                 padding:3px;
                 background-position: center;
 
                 &:hover {
-                    background-color: #333333;
+                    background-color: $darkColor;
                     cursor: pointer;            
                     background-image: url("../img/attachment_hover.png");
                 }
@@ -275,16 +268,16 @@
             width:100%;
             display:flex;
             margin-top: 10px;
-            border: #333333 1px solid;
+            border: $darkColor 1px solid;
             border-radius: 10px;
-            color: #333333;
+            color: $darkColor;
             background-color: #DBDBDB;
             text-align: center;
     
             &:hover {
-                color: #f1f1f1;
-                background-color: #333333;
-                border-color: #f1f1f1;
+                color: $lightGreyColor;
+                background-color: $darkColor;
+                border-color: $lightGreyColor;
                 cursor: pointer;
             }
 

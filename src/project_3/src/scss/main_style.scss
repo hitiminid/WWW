@@ -8,10 +8,12 @@
 @import 'comments';
 @import 'education';
 @import 'timeline';
+@import 'index';
 
 $bg-color: #474e5d;
 $font-family: 'Lato', sans-serif;
 $content-background: #fcfcfc;
+$lightGreyColor: #f1f1f1;
 
 * {
     box-sizing: border-box;
@@ -77,7 +79,6 @@ ul {
             background-size: 188px 80px;
         }
     }
-    
 }
 
 .navigation-item {
@@ -109,8 +110,8 @@ ul {
 }
 
 .navigation-item a:hover, .dropdown:hover .dropbtn {
-    background-color: #f1f1f1;
-    color:black
+    background-color: $lightGreyColor;
+    color:black;
 }
 
 .navigation-item.dropdown {
@@ -138,7 +139,6 @@ ul {
             background-color: #f1f1f1
         }
     }
-
 }
 
 .dropdown:hover .dropdown-content {
@@ -169,5 +169,3 @@ footer {
       width:90%;
     }
 }
-
-

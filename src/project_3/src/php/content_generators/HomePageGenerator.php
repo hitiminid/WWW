@@ -11,7 +11,7 @@
       $content = "
       <div id='panorama'>
         <img src='$backgroundPath' alt='$altBackground'/>
-        <div id='panorama-panel'>
+        <div id='panorama-panel-inner-image'>
           <img id='face-image' src='$facePath' alt='$altFace'/>
           <h2>$name</h2>
         </div>

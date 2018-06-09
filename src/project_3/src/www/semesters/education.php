@@ -2,12 +2,7 @@
   require_once(__DIR__."/../../php/content_generators/EducationGenerator.php");
   require_once(__DIR__."/../../php/content_generators/PageGenerator.php");
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/reset.css",
-                     "../../css/grid.css",
-                     "../../css/main_style.css",
-                     "../../css/timeline.css",
-                     "../../css/panorama.css",
-                     "../../css/education.css");
+  $cssStyles = array("../../css/main_style.css");
   $head = $pageGenerator->generateHead("Piotr Kawa - Edukacja", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
   $contentGenerator   = new EducationGenerator;
