@@ -21,7 +21,7 @@
   $semestersPrefix  = "../../www/semesters/";
   $hobbyPath        = "hobbies.php";
   $imagePath = "../../img/logo.png";
-  $panorama   = $contentGenerator->generatePanorama("Moje hobby", "../../img/hobbies.png");
+  $panorama   = $contentGenerator->generatePanorama("Moje hobby", "../../img/hobbies_low_res.png");
   $hobbiesRow = array(
     $contentGenerator->renderHobbyPanel("Czytanie", "reading.php", "../../img/reading.png"),
     $contentGenerator->renderHobbyPanel("Rower", "cycling.php", "../../img/cycling.png"));

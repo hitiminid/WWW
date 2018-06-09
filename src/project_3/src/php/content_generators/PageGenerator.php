@@ -8,7 +8,7 @@
     function __construct() {
       $this->utilityManager = new Utility();
     }
-
+    
     public function generatePageStructure($content) {
       return $this->utilityManager->appendElements("<!DOCTYPE html>\n<html lang='pl'>\n", $content, "</html>");
     }

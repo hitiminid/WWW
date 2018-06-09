@@ -60,11 +60,6 @@ function toDataURL(src, callback) {
       localStorage.removeItem(this.localStorageKey);
   };
 
-//   var myImg = new ImageLoader("face-image", "faceImage", "../img/face.png");
-//   myImg.loadImage();
-
-//   localStorage.removeItem("galacticaImg");
-
   function czysc() {
     myImg.clearLocalStorage();
   }

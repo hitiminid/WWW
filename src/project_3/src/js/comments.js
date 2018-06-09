@@ -43,7 +43,6 @@ appendCurrentlyCreatedComment = (author, email, avatar, date, title, text) => {
     if (avatar === "") {
         avatar = '../../img/avatar_placeholder.png';
     }
-    //todo: render title
     let commentStart_1 = "<div class='comment'><div class='comment-header'><div class='children'>";
     let commentStart_2 = `<div class='image-panel'><img src='${avatar}'></div>`;
     let commentStart_3 = `<div class='comment-info'>` + getAuthorField(author, email);
