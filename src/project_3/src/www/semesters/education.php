@@ -24,6 +24,5 @@
 
   $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   
-  $bodyScripts = $pageGenerator->addJSFiles();
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>
