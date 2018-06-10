@@ -7,10 +7,10 @@
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
   require_once(__DIR__."/../php/database_utilities/CaptchaUtility.php");
 
-
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../css/main_style.css");
-  $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+  $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../js/localStorageUtility.js", "../js/index.js");
+  $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, $jsFiles);
 
   $contentGenerator = new HomePageGenerator;
   $mainPagePath     = "index.php";
@@ -29,9 +29,6 @@
   $navbar = $contentGenerator->generateNavbar($mainPagePath,$imagePath,$semestersPrefix,$hobbyPath);
   $main   = $contentGenerator->generateMain(array($panorama, $aboutMe, $subSectionPanels));
 
-  $bodyScripts = $pageGenerator->addJSFiles(array("../js/localStorageUtility.js", "../js/index.js"));
-  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter(),  $bodyScripts));
-  
-
+  $body   = $pageGenerator->generateBody(array($navbar, $main, $commentsSection, $contentGenerator->generateFooter()));
   echo $pageGenerator-> generatePageStructure(array($head,$body));
 ?>
