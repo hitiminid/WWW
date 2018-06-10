@@ -5,8 +5,6 @@
     use MyPage\Captcha;
     use MyPage\CaptchaQuery;
 
-    //todo: builder pattern
-
     class CommentsUtility {
         
         /**

@@ -1,5 +1,14 @@
-let attachIcon = document.getElementById("attach-icon");
-let avatarInput = document.getElementById("avatar-input-field");
+// inputs are used in many places - assign them once
+var attachIcon = document.getElementById("attach-icon");
+var avatarInput = document.getElementById("avatar-input-field");
+var commentAuthorInputField = document.getElementById("comment-author-input-field");
+var avatarInputField = document.getElementById('avatar-input-field');
+var commentTitleInputField = document.getElementById("comment-title-input-field");
+var commentTextArea = document.getElementById("comment-text-area");
+var captchaQuestion = document.getElementById('captcha-question');
+var captchaAnswer = document.getElementById('captcha-answer');
+var emailInputField = document.getElementById('email-input-field');
+var noCommentsInfo = document.getElementById('no-comments-info');
 
 if (attachIcon != null) {
     attachIcon.addEventListener("click", function(){
@@ -9,14 +18,13 @@ if (attachIcon != null) {
 }
 
 validateData = () => {
-    let text   = document.getElementById("comment-text-area").value;
+    let text   = commentTextArea.value;
     return text != "";
 }
 
 hideNoCommentsSection = () => {
-    let noCommentsSection = document.getElementById('no-comments-info');
-    if (noCommentsSection != null) {
-        noCommentsSection.style.display = 'none';
+    if (noCommentsInfo != null) {
+        noCommentsInfo.style.display = 'none';
     }
 }
 
@@ -38,6 +46,11 @@ getCommentBody = (title, text) => {
 
 appendCurrentlyCreatedComment = (author, email, avatar, date, title, text) => {
     hideNoCommentsSection(); 
+    let comment = createNewComment(author, email, avatar, date, title, text);
+    $("#comment-section-body").append(comment);
+}
+
+createNewComment = (author, email, avatar, date, title, text) => {
     if (avatar === "") {
         avatar = '../../img/avatar_placeholder.png';
     }
@@ -47,33 +60,33 @@ appendCurrentlyCreatedComment = (author, email, avatar, date, title, text) => {
     let dateField = `<h6 class='comment-date'>${date}</h6></div></div></div>`;
     let commentBody = getCommentBody(title, text);
     let comment = commentStart_1 + commentStart_2 + commentStart_3 + dateField + commentBody;
-    $("#comment-section-body").append(comment);
+    return comment;
 }
 
 clearInputFields = () => {
-    document.getElementById("comment-author-input-field").value = '';
-    document.getElementById("comment-title-input-field").value = '';
-    document.getElementById("comment-text-area").value = '';
-    document.getElementById('avatar-input-field').value = '';
-    document.getElementById('email-input-field').value = '';
-    document.getElementById('captcha-answer').value = '';
+    commentAuthorInputField.value = '';
+    commentTitleInputField.value = '';
+    commentTextArea.value = '';
+    avatarInputField.value = '';
+    emailInputField.value = '';
+    captchaAnswer.value = '';
 }
 
 function sendComment(event) {
     if (validateData()) {
 
-        let author     = document.getElementById('comment-author-input-field').value;
+        let author     = commentAuthorInputField.value;
         if (author === "") {
             author = "Anonim";
         }
-        let avatar     = document.getElementById('avatar-input-field').value;
-        let title      = document.getElementById('comment-title-input-field').value;
-        let text       = document.getElementById('comment-text-area').value;
-        let email      = document.getElementById('email-input-field').value;
-        let avatarLink = document.getElementById('avatar-input-field').value;
+        let avatar     = avatarInputField.value;
+        let title      = commentTitleInputField.value;
+        let text       = commentTextArea.value;
+        let email      = emailInputField.value;
         let date       = "";
-        let question   = document.getElementById('captcha-question').innerHTML;
-        let answer     = document.getElementById('captcha-answer').value;
+        
+        let question   = captchaQuestion.innerHTML;
+        let answer     = captchaAnswer.value;
 
         var myData = {
             commentAuthor: author,

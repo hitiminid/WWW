@@ -49,6 +49,11 @@
             $captcha4->setQuestion("Ile bitów ma bajt?");
             $captcha4->setAnswer("8");
             $captcha4->save();
+
+            $captcha5 = new Captcha();
+            $captcha5->setQuestion("O(n) InsertionSort");
+            $captcha5->setAnswer("n^2");
+            $captcha5->save();
         }
     }
 ?>
