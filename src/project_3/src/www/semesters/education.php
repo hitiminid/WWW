@@ -3,7 +3,8 @@
   require_once(__DIR__."/../../php/content_generators/PageGenerator.php");
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/main_style.css");
-  $head = $pageGenerator->generateHead("Piotr Kawa - Edukacja", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+  $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../../js/imageLoadUtility.js", "../../js/comments.js", "../../js/education.js");
+  $head = $pageGenerator->generateHead("Piotr Kawa - Edukacja", $cssStyles, $jsFiles);
 
   $contentGenerator   = new EducationGenerator;
   $description = $contentGenerator->generateDescription("W przeciągu 3 lat na Politechnice Wrocławskiej brałem udział w wielu przydatnych i ciekawych kursach z zakresu zarówno matematyki jak i informatyki. Poniższa oś czasu pokazuje każdy z semestrów, które odbyłem wraz z kursami które obejmowały.");
@@ -23,6 +24,6 @@
 
   $body = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
   
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/comments.js", "../../js/education.js"));
+  $bodyScripts = $pageGenerator->addJSFiles();
   echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
 ?>

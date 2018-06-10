@@ -7,7 +7,8 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/main_style.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+  $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../../js/imageLoadUtility.js", "../../js/comments.js", "../../js/cycling.js");
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Rower", $cssStyles, $jsFiles);
 
   $contentGenerator = new CyclingGenerator;
   $mainPagePath     = "../index.php";
@@ -29,6 +30,5 @@
   $mapSection = $contentGenerator->generateMapSection($panels);
   $main   = $contentGenerator->generateMain(array($panorama, $description, $mapSection, $commentsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/cycling.js", "../../js/comments.js"));
-  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
+  echo $pageGenerator-> generatePageStructure(array($head,$body));
 ?>

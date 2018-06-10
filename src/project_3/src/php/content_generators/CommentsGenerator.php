@@ -85,7 +85,7 @@
 
             $header = "<div class='comment-header'>
                         <div class='children'>
-                            <div class='image-panel'><img src='$avatar'></div>
+                            <div class='image-panel'><img src='$avatar' alt='avatar-image'></div>
                             <div class='comment-info'>$authorField<h6 class='comment-date'>$commentDate</h6></div>
                         </div>
                     </div>";

@@ -6,8 +6,8 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/main_style.css");
-                     
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr VI", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+  $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../../js/comments.js", "../../js/semester_6.js");
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr VI", $cssStyles, $jsFiles);
 
   $contentGenerator = new SemestersGenerator;
 
@@ -31,6 +31,5 @@
   $commentsSection = (new CommentsGenerator())->generateCommentsSection(10);  
   $main   = $contentGenerator->generateMain(array($semestersWithHeader, $commentsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/comments.js", "../../js/semester_6.js"));
-  echo $pageGenerator-> generatePageStructure(array($head, $body, $bodyScripts));
+  echo $pageGenerator-> generatePageStructure(array($head, $body));
 ?>

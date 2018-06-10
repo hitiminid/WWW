@@ -7,7 +7,8 @@
 
   $pageGenerator = new PageGenerator;
   $cssStyles = array("../../css/main_style.css");
-  $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+  $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js");
+  $head      = $pageGenerator->generateHead("Piotr Kawa - Czytanie", $cssStyles, $jsFiles);
 
   $contentGenerator = new ReadingGenerator;
   $mainPagePath     = "../index.php";
@@ -41,6 +42,5 @@
   $commentsSection = (new CommentsGenerator)->generateCommentsSection(2);
   $main   = $contentGenerator->generateMain(array($panorama, $yearsSection, $commentsSection));
   $body   = $pageGenerator->generateBody(array($navbar, $main, $contentGenerator->generateFooter()));
-  $bodyScripts = $pageGenerator->addJSFiles(array("../../js/imageLoadUtility.js", "../../js/reading.js", "../../js/comments.js"));
-  echo $pageGenerator-> generatePageStructure(array($head,$body, $bodyScripts));
+  echo $pageGenerator-> generatePageStructure(array($head,$body));
 ?>
