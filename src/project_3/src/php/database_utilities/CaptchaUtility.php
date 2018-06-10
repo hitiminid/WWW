@@ -24,20 +24,21 @@
         }
 
         public function mockCaptchas() {
+            
             $captcha = new Captcha();
             $captcha->setQuestion("O(n) QuickSort:");
             $captcha->setAnswer("nlogn");
             $captcha->save();
             
+            $captcha1 = new Captcha();
+            $captcha1->setQuestion("1+1=");
+            $captcha1->setAnswer("2");
+            $captcha1->save();
+            
             $captcha2 = new Captcha();
-            $captcha2->setQuestion("1+1=");
-            $captcha2->setAnswer("2");
+            $captcha2->setQuestion("(1+8i) / (2+3i)");
+            $captcha2->setAnswer("2+i");
             $captcha2->save();
-        
-            $captcha5 = new Captcha();
-            $captcha5->setQuestion("(1+8i) / (2+3i)");
-            $captcha5->setAnswer("2+i");
-            $captcha5->save();
             
             $captcha3 = new Captcha();
             $captcha3->setQuestion("(1+2i)*(3+i)​");

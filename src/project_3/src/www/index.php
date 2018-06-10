@@ -9,7 +9,8 @@
   require_once(__DIR__."/../php/database_utilities/DatabaseUtility.php");
 
   $db = new DatabaseUtility();
-  $db->dropDB(true, true);
+  // $db->dropDB(false, true);
+  
   $captchaUtility = new CaptchaUtility();
   $captchaUtility->mockCaptchas();
   
