@@ -1,5 +1,5 @@
 <?php
-    require_once("../../setup.php");
+    // require_once("../../setup.php");
 
     use MyPage\Comment;
     use MyPage\CommentQuery;
@@ -8,21 +8,13 @@
     
     class DatabaseUtility {
 
-        public function mockDataBase() {
-        }
-
-        private function mockCaptcha(){
-            
-        }
-        
-        private function mockComments(){
-
-        }
-
-        public function dropDB() {
-            CommentQuery::create()->find()->delete();
-            CaptchaQuery::create()->find()->delete();
-            
+        public function dropDB($dropComment, $dropCaptcha) {
+            if ($dropComment) {
+                CommentQuery::create()->find()->delete();
+            }
+            if ($dropCaptcha) {
+                CaptchaQuery::create()->find()->delete();
+            }
         }
     }
 ?>

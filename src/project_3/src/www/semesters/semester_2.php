@@ -7,7 +7,7 @@
   require_once("../../setup.php");
   
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../../css/main_style.css");
+  $cssStyles = array("../../css/styles.css");
   $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../../js/comments.js", "../../js/semester_2.js");
   $head      = $pageGenerator->generateHead("Piotr Kawa - Semestr II", $cssStyles, $jsFiles);
 

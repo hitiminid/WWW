@@ -6,9 +6,15 @@
   require_once(__DIR__."/../php/content_generators/CommentsGenerator.php");
   require_once(__DIR__."/../php/database_utilities/CommentsUtility.php");
   require_once(__DIR__."/../php/database_utilities/CaptchaUtility.php");
+  require_once(__DIR__."/../php/database_utilities/DatabaseUtility.php");
 
+  $db = new DatabaseUtility();
+  $db->dropDB(true, true);
+  $captchaUtility = new CaptchaUtility();
+  $captchaUtility->mockCaptchas();
+  
   $pageGenerator = new PageGenerator;
-  $cssStyles = array("../css/main_style.css");
+  $cssStyles = array("../css/styles.css");
   $jsFiles = array("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js", "../js/localStorageUtility.js", "../js/index.js");
   $head = $pageGenerator->generateHead("Piotr Kawa - Moja przygoda z edukacją", $cssStyles, $jsFiles);
 

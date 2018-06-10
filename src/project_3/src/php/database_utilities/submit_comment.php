@@ -17,7 +17,7 @@
     $pageId     = $_POST['pageId'];
     $question   = $_POST['captchaQuestion'];
     $answer     = $_POST['captchaAnswer'];
-
+    
     $commentsUtility = new CommentsUtility();
     $captchaUtility = new CaptchaUtility();
     $response = array();

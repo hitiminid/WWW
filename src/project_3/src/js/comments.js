@@ -9,10 +9,8 @@ if (attachIcon != null) {
 }
 
 validateData = () => {
-    let author = document.getElementById("comment-author-input-field").value;
-    let title  = document.getElementById("comment-title-input-field").value;
     let text   = document.getElementById("comment-text-area").value;
-    return author != "" && title != "" && text != "";
+    return text != "";
 }
 
 hideNoCommentsSection = () => {
@@ -66,6 +64,9 @@ function sendComment(event) {
     if (validateData()) {
 
         let author     = document.getElementById('comment-author-input-field').value;
+        if (author === "") {
+            author = "Anonim";
+        }
         let avatar     = document.getElementById('avatar-input-field').value;
         let title      = document.getElementById('comment-title-input-field').value;
         let text       = document.getElementById('comment-text-area').value;

@@ -19,7 +19,7 @@ gulp.task('reload',function() {
 });
 
 gulp.task('styles', function() {
-    return gulp.src('scss/**/main_style.scss')
+    return gulp.src('scss/**/styles.scss')
         .pipe(sass(ouputStyleExpanded))
         .on('error', sass.logError)
         .pipe(gulp.dest('./css/'))
