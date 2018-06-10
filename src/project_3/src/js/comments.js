@@ -21,7 +21,7 @@ hideNoCommentsSection = () => {
 }
 
 getAuthorField = (author, email) => {
-    if (email != null || email != "") {
+    if (email != "") {
         return `<h6 class='comment-author'>${author} (${email})</h6>`;
     } else {
         return `<h6 class='comment-author'>${author}</h6>`;
@@ -47,7 +47,6 @@ appendCurrentlyCreatedComment = (author, email, avatar, date, title, text) => {
     let dateField = `<h6 class='comment-date'>${date}</h6></div></div></div>`;
     let commentBody = getCommentBody(title, text);
     let comment = commentStart_1 + commentStart_2 + commentStart_3 + dateField + commentBody;
-    console.log(comment);
     $("#comment-section-body").append(comment);
 }
 
